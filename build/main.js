@@ -37,13 +37,29 @@ var MapService = (function () {
         this.markersPoi = [];
         this.polygonsPoi = [];
         this.baseMaps = {
-            RimTelecom: L.tileLayer("https://api.mapbox.com/styles/v1/aminehn/ciycvpk1800e42rool43biorb/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiYW1pbmVobiIsImEiOiJjaXg5M2FuYmwwMDN0Mm9udTNtbm10MmF2In0.TCtNRI8pQSawNt927GPoDg", {
-                attribution: '&copy; Rimtelecom map',
-                id: 'mapbox.streets',
+            RimTelecom: L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+                maxZoom: 20,
+                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+            }),
+            googlestreet: L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+                id: 'Google Streets',
                 maxZoom: 20,
                 maxNativeZoom: 17,
-                accessToken: 'pk.eyJ1IjoiYW1pbmVobiIsImEiOiJjaXg5M2FuYmwwMDN0Mm9udTNtbm10MmF2In0.TCtNRI8pQSawNt927GPoDg'
-            }) /*,
+                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+            }),
+            'Google Hybrid': L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
+                maxZoom: 20,
+                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+            }),
+            'Google Sat': L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+                maxZoom: 20,
+                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+            }),
+            'Google Terrain': L.tileLayer('http://{s}.google.com/vt/lyrs=p&x={x}&y={y}&z={z}', {
+                maxZoom: 20,
+                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+            })
+            /*
             OpenStreetMap: L.tileLayer("http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png", {
                 maxZoom: 20,
                 maxNativeZoom: 17,
