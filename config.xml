@@ -85,11 +85,9 @@
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <gap:plugin name="ionic-plugin-keyboard" source="npm" />
     <gap:plugin name="phonegap-plugin-push" source="npm"/>
-<<<<<<< Updated upstream
+
 
         <variable name="SENDER_ID" value="XXXXX" />
-=======
-    <variable name="SENDER_ID" value="XXXXX" />
->>>>>>> Stashed changes
+
 
 </widget>
