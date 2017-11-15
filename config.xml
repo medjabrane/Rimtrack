@@ -85,13 +85,11 @@
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <gap:plugin name="ionic-plugin-keyboard" source="npm" />
     <gap:plugin name="phonegap-plugin-push" source="npm"/>
-<<<<<<< HEAD
-    <variable name="SENDER_ID" value="XXXXX" />
-=======
+
 
 
 
         <variable name="SENDER_ID" value="XXXXX" />
->>>>>>> d0ecaaaf500934ebb99fcfaa7b37b249c8a852af
+
 
 </widget>
