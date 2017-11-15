@@ -25297,18 +25297,3 @@ ion-footer ion-toolbar {
   align-content: bottom;
   background-color: #e42b2b;
 }
-
-page-map-page .tabs-md .tabbar {
-  background: rgba(248, 248, 248, 0.9) !important;
-}
-
-page-map-page .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
-  color: #4a91ff;
-  -webkit-transform: translate3d(0, -2px, 0);
-  transform: translate3d(0, -2px, 0);
-}
-
-page-map-page .tabs-md .tab-button[aria-selected=true] {
-  color: #4a91ff;
-  padding: 0;
-}
