@@ -25297,6 +25297,12 @@ ion-header ion-title a {
   color: white;
 }
 
+.page-login .item .spinner {
+  width: 16px !important;
+  height: 16px !important;
+  color: #FFF;
+}
+
 .page-login .button {
   background: #c42e36;
   border-radius: 20px;
