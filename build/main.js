@@ -64,6 +64,7 @@ var HomePage = (function () {
             });
             _this.buttonColor = '#c42e36';
             toast.present();
+            _this.loader.dismiss();
         });
     };
     HomePage.prototype.ionViewWillLeave = function () {
@@ -297,15 +298,21 @@ var Historical = (function () {
         this.isCurrentPathClicked = false;
         this.pathDrawn = false;
         this.previousPathdrawn = false;
+        this.pathDraw = false;
         this.currentPathClickedDeviceIds = null;
+        this.modalopen = false;
+        this.dismissbutton = false;
     }
+    // 
     Historical.prototype.ngOnInit = function () {
         this.initMap();
         this.init();
     };
+    //Disable swipe back
     Historical.prototype.ionViewWillEnter = function () {
         this.navCtrl.swipeBackEnabled = false;
     };
+    //Loading groups and all real time records
     Historical.prototype.init = function () {
         var _this = this;
         this.loader = this.loadingCtrl.create({
@@ -318,6 +325,7 @@ var Historical = (function () {
             _this.getAllRealTimeRecords();
         });
     };
+    //get all groups methods
     Historical.prototype.loadGroups = function () {
         var _this = this;
         this.allGroups = this.realTimeService.getAllGroups(this.searchWord).subscribe(function (groupes) {
@@ -332,6 +340,7 @@ var Historical = (function () {
         });
         this.loader.dismiss();
     };
+    // All records real time method
     Historical.prototype.getAllRealTimeRecords = function () {
         var _this = this;
         this.allRealTimeRecords = this.realTimeService.getAllRealTimeRecords().subscribe(function (realTimeRecords) {
@@ -349,12 +358,6 @@ var Historical = (function () {
                                 _this.displayCurrentPath(realTimeRecord.idRealTimeRecord);
                             }
                             if (oldRealTimeRecord.speed == 0 && realTimeRecord.speed > 0) {
-                                var toast = _this.toastController.create({
-                                    message: realTimeRecord.mark + ' à démarré !',
-                                    duration: 2000,
-                                    position: 'top'
-                                });
-                                toast.present();
                                 _this.isCurrentPathClicked = true;
                                 if (_this.currentPathClickedDeviceIds != null)
                                     _this.currentPathClickedDeviceIds.push(realTimeRecord.idRealTimeRecord);
@@ -362,21 +365,7 @@ var Historical = (function () {
                                     _this.displayCurrentPath(realTimeRecord.idRealTimeRecord);
                                 }
                             }
-                            if ((oldRealTimeRecord.speed > 0 && realTimeRecord.speed == 0) && realTimeRecord.ignition == true) {
-                                var toast = _this.toastController.create({
-                                    message: realTimeRecord.vehicule.mark + " s'est arrêté provisoirement!",
-                                    duration: 2000,
-                                    position: 'top'
-                                });
-                                toast.present();
-                            }
                             if ((oldRealTimeRecord.speed > 0 && realTimeRecord.speed == 0) && realTimeRecord.ignition == false) {
-                                var toast = _this.toastController.create({
-                                    message: realTimeRecord.vehicule.mark + " s'est arrêté!",
-                                    duration: 2000,
-                                    position: 'top'
-                                });
-                                toast.present();
                                 _this.isCurrentPathClicked = false;
                                 _this.currentPathClickedDeviceIds = null;
                             }
@@ -386,6 +375,7 @@ var Historical = (function () {
             });
         });
     };
+    //initialisation du map
     Historical.prototype.initMap = function () {
         if (this.mapService.map)
             this.mapService.map.remove();
@@ -401,6 +391,7 @@ var Historical = (function () {
         L.control.zoom({ position: 'topright' }).addTo(map);
         this.mapService.map = map;
     };
+    // (open modal) liste des groupes et véhicules (temps réel) 
     Historical.prototype.openGroupsModal = function () {
         var _this = this;
         var groupModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_14__groups_page_groups_page__["a" /* GroupsPage */], { groups: this.groups });
@@ -413,12 +404,17 @@ var Historical = (function () {
                 _this.goToRealTimeRecord(selectedDevice);
             }
         });
+        this.modalopen = false;
+        this.dismissbutton = true;
+        this.DeviceId = null;
     };
+    //remove polylines and markers from map
     Historical.prototype.clearPolylines = function () {
         this.mapService.removePolylinesFromMap();
         this.mapService.removeMarkersFromMap();
         this.pathDrawn = false;
     };
+    //Getting old real time record
     Historical.prototype.getOldRealTimeRecord = function (id) {
         var result = this.oldRealTimeRecords.filter(function (rt) {
             return rt.idRealTimeRecord == id;
@@ -428,6 +424,7 @@ var Historical = (function () {
         else
             return null;
     };
+    //
     Historical.prototype.goToRealTimeRecord = function (idRealTimeRecord) {
         var _this = this;
         this.newRealTimeRecords.forEach(function (realTimeRecord) {
@@ -438,12 +435,14 @@ var Historical = (function () {
             }
         });
     };
+    //
     Historical.prototype.compareTwoCoordinate = function (p1, p2) {
         if (p1.lat == p2.lat && p1.lng == p2.lng)
             return true;
         else
             false;
     };
+    //
     Historical.prototype.getGeocoding = function (address) {
         var geocoding = null;
         if (address) {
@@ -462,6 +461,7 @@ var Historical = (function () {
         }
         return geocoding;
     };
+    // 
     Historical.prototype.getVehicule = function (idDevice) {
         var foundVehicule = new __WEBPACK_IMPORTED_MODULE_15__objects_real_time__["b" /* Vehicule */]();
         for (var i = 0; i < this.groups.length; i++) {
@@ -474,6 +474,7 @@ var Historical = (function () {
         }
         return foundVehicule;
     };
+    //
     Historical.prototype.trackRealTimeRecord = function (realTimeRecord) {
         var _this = this;
         var angle = 0;
@@ -581,7 +582,7 @@ var Historical = (function () {
               value: marker,
               icon: icon,
               angle: angle
-            }, displaycurrentPath);*/
+              }, displaycurrentPath);*/
         }, function (err) {
             var displaycurrentPath = false;
             if (_this.currentPathClickedDeviceIds != null && _this.currentPathClickedDeviceIds.indexOf(realTimeRecord.idRealTimeRecord) != -1) {
@@ -590,18 +591,20 @@ var Historical = (function () {
             if (realTimeRecord.idRealTimeRecord == _this.selectedDevice) {
                 marker.bindPopup(popup);
                 /*this.mapService.updateRtMarker({
-                  id: realTimeRecord.idRealTimeRecord,
-                  value: marker,
-                  icon: icon,
-                  angle: angle
+                id: realTimeRecord.idRealTimeRecord,
+                value: marker,
+                icon: icon,
+                angle: angle
                 }, displaycurrentPath);*/
                 _this.mapService.updateRtMarkertest(realTimeRecord.coordinate, popup, icon, realTimeRecord.idRealTimeRecord, displaycurrentPath);
             }
         });
     };
+    //
     Historical.prototype.PipeLngLat = function (value) {
         return this.pipe.transform(value, '2.2-6');
     };
+    //
     Historical.prototype.updateSpecificGroups = function (realTimeRecord) {
         if (this.groups)
             this.groups.forEach(function (group) {
@@ -612,6 +615,7 @@ var Historical = (function () {
                     });
             });
     };
+    //
     Historical.prototype.openFormModal = function () {
         var _this = this;
         this.mapService.removeAllRtMarkers();
@@ -707,6 +711,7 @@ var Historical = (function () {
             }
         });
     };
+    //
     Historical.prototype.openResultsModal = function () {
         var _this = this;
         var pathsListModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_7__paths_list_paths_list__["a" /* PathsList */], { paths: this.paths });
@@ -716,6 +721,7 @@ var Historical = (function () {
                 _this.drawPath(pathClicked);
         });
     };
+    //
     Historical.prototype.drawPath = function (path) {
         var _this = this;
         this.mapService.removePolylinesFromMap();
@@ -801,7 +807,9 @@ var Historical = (function () {
             var middle = points.coordinates[Math.round((points.coordinates.length - 1) / 2)];
             _this.mapService.map.setView(middle, 12);
         });
+        this.modalopen = true;
     };
+    //
     Historical.prototype.displayCurrentPath = function (deviceId) {
         var _this = this;
         this.realTimeService.getCurrentPath(deviceId).subscribe(function (currentPath) {
@@ -829,12 +837,13 @@ var Historical = (function () {
                 _this.pathDrawn = true;
             }
             _this.previousPathdrawn = true;
+            _this.loader.dismiss();
         }, function (err) {
             _this.previousPathdrawn = false;
         });
+        this.DeviceId = deviceId;
     };
-    Historical.prototype.ionViewDidLoad = function () {
-    };
+    //
     Historical.prototype.processGeocoding = function (geocoding) {
         if (geocoding != null) {
             var array = geocoding.split(',', 3);
@@ -848,6 +857,7 @@ var Historical = (function () {
         else
             return null;
     };
+    //
     Historical.prototype.logout = function () {
         this._app.getRootNav().setRoot(__WEBPACK_IMPORTED_MODULE_13__home_home__["a" /* HomePage */]);
     };
@@ -855,11 +865,12 @@ var Historical = (function () {
 }());
 Historical = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-historical',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack withoud local storage\rimtrack\src\pages\historical\historical.html"*/'<ion-header>\n\n  <ion-navbar hideBackButton="true">\n    <ion-title><a>RimTelecom</a></ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="logout()">\n        <ion-icon ios="ios-log-out" md="md-log-out"> </ion-icon>  \n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n    <ion-fab top left>\n        <button ion-fab ><ion-icon name="list"></ion-icon></button>\n        <ion-fab-list side="bottom">\n        <button ion-button  (click)="openGroupsModal()" color="light"><ion-icon name="flag"></ion-icon> Temps Réel</button>\n        <button ion-button (click)="openFormModal()" color="light"><ion-icon name="list"></ion-icon> Historique</button>\n        </ion-fab-list>\n      </ion-fab>\n      <ion-fab bottom right \n      >\n        <button ion-fab (click)="openResultsModal()" color="primary"><ion-icon name="search"></ion-icon></button>\n      </ion-fab>\n      <ion-fab bottom left *ngIf="pathDrawn == true">\n        <button ion-fab (click)="clearPolylines()" color="danger"><ion-icon name="close"></ion-icon></button>\n      </ion-fab>  \n      \n  <div id="historicalMap" class="leaflet-pseudo-fullscreen leaflet-fullscreen-on" style="height: 93%!important; top: 7.5% !important;"></div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack withoud local storage\rimtrack\src\pages\historical\historical.html"*/,
+        selector: 'page-historical',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack withoud local storage\rimtrack\src\pages\historical\historical.html"*/'<ion-header>\n   <ion-fab top left>\n      <button ion-fab mini ><ion-icon name="list"></ion-icon></button>\n      <ion-fab-list side="bottom">\n        <button ion-button  (click)="openGroupsModal()" color="light"><ion-icon name="flag"></ion-icon> Temps Réel</button>\n        <button ion-button (click)="openFormModal()" color="light"><ion-icon name="list"></ion-icon> Historique </button>\n      </ion-fab-list>\n    </ion-fab>\n  <ion-navbar hideBackButton="true">\n    <ion-title><a>RimTelecom</a></ion-title>\n  </ion-navbar>\n \n</ion-header>\n\n<ion-content>\n  \n  <ion-fab bottom right >\n    <button ion-fab mini (click)="openResultsModal()" color="primary" *ngIf="modalopen==true"><ion-icon name="search"></ion-icon></button>\n  </ion-fab>\n  <ion-fab bottom left *ngIf="pathDrawn == true">\n    <button ion-fab mini (click)="clearPolylines()" color="danger">\n      <ion-icon name="close"></ion-icon>\n    </button>\n  </ion-fab>    \n  <ion-fab bottom left *ngIf="pathDrawn == false && previousPathdrawn==true && DeviceId!==null">\n      <button ion-fab mini (click)="displayCurrentPath(DeviceId)"  [ngStyle]="{\'background-color\': \'rgb(70, 238, 14)\'}">\n        <ion-icon name="arrow-forward" ></ion-icon>\n      </button>\n    </ion-fab>\n  <div id="historicalMap" class="leaflet-pseudo-fullscreen leaflet-fullscreen-on" style="height: 93%!important; top: 7.5% !important;"></div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack withoud local storage\rimtrack\src\pages\historical\historical.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common__["d" /* DecimalPipe */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */], __WEBPACK_IMPORTED_MODULE_11__providers_real_time_service__["a" /* RealTimeService */], __WEBPACK_IMPORTED_MODULE_9__utils_geocoding_service__["a" /* GeocodingService */], __WEBPACK_IMPORTED_MODULE_5__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* App */], __WEBPACK_IMPORTED_MODULE_4__providers_historical_service__["a" /* HistoricalService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__utils_map_service__["a" /* MapService */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common__["d" /* DecimalPipe */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common__["d" /* DecimalPipe */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_11__providers_real_time_service__["a" /* RealTimeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_11__providers_real_time_service__["a" /* RealTimeService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_9__utils_geocoding_service__["a" /* GeocodingService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__utils_geocoding_service__["a" /* GeocodingService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__providers_data_management_service__["a" /* DataManagementService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_data_management_service__["a" /* DataManagementService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* App */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__providers_historical_service__["a" /* HistoricalService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_historical_service__["a" /* HistoricalService */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_3__utils_map_service__["a" /* MapService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__utils_map_service__["a" /* MapService */]) === "function" && _m || Object])
 ], Historical);
 
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
 //# sourceMappingURL=historical.js.map
 
 /***/ }),
@@ -1278,9 +1289,10 @@ PathsList = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-paths-list',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack withoud local storage\rimtrack\src\pages\paths-list\paths-list.html"*/'<!--\n  Generated template for the PathsList page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Liste des trajets</ion-title>\n    <ion-buttons end>\n            <button ion-button icon-only (click)="closeModal()">\n        <ion-icon name="arrow-down"></ion-icon>\n      </button>\n        </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding style="background-color: rgba(255, 255, 255, 0.69) !important;">\n  <div style = "overflow: auto ; height: auto;">\n  <table style="font-family: Consolas;font-size: 12px;" >\n    <thead>\n      <tr style="background-color: #F5F5F5;opacity: 0.85">\n        <th  style="text-align: center;"><i class="fa fa-clock-o" aria-hidden="true"></i> Date Départ\n        </th>\n        <th  style="text-align: center;padding-left: 15px;padding-right: 15px">Lieu Départ</th>\n        <th  style="text-align: center;padding-left: 15px;padding-right: 15px"><i class="fa fa-clock-o" aria-hidden="true"></i> Date Arrivée\n        </th>\n        <th style="text-align: center;padding-left: 15px;padding-right: 15px">Lieu Arrivée</th>\n        <th style="text-align: center; padding-right: 15px;padding-left: 15px">Kilométrage</th>\n        <th style="text-align: center; padding-right: 15px; padding-left: 15px">   V Max   </th>\n        <th style="text-align: center;padding-right: 15px; padding-left: 15px">Durée Trajet</th>\n        <th style="text-align: center;padding-right: 15px; padding-left: 15px">Durée Arrêt</th>\n      </tr>\n    </thead>\n    <tbody style="background-color: #FFFAFA;opacity: 0.7;font: bolder;">\n      <tr *ngFor="let path of paths" (click)="drawPath(path)" style="border-top: solid black 1px;">\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.beginPathTime}};">\n          {{path.displayBeginPathTime}}\n        </td>\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.beginPathGeocodingDetails}}">\n          {{path.beginPathGeocoding}}\n        </td>\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.endPathTime}}">\n          {{path.displayEndPathTime}}\n        </td>\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.endPathGeocodingDetails}}">\n          {{path.endPathGeocoding}}\n        </td>\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.distanceDriven">{{path.distanceDriven | number:\'1.2-2\'}}\n        </td>\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.maxSpeed}}">\n          {{path.maxSpeed}}\n        </td>\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.pathDurationStr}}">\n          {{path.pathDurationStr}}\n        </td>\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.nextStopDurationStr}}">\n          {{path.nextStopDurationStr}}\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n</ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack withoud local storage\rimtrack\src\pages\paths-list\paths-list.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */]) === "function" && _c || Object])
 ], PathsList);
 
+var _a, _b, _c;
 //# sourceMappingURL=paths-list.js.map
 
 /***/ }),
