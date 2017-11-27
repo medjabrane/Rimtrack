@@ -25234,6 +25234,21 @@ ion-header ion-fab1 {
   padding-top: 0px;
 }
 
+ion-header ion-fab2 {
+  padding-top: 0px;
+}
+
+@media screen and (max-width: 768px) {
+  .app-content,
+  .leaflet-fullscreen-on {
+    z-index: 6;
+    width: 100% !important;
+    height: 100% !important;
+    margin-left: 0px !important;
+    margin-top: 0px !important;
+  }
+}
+
 ion-header ion-title {
   position: absolute;
   top: 0;
@@ -25353,4 +25368,45 @@ ion-footer ion-toolbar {
   -ms-flex-line-pack: bottom;
   align-content: bottom;
   background-color: #e42b2b;
+}
+
+ion-content .item .text-input {
+  color: black;
+}
+
+ion-content .item .text-input::-moz-placeholder {
+  color: black;
+}
+
+ion-content .item .text-input:-ms-input-placeholder {
+  color: black;
+}
+
+ion-content .item .text-input::-webkit-input-placeholder {
+  color: black;
+}
+
+ion-content .item input::-moz-placeholder {
+  color: black;
+}
+
+ion-content .item input:-moz-placeholder {
+  color: black;
+}
+
+ion-content .item .spinner {
+  width: 16px !important;
+  height: 16px !important;
+  color: black;
+}
+
+ion-content .item .ion-label {
+  color: black;
+}
+
+ion-content ul {
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
 }
