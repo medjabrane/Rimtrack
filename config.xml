@@ -87,11 +87,6 @@
     <gap:plugin name="ionic-plugin-keyboard" source="npm" />
     <gap:plugin name="phonegap-plugin-push" source="npm"/>
 
-<<<<<<< Updated upstream
-     <gap:plugin name="cordova-plugin-geolocation" source="npm"/>
-
-=======
->>>>>>> Stashed changes
     <variable name="SENDER_ID" value="XXXXX" />
 
 </widget>
