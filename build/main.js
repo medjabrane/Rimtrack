@@ -31,10 +31,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var HomePage = (function () {
-    function HomePage(storage, historicalService, loadingCtrl, realTimeService, dataManagementService, navCtrl, signinService, toastController) {
+    function HomePage(storage, historicalService, app, loadingCtrl, realTimeService, dataManagementService, navCtrl, signinService, toastController) {
         var _this = this;
         this.storage = storage;
         this.historicalService = historicalService;
+        this.app = app;
         this.loadingCtrl = loadingCtrl;
         this.realTimeService = realTimeService;
         this.dataManagementService = dataManagementService;
@@ -94,8 +95,10 @@ var HomePage = (function () {
         this.loader.dismiss();
     };
     HomePage.prototype.goToRt = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_0__historical_historical__["a" /* Historical */], {
-            value: null
+        var _this = this;
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_0__historical_historical__["a" /* Historical */]).then(function () {
+            var index = _this.navCtrl.getActive().index;
+            _this.navCtrl.remove(0, index);
         });
     };
     return HomePage;
@@ -104,9 +107,10 @@ HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
         selector: 'page-home',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar >\n    <ion-title > <a>Bienvenue</a></ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content class="page-login">\n \n  <ion-card class="login-card">\n    <ion-card-content>\n      <ion-list no-line>\n       <ion-item>\n          <ion-input type="text" [(ngModel)]="login" name="login" placeholder="Identifiant"></ion-input>\n        </ion-item>\n\n        <ion-item>\n         \n          <ion-input type="password" [(ngModel)]="mdp" name="mdp" placeholder="Mot de passe"></ion-input>\n        </ion-item>\n      </ion-list>\n      <button  margin-top ion-button margin-right block (click)=onSubmit() [ngStyle]="{\'background-color\': buttonColor}">\n      Connexion\n      </button>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n\n<ion-footer>\n    <ion-toolbar>\n       <ion-title> <img src="assets/img/logorim.jpg" height="100" /></ion-title>\n    </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\home\home.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_7__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_5__providers_historical_service__["a" /* HistoricalService */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_4__providers_real_time_service__["a" /* RealTimeService */], __WEBPACK_IMPORTED_MODULE_6__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__providers_login__["a" /* Login */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* ToastController */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_7__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__ionic_storage__["b" /* Storage */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__providers_historical_service__["a" /* HistoricalService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_historical_service__["a" /* HistoricalService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* App */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* LoadingController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__providers_real_time_service__["a" /* RealTimeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_real_time_service__["a" /* RealTimeService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6__providers_data_management_service__["a" /* DataManagementService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__providers_data_management_service__["a" /* DataManagementService */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_3__providers_login__["a" /* Login */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_login__["a" /* Login */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* ToastController */]) === "function" && _j || Object])
 ], HomePage);
 
+var _a, _b, _c, _d, _e, _f, _g, _h, _j;
 //# sourceMappingURL=home.js.map
 
 /***/ }),

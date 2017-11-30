@@ -25266,6 +25266,7 @@ ion-header ion-title a {
 }
 
 .page-login {
+  background-image: url("../assets/img/bg.jpg");
   background-color: #FFF;
   background-size: cover;
   background-repeat: no-repeat;
