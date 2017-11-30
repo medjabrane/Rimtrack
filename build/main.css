@@ -25225,10 +25225,22 @@ ion-header ion-title a {
   font-size: 20px;
 }
 
+ion-header ion-fab1 {
+  padding-top: 0px;
+}
+
+ion-header ion-fab2 {
+  padding-top: 0px;
+}
+
 @media screen and (max-width: 768px) {
   .app-content,
   .leaflet-fullscreen-on {
     z-index: 6;
+    width: 100% !important;
+    height: 100% !important;
+    margin-left: 0px !important;
+    margin-top: 0px !important;
   }
 }
 
