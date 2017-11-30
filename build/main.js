@@ -9,9 +9,9 @@ webpackJsonp([0],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login__ = __webpack_require__(267);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_real_time_service__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_historical_service__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_data_management_service__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_real_time_service__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_historical_service__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_data_management_service__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_storage__ = __webpack_require__(138);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -116,28 +116,28 @@ HomePage = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Historical; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__objects_data_management__ = __webpack_require__(156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_map_service__ = __webpack_require__(86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_historical_service__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_data_management_service__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__historical_form_historical_form__ = __webpack_require__(241);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__paths_list_paths_list__ = __webpack_require__(242);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_global_config__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__utils_geocoding_service__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_leaflet__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_leaflet__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_real_time_service__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_Rx__ = __webpack_require__(317);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_rxjs_Rx__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__home_home__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__groups_page_groups_page__ = __webpack_require__(266);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__objects_real_time__ = __webpack_require__(582);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__poi_poi__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_call_number__ = __webpack_require__(150);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_storage__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_map_service__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_historical_service__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_data_management_service__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__historical_form_historical_form__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__paths_list_paths_list__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_global_config__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils_geocoding_service__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_leaflet__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_leaflet__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_real_time_service__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_Rx__ = __webpack_require__(318);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_rxjs_Rx__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__home_home__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__groups_page_groups_page__ = __webpack_require__(266);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__objects_real_time__ = __webpack_require__(583);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__poi_poi__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_call_number__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_storage__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_geolocation__ = __webpack_require__(150);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -147,7 +147,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -170,9 +169,11 @@ var Icon = L.Icon;
 
 
 
+
 var Historical = (function () {
-    function Historical(alertCtrl, viewCtrl, callNumber, storage, pipe, toastController, realTimeService, geocodingService, dataManagementService, _app, historicalService, loadingCtrl, modalCtrl, navCtrl, navParams, mapService) {
+    function Historical(alertCtrl, geolocation, viewCtrl, callNumber, storage, pipe, toastController, realTimeService, geocodingService, dataManagementService, _app, historicalService, loadingCtrl, modalCtrl, navCtrl, navParams, mapService) {
         this.alertCtrl = alertCtrl;
+        this.geolocation = geolocation;
         this.viewCtrl = viewCtrl;
         this.callNumber = callNumber;
         this.storage = storage;
@@ -204,8 +205,19 @@ var Historical = (function () {
         this.username = window.localStorage.getItem('username');
     }
     Historical.prototype.ngOnInit = function () {
+        var _this = this;
         this.initMap();
         this.init();
+        this.geolocation.getCurrentPosition().then(function (resp) {
+            _this.currentlocationlat = resp.coords.latitude;
+            _this.currentlocationlng = resp.coords.longitude;
+            _this.coords = resp.coords;
+        }).catch(function (error) {
+            console.log('Error getting location', error);
+        });
+    };
+    Historical.prototype.getIntineraire = function () {
+        var polyline = L.polyline(this.coords, { color: '#0031D9', weight: 3 });
     };
     //Disable swipe back
     Historical.prototype.ionViewWillEnter = function () {
@@ -220,7 +232,7 @@ var Historical = (function () {
         this.loader.present();
         this.mapService.removeAllRtMarkers();
         this.loadGroups();
-        __WEBPACK_IMPORTED_MODULE_13_rxjs_Rx__["Observable"].interval(1000 * 60).subscribe(function (x) {
+        __WEBPACK_IMPORTED_MODULE_12_rxjs_Rx__["Observable"].interval(1000 * 60).subscribe(function (x) {
             _this.getAllRealTimeRecords();
         });
     };
@@ -232,7 +244,7 @@ var Historical = (function () {
             _this.openGroupsModal();
             _this.groups.forEach(function (group) {
                 group.vehicules.forEach(function (vehicule) {
-                    vehicule.realTimeRecord = new __WEBPACK_IMPORTED_MODULE_16__objects_real_time__["a" /* RealTimeRecord */]();
+                    vehicule.realTimeRecord = new __WEBPACK_IMPORTED_MODULE_15__objects_real_time__["a" /* RealTimeRecord */]();
                     _this.getAllRealTimeRecords();
                 });
             });
@@ -293,7 +305,7 @@ var Historical = (function () {
     // (open modal) liste des groupes et véhicules (temps réel) 
     Historical.prototype.openGroupsModal = function () {
         var _this = this;
-        var groupModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_15__groups_page_groups_page__["a" /* GroupsPage */], { groups: this.groups });
+        var groupModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_14__groups_page_groups_page__["a" /* GroupsPage */], { groups: this.groups });
         groupModal.present();
         groupModal.onDidDismiss(function (selectedDevice) {
             if (selectedDevice != null && selectedDevice != 0) {
@@ -310,14 +322,10 @@ var Historical = (function () {
     //open POI Modal
     Historical.prototype.openPoiModal = function () {
         var _this = this;
-        var PoiModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_17__poi_poi__["a" /* Poi */]);
+        var PoiModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_16__poi_poi__["a" /* Poi */], { addresspoi: this.addresspoi, latpoi: this.latpoi, lngpoi: this.lngpoi });
         PoiModal.present();
         PoiModal.onDidDismiss(function (form) {
-            var pointInterest = new __WEBPACK_IMPORTED_MODULE_0__objects_data_management__["a" /* PointInterest */]();
-            pointInterest.name = form.nompoi;
-            pointInterest.ray = form.rayonpoi;
-            _this.dataManagementService.addPointInterest(pointInterest).subscribe(function (pointInterest) {
-                _this.drawPointInterest(pointInterest);
+            _this.dataManagementService.addPointInterest(form.pointInterest).subscribe(function (pointInterest) {
                 if (pointInterest.type == "MARKER") {
                     var circle = L.circle(pointInterest.coordinate, {
                         color: 'red',
@@ -390,7 +398,7 @@ var Historical = (function () {
     };
     // get vehicule
     Historical.prototype.getVehicule = function (idDevice) {
-        var foundVehicule = new __WEBPACK_IMPORTED_MODULE_16__objects_real_time__["b" /* Vehicule */]();
+        var foundVehicule = new __WEBPACK_IMPORTED_MODULE_15__objects_real_time__["b" /* Vehicule */]();
         for (var i = 0; i < this.groups.length; i++) {
             for (var j = 0; j < this.groups[i].vehicules.length; j++) {
                 if (this.groups[i].vehicules[j].idDevice == idDevice) {
@@ -446,7 +454,10 @@ var Historical = (function () {
             " <i class='fa fa-wifi' aria-hidden='true'></i><br><b>Sat en vue:</b> " + realTimeRecord.satInView + " <i class='fa fa-globe' aria-hidden='true'></i>";
         this.latpoi = this.PipeLngLat(realTimeRecord.coordinate.lat);
         this.lngpoi = this.PipeLngLat(realTimeRecord.coordinate.lng);
-        this.addresspoi = this.dataManagementService.inverseGeoconding(this.latpoi, this.lngpoi, 17);
+        this.dataManagementService.inverseGeoconding(this.latpoi, this.lngpoi, 17).subscribe(function (res) {
+            _this.addresspoi = res.display_name;
+        }, function (err) {
+        });
         if (realTimeRecord.vehicule.driver) {
             this.driverphone = realTimeRecord.vehicule.driver.telephone;
         }
@@ -457,35 +468,35 @@ var Historical = (function () {
         // marker.bindPopup("salut")
         if (realTimeRecord.realTimeRecordStatus == 'VALID' && realTimeRecord.speed == 0 && realTimeRecord.ignition == true) {
             icon = new Icon({
-                iconUrl: __WEBPACK_IMPORTED_MODULE_9__providers_global_config__["b" /* imagesDir */] + "c4x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
+                iconUrl: __WEBPACK_IMPORTED_MODULE_8__providers_global_config__["b" /* imagesDir */] + "c4x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
                 iconAnchor: [-2, 30],
                 popupAnchor: [10, -10]
             });
-            imageUri = __WEBPACK_IMPORTED_MODULE_9__providers_global_config__["b" /* imagesDir */] + "c4x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
+            imageUri = __WEBPACK_IMPORTED_MODULE_8__providers_global_config__["b" /* imagesDir */] + "c4x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
         }
         if (realTimeRecord.realTimeRecordStatus == 'VALID' && realTimeRecord.speed > 0) {
             icon = new Icon({
-                iconUrl: __WEBPACK_IMPORTED_MODULE_9__providers_global_config__["b" /* imagesDir */] + "c1x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
+                iconUrl: __WEBPACK_IMPORTED_MODULE_8__providers_global_config__["b" /* imagesDir */] + "c1x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
                 iconAnchor: [-2, 30],
                 popupAnchor: [10, -25]
             });
-            imageUri = __WEBPACK_IMPORTED_MODULE_9__providers_global_config__["b" /* imagesDir */] + "c1x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
+            imageUri = __WEBPACK_IMPORTED_MODULE_8__providers_global_config__["b" /* imagesDir */] + "c1x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
         }
         if (realTimeRecord.realTimeRecordStatus == 'VALID' && realTimeRecord.speed == 0 && realTimeRecord.ignition == false) {
             icon = new Icon({
-                iconUrl: __WEBPACK_IMPORTED_MODULE_9__providers_global_config__["b" /* imagesDir */] + "c2x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
+                iconUrl: __WEBPACK_IMPORTED_MODULE_8__providers_global_config__["b" /* imagesDir */] + "c2x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
                 iconAnchor: [-2, 30],
                 popupAnchor: [10, -25]
             });
-            imageUri = __WEBPACK_IMPORTED_MODULE_9__providers_global_config__["b" /* imagesDir */] + "c2x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
+            imageUri = __WEBPACK_IMPORTED_MODULE_8__providers_global_config__["b" /* imagesDir */] + "c2x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
         }
         if (realTimeRecord.realTimeRecordStatus == 'NON_VALID' || realTimeRecord.realTimeRecordStatus == 'TECHNICAL_ISSUE') {
             icon = new Icon({
-                iconUrl: __WEBPACK_IMPORTED_MODULE_9__providers_global_config__["b" /* imagesDir */] + "c3x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
+                iconUrl: __WEBPACK_IMPORTED_MODULE_8__providers_global_config__["b" /* imagesDir */] + "c3x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
                 iconAnchor: [-2, 30],
                 popupAnchor: [10, -25]
             });
-            imageUri = __WEBPACK_IMPORTED_MODULE_9__providers_global_config__["b" /* imagesDir */] + "c3x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
+            imageUri = __WEBPACK_IMPORTED_MODULE_8__providers_global_config__["b" /* imagesDir */] + "c3x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
         }
         realTimeRecord.icon = imageUri;
         this.geocodingService.inverseGeoconding(realTimeRecord.coordinate.lat, realTimeRecord.coordinate.lng, 18).subscribe(function (adress) {
@@ -610,14 +621,14 @@ var Historical = (function () {
         var _this = this;
         this.mapService.removePolylinesFromMap();
         this.mapService.removeMarkersFromMap();
-        var pathsListModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_8__paths_list_paths_list__["a" /* PathsList */], { paths: this.paths });
+        var pathsListModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_7__paths_list_paths_list__["a" /* PathsList */], { paths: this.paths });
         if (this.paths == null) {
-            var alert_1 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'Historique',
                 subTitle: 'Aucune informations',
                 buttons: ['Ok']
             });
-            alert_1.present();
+            alert.present();
         }
         else {
             pathsListModal.present();
@@ -638,7 +649,7 @@ var Historical = (function () {
         }).subscribe(function (points) {
             var stopMarkers = [];
             points.stops.forEach(function (stop) {
-                var popup = "<img src='" + __WEBPACK_IMPORTED_MODULE_9__providers_global_config__["b" /* imagesDir */] + "stop_smal.png" + "'/> Durée d'arrêt : " + stop.stopDurationStr;
+                var popup = "<img src='" + __WEBPACK_IMPORTED_MODULE_8__providers_global_config__["b" /* imagesDir */] + "stop_smal.png" + "'/> Durée d'arrêt : " + stop.stopDurationStr;
                 /*let stopMarker = new Marker({
                   lat: stop.stopLatitude,
                   lng: stop.stopLongitude
@@ -662,7 +673,7 @@ var Historical = (function () {
                     stopMarker.bindPopup(popup);
                 });
                 stopMarker.setIcon(new Icon({
-                    iconUrl: __WEBPACK_IMPORTED_MODULE_9__providers_global_config__["b" /* imagesDir */] + "stop_smal.png",
+                    iconUrl: __WEBPACK_IMPORTED_MODULE_8__providers_global_config__["b" /* imagesDir */] + "stop_smal.png",
                     iconAnchor: [-2, 30],
                     popupAnchor: [10, -25]
                 }));
@@ -673,10 +684,10 @@ var Historical = (function () {
                 var marker = L.marker(coordinate);
                 if (i != 0 && i != points.coordinates.length - 1) {
                     marker.setIcon(new Icon({
-                        iconUrl: __WEBPACK_IMPORTED_MODULE_9__providers_global_config__["b" /* imagesDir */] + "green-point.png",
+                        iconUrl: __WEBPACK_IMPORTED_MODULE_8__providers_global_config__["b" /* imagesDir */] + "green-point.png",
                         iconAnchor: [2, 2]
                     }));
-                    var pointDatePipe = new __WEBPACK_IMPORTED_MODULE_3__angular_common__["c" /* DatePipe */](coordinate.date);
+                    var pointDatePipe = new __WEBPACK_IMPORTED_MODULE_2__angular_common__["c" /* DatePipe */](coordinate.date);
                     var popup = '<b>Heure:</b> ' + pointDatePipe.transform(coordinate.date, 'dd/MM/yyyy HH:mm:ss') + '<b><br>vitesse:</b> ' + coordinate.speed + ' Km/h';
                     marker.bindPopup(popup);
                     marker.on('click', function () {
@@ -687,10 +698,10 @@ var Historical = (function () {
             });
             var startMarker = L.marker({ lat: path.beginPathLatitude, lng: path.beginPathLongitude });
             var startTime = path.beginPathTime;
-            var startDatePipe = new __WEBPACK_IMPORTED_MODULE_3__angular_common__["c" /* DatePipe */](startTime);
+            var startDatePipe = new __WEBPACK_IMPORTED_MODULE_2__angular_common__["c" /* DatePipe */](startTime);
             startMarker.bindPopup('<b> Lieu de début: </b>' + path.beginPathGeocoding + '<b></i><br>Temps de début du trajet : </b>' + startDatePipe.transform(startTime, 'dd/MM/yyyy HH:mm:ss'));
             startMarker.setIcon(new Icon({
-                iconUrl: __WEBPACK_IMPORTED_MODULE_9__providers_global_config__["b" /* imagesDir */] + "startMarker.png",
+                iconUrl: __WEBPACK_IMPORTED_MODULE_8__providers_global_config__["b" /* imagesDir */] + "startMarker.png",
                 iconAnchor: [-2, 30],
                 popupAnchor: [10, -25]
             }));
@@ -698,12 +709,12 @@ var Historical = (function () {
             if (path.endPathLatitude != null && path.endPathLongitude != null && path.endPathTime != null) {
                 var endMarker = L.marker({ lat: path.endPathLatitude, lng: path.endPathLongitude });
                 var endTime = path.endPathTime;
-                var endDatePipe = new __WEBPACK_IMPORTED_MODULE_3__angular_common__["c" /* DatePipe */](endTime);
+                var endDatePipe = new __WEBPACK_IMPORTED_MODULE_2__angular_common__["c" /* DatePipe */](endTime);
                 endMarker.bindPopup('<b> Lieu de fin: </b>' + path.endPathGeocoding + '<br><b>Temps de fin du trajet : </b>' + endDatePipe.transform(endTime, 'dd/MM/yyyy HH:mm:ss')
                     + '<br><b> Durée du trajet : </b>' + path.pathDurationStr + "<br><b> Durée d'arrêt : </b>" + path.nextStopDurationStr + "<br><b> Vitesse maximum : </b>"
                     + path.maxSpeed + " Km/h <br><b> Kilometrage parcouru : </b>" + path.distanceDriven.toFixed(2) + ' Km');
                 endMarker.setIcon(new Icon({
-                    iconUrl: __WEBPACK_IMPORTED_MODULE_9__providers_global_config__["b" /* imagesDir */] + "endMarker.png",
+                    iconUrl: __WEBPACK_IMPORTED_MODULE_8__providers_global_config__["b" /* imagesDir */] + "endMarker.png",
                     iconAnchor: [-2, 30],
                     popupAnchor: [10, -25]
                 }));
@@ -725,7 +736,7 @@ var Historical = (function () {
                     var marker = new Marker(coordinate);
                     if (i != 0 && i != currentPath.coordinates.length - 1) {
                         marker.setIcon(new Icon({
-                            iconUrl: __WEBPACK_IMPORTED_MODULE_9__providers_global_config__["b" /* imagesDir */] + "green-point.png",
+                            iconUrl: __WEBPACK_IMPORTED_MODULE_8__providers_global_config__["b" /* imagesDir */] + "green-point.png",
                             iconAnchor: [2, 2]
                         }));
                         _this.mapService.addMarker(marker);
@@ -733,7 +744,7 @@ var Historical = (function () {
                 });
                 var startMarker = L.marker({ lat: currentPath.beginPathLatitude, lng: currentPath.beginPathLongitude });
                 startMarker.setIcon(new Icon({
-                    iconUrl: __WEBPACK_IMPORTED_MODULE_9__providers_global_config__["b" /* imagesDir */] + "startMarker.png",
+                    iconUrl: __WEBPACK_IMPORTED_MODULE_8__providers_global_config__["b" /* imagesDir */] + "startMarker.png",
                     iconAnchor: [-2, 30],
                     popupAnchor: [10, -25]
                 }));
@@ -770,12 +781,12 @@ var Historical = (function () {
                 .catch(function () { return console.log('Error launching dialer'); });
         }
         else {
-            var alert_2 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'Error',
                 subTitle: 'Numéro introuvable',
                 buttons: ['Ok']
             });
-            alert_2.present();
+            alert.present();
         }
     };
     //
@@ -938,7 +949,7 @@ var Historical = (function () {
     Historical.prototype.openFormModal = function () {
         var _this = this;
         this.mapService.removeAllRtMarkers();
-        var formModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_7__historical_form_historical_form__["a" /* HistoricalForm */]);
+        var formModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_6__historical_form_historical_form__["a" /* HistoricalForm */]);
         formModal.present();
         formModal.onDidDismiss(function (form) {
             var firstDateTime = new Date(form.startDate);
@@ -949,12 +960,12 @@ var Historical = (function () {
             _this.loader.present();
             if (form.startDate == null && form.endDate == null) {
                 _this.loader.dismiss();
-                var alert_3 = _this.alertCtrl.create({
+                var alert = _this.alertCtrl.create({
                     title: 'Error',
                     subTitle: 'Informations erronées',
                     buttons: ['Ok']
                 });
-                alert_3.present();
+                alert.present();
             }
             _this.allPaths = _this.historicalService.getAllPaths(_this.selectedDevice, {
                 startDate: firstDateTime,
@@ -967,11 +978,11 @@ var Historical = (function () {
                     var i_1 = 0;
                     _this.paths.forEach(function (path) {
                         var startHour = path.beginPathTime;
-                        var startTime = startHour + __WEBPACK_IMPORTED_MODULE_9__providers_global_config__["d" /* time_difference */];
+                        var startTime = startHour + __WEBPACK_IMPORTED_MODULE_8__providers_global_config__["d" /* time_difference */];
                         path.displayBeginPathTime = startTime;
                         if (path.endPathTime != null) {
                             var endHour = path.endPathTime;
-                            var endTime = endHour + __WEBPACK_IMPORTED_MODULE_9__providers_global_config__["d" /* time_difference */];
+                            var endTime = endHour + __WEBPACK_IMPORTED_MODULE_8__providers_global_config__["d" /* time_difference */];
                             path.displayEndPathTime = endTime;
                         }
                         path.beginPathGeocodingDetails = _this.dataManagementService.getRelativePosition(path.beginPathLatitude, path.beginPathLongitude);
@@ -1043,21 +1054,45 @@ var Historical = (function () {
             });
         });
     };
+    Historical.prototype.presentConfirm = function () {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Déconnexion',
+            message: 'vous êtes sur?',
+            buttons: [
+                {
+                    text: 'Cancel',
+                    role: 'cancel',
+                    handler: function () {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'Déconnexion',
+                    handler: function () {
+                        _this.logout();
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
     //
     Historical.prototype.logout = function () {
         this.storage.set('username', null);
         this.storage.set('password', null);
-        this._app.getRootNav().setRoot(__WEBPACK_IMPORTED_MODULE_14__home_home__["a" /* HomePage */]);
+        this._app.getRootNav().setRoot(__WEBPACK_IMPORTED_MODULE_13__home_home__["a" /* HomePage */]);
     };
     return Historical;
 }());
 Historical = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
-        selector: 'page-historical',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/'<ion-header>\n  <ion-fab top right class="ion-fab2">\n    <button ion-fab mini round outline strong  style="margin-top:0px;margin-right:60px;background-color:rgba(0,0,0,0.6)" (click)="openGroupsModal()"><ion-icon name="flag"></ion-icon></button>\n  </ion-fab>\n  <ion-fab top right>\n      <button  ion-fab mini round outline strong (click)="calldriver(driverphone)" color="primary" style="margin-top:0px;background-color:rgb(70, 238, 14)" ><ion-icon name="call"></ion-icon></button>\n  </ion-fab>\n  <ion-fab top left outline class="ion-fab1">\n    <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6)"  ><ion-icon name="list"></ion-icon></button>\n    <ion-fab-list side="bottom" >\n      <button ion-button round outline strong (click)="openFormModal()" color="light"style="background-color:rgba(0,0,0,0.4);width:80%"><ion-icon name="list"></ion-icon> Historique </button>\n      <button ion-button round outline strong (click)="openPoiModal()" color="light"style="background-color:rgba(0,0,0,0.4);width:80%"><ion-icon name="locate"  ></ion-icon> POIs </button>\n      <button ion-button round outline strong (click)="AlertLancementMoteur(selectedDevice)" color="secondary" style="width:80%;background-color:rgba(70, 238, 14, 0.4);color:#FFF" >Lancement</button>\n      <button ion-button round outline strong (click)="AlertArretMoteur(selectedDevice)" color="danger" style="width:80%;background-color:rgba(242, 11, 11, 0.4);color:#FFF" >Arrêt (Moteur)</button>\n    </ion-fab-list>\n  </ion-fab>\n  <ion-navbar hideBackButton="true"> </ion-navbar>\n  <ion-title><a>RimTelecom</a></ion-title>\n</ion-header>\n\n<ion-content>\n  <ion-fab bottom left *ngIf="pathDrawn == true">\n    <button ion-fab mini (click)="clearPolylines()" color="danger">\n      <ion-icon name="close"></ion-icon>\n    </button>\n  </ion-fab>    \n  <ion-fab bottom left *ngIf="pathDrawn == false && previousPathdrawn==true && DeviceId!==null">\n    <button ion-fab mini (click)="displayCurrentPath(DeviceId)"  [ngStyle]="{\'background-color\': \'rgb(70, 238, 14)\'}">\n      <ion-icon name="arrow-forward" ></ion-icon>\n    </button>\n  </ion-fab>\n  <div class="pois-toggle leaflet-bottom leaflet-right" (click)="drawPointInterests()">\n    <div class=" leaflet-bar leaflet-control" style="margin-bottom:50px;margin-right:3px;" >\n        <button  class="fa fa-eye-slash leaflet-bar-part" title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;">  <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon></button>\n    </div>\n  </div>\n\n \n  <div id="historicalMap" class="leaflet-pseudo-fullscreen leaflet-fullscreen-on" style="height: 93%!important; top: 7.5% !important;"></div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/,
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-historical',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/'<ion-header>\n  <ion-fab top right class="ion-fab2">\n    <button ion-fab mini round outline strong  style="margin-top:0px;margin-right:60px;background-color:rgba(0,0,0,0.6)" (click)="openGroupsModal()"><ion-icon name="flag"></ion-icon></button>\n  </ion-fab>\n  <ion-fab top right>\n      <button  ion-fab mini round outline strong (click)="calldriver(driverphone)" color="primary" style="margin-top:0px;background-color:rgb(70, 238, 14)" ><ion-icon name="call"></ion-icon></button>\n  </ion-fab>\n  <ion-fab top left outline class="ion-fab1">\n    <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6)"  ><ion-icon name="list"></ion-icon></button>\n    <ion-fab-list side="bottom" >\n      <button ion-button round outline strong (click)="openFormModal()" color="light"style="background-color:rgba(0,0,0,0.4);width:80%"><ion-icon name="list"></ion-icon> Historique </button>\n      <button ion-button round outline strong (click)="drawPointInterests()" color="light"style="background-color:rgba(0,0,0,0.4);width:80%"><ion-icon name="locate"  ></ion-icon> POIs </button>\n      <button ion-button round outline strong (click)="AlertLancementMoteur(selectedDevice)" color="secondary" style="width:80%;background-color:rgba(70, 238, 14, 0.4);color:#FFF" >Lancement</button>\n      <button ion-button round outline strong (click)="AlertArretMoteur(selectedDevice)" color="danger" style="width:80%;background-color:rgba(242, 11, 11, 0.4);color:#FFF" >Arrêt (Moteur)</button>\n    </ion-fab-list>\n  </ion-fab>\n  <ion-navbar hideBackButton="true"> </ion-navbar>\n  <ion-title><button style="background-color:rgba(0,0,0,0)" (click)="presentConfirm()"><a>RimTelecom</a></button></ion-title>\n</ion-header>\n\n<ion-content>\n  <ion-fab bottom left *ngIf="pathDrawn == true">\n    <button ion-fab mini (click)="clearPolylines()" color="danger">\n      <ion-icon name="close"></ion-icon>\n    </button>\n  </ion-fab>    \n  <ion-fab bottom left *ngIf="pathDrawn == false && previousPathdrawn==true && DeviceId!==null">\n    <button ion-fab mini (click)="displayCurrentPath(DeviceId)"  [ngStyle]="{\'background-color\': \'rgb(70, 238, 14)\'}">\n      <ion-icon name="arrow-forward" ></ion-icon>\n    </button>\n  </ion-fab>\n  \n  <!-- <div class="pois-toggle leaflet-bottom leaflet-right" (click)="drawPointInterests()"> \n    <div class=" leaflet-bar leaflet-control" style="margin-bottom:50px;margin-right:3px;" >\n        <button  class="fa fa-eye-slash leaflet-bar-part" title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;">  <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon></button>\n    </div>\n  </div>-->\n  \n  \n\n  <!--================== /Leaflet Draw plugin ======================-->\n  \n  \n \n  <div id="historicalMap" class="leaflet-pseudo-fullscreen leaflet-fullscreen-on" style="height: 93%!important; top: 7.5% !important;"></div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ViewController */], __WEBPACK_IMPORTED_MODULE_18__ionic_native_call_number__["a" /* CallNumber */], __WEBPACK_IMPORTED_MODULE_19__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_3__angular_common__["d" /* DecimalPipe */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* ToastController */], __WEBPACK_IMPORTED_MODULE_12__providers_real_time_service__["a" /* RealTimeService */], __WEBPACK_IMPORTED_MODULE_10__utils_geocoding_service__["a" /* GeocodingService */], __WEBPACK_IMPORTED_MODULE_6__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* App */], __WEBPACK_IMPORTED_MODULE_5__providers_historical_service__["a" /* HistoricalService */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* ModalController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__utils_map_service__["a" /* MapService */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_19__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_19__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_17__ionic_native_call_number__["a" /* CallNumber */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_17__ionic_native_call_number__["a" /* CallNumber */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_18__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_18__ionic_storage__["b" /* Storage */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common__["d" /* DecimalPipe */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common__["d" /* DecimalPipe */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_11__providers_real_time_service__["a" /* RealTimeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_11__providers_real_time_service__["a" /* RealTimeService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_9__utils_geocoding_service__["a" /* GeocodingService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__utils_geocoding_service__["a" /* GeocodingService */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_5__providers_data_management_service__["a" /* DataManagementService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_data_management_service__["a" /* DataManagementService */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_4__providers_historical_service__["a" /* HistoricalService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_historical_service__["a" /* HistoricalService */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]) === "function" && _o || Object, typeof (_p = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]) === "function" && _p || Object, typeof (_q = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _q || Object, typeof (_r = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _r || Object, typeof (_s = typeof __WEBPACK_IMPORTED_MODULE_3__utils_map_service__["a" /* MapService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__utils_map_service__["a" /* MapService */]) === "function" && _s || Object])
 ], Historical);
 
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s;
 //# sourceMappingURL=historical.js.map
 
 /***/ }),
@@ -1079,15 +1114,15 @@ webpackEmptyAsyncContext.id = 149;
 
 /***/ }),
 
-/***/ 154:
+/***/ 155:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Poi; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_geocoding_service__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_data_management_service__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_data_management_service__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_map_service__ = __webpack_require__(86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__objects_data_management__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__objects_data_management__ = __webpack_require__(280);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_global_config__ = __webpack_require__(33);
@@ -1142,6 +1177,9 @@ var Poi = (function () {
         ];
         this.selectedImage = this.images[0];
         this.addresspoi = this.navParams.get('addresspoi');
+        this.latpoi = this.navParams.get('latpoi');
+        this.lngpoi = this.navParams.get('lngpoi');
+        console.log(this.latpoi);
     }
     Poi.prototype.ngOnInit = function () {
         this.loadPOI();
@@ -1236,7 +1274,16 @@ var Poi = (function () {
         this.mapService.addMarkerPoi(marker);
     };
     Poi.prototype.addpoi = function () {
-        this.viewCtrl.dismiss({ nompoi: this.nompoi, rayonpoi: this.rayonpoi });
+        var pointInterest = new __WEBPACK_IMPORTED_MODULE_3__objects_data_management__["a" /* PointInterest */]();
+        pointInterest.address = this.addresspoi;
+        pointInterest.name = this.nompoi;
+        pointInterest.ray = this.rayonpoi;
+        pointInterest.coordinate = { lat: this.latpoi, lng: this.lngpoi };
+        console.log(pointInterest.coordinate.lat);
+        pointInterest.type = 'MARKER';
+        pointInterest.imageUri = this.selectedImage.uri;
+        console.log(pointInterest);
+        this.viewCtrl.dismiss({ pointInterest: pointInterest });
     };
     Poi.prototype.addPointInterest = function () {
         var _this = this;
@@ -1288,79 +1335,12 @@ __decorate([
 ], Poi.prototype, "pointInterest", void 0);
 Poi = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["n" /* Component */])({
-        selector: 'app-poi',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\poi\poi.html"*/'<ion-header>\n\n    <ion-navbar>\n\n      <ion-title style="text-align: center"><a> Ajouter comme POI</a> </ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only (click)="closeModal()">\n\n        <ion-icon name="arrow-down"></ion-icon>\n\n      </button>\n\n      </ion-buttons>\n\n    </ion-navbar>\n\n    \n\n  </ion-header>\n\n  <ion-content padding text-center style="background-color: rgba(255, 255, 255, 0.69) !important;">\n\n        <ion-list style="margin-top:40px;" >\n\n                <ion-item  >\n\n               \n\n                  <ion-input placeholder="Nom..."></ion-input>\n\n                </ion-item>\n\n\n\n                <ion-item>\n\n                    \n\n                    <ion-input  placeholder="" [(ngModel)]="addresspoi"></ion-input>\n\n                </ion-item>\n\n                <ion-item>\n\n                        <ion-input type="number" placeholder="Rayon"></ion-input>\n\n                </ion-item>\n\n       </ion-list>\n\n       \n\n            \n\n                <ion-item>\n\n                    \n\n                        <ion-label>Marker</ion-label>\n\n                        <ion-select [(ngModel)]="image">\n\n                          <ion-option  *ngFor="let image of images" >\n\n                                <a>\n\n                                        <img src="{{image.uri}}" width="17px"/> {{image.text}}\n\n                                </a>\n\n                          </ion-option>\n\n                          \n\n                        </ion-select>\n\n                      </ion-item>\n\n       \n\n       <button ion-button center round (click)="addpoi()">Chercher  \n\n            <!--<ion-icon style ="margin-left: 5px" name="search"></ion-icon>-->\n\n        </button>\n\n\n\n  </ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\poi\poi.html"*/
+        selector: 'app-poi',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\poi\poi.html"*/'<ion-header>\n\n    <ion-navbar>\n\n      <ion-title style="text-align: center"><a> Ajouter comme POI</a> </ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only (click)="closeModal()">\n\n        <ion-icon name="arrow-down"></ion-icon>\n\n      </button>\n\n      </ion-buttons>\n\n    </ion-navbar>\n\n    \n\n  </ion-header>\n\n  <ion-content padding text-center style="background-color: rgba(255, 255, 255, 0.69) !important;">\n\n        <ion-list style="margin-top:40px;" >\n\n                <ion-item  >\n\n               \n\n                  <ion-input placeholder="Nom..."[(ngModel)]="nompoi" ></ion-input>\n\n                </ion-item>\n\n\n\n                <ion-item>\n\n                    \n\n                    <ion-input   [(ngModel)]="addresspoi"></ion-input>\n\n                </ion-item>\n\n                <ion-item>\n\n                        <ion-input type="number" placeholder="Rayon" [(ngModel)]="rayonpoi"></ion-input>\n\n                </ion-item>\n\n       </ion-list>\n\n       <p>[lat],[lng]\n\n       \n\n        {{latpoi}},{{lngpoi}}\n\n       </p>\n\n       \n\n                <div class="form-group">\n\n        <div class="dropdown">\n\n            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"\n\n                    data-toggle="dropdown" aria-haspopup="true"\n\n                    aria-expanded="true" style="border-radius: 0px;">\n\n                <img src="{{selectedImage.uri}}" width="17px"/> {{selectedImage.text}}\n\n                <span class="caret"></span>\n\n            </button>\n\n            <ul class="dropdown-menu" style="border-radius: 0px;">\n\n                <li *ngFor="let image of images" (click)="selectedImage = image;">\n\n                    <a>\n\n                        <img src="{{image.uri}}" width="30px"/> {{image.text}}\n\n                    </a>\n\n                </li>\n\n            </ul>\n\n        </div>\n\n    </div>\n\n                \n\n                       \n\n                      \n\n                       \n\n       <button ion-button center round (click)="addpoi()">Add POI\n\n            <!--<ion-icon style ="margin-left: 5px" name="search"></ion-icon>-->\n\n        </button>\n\n\n\n  </ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\poi\poi.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__utils_map_service__["a" /* MapService */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["k" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["l" /* ViewController */], __WEBPACK_IMPORTED_MODULE_0__utils_geocoding_service__["a" /* GeocodingService */]])
 ], Poi);
 
 //# sourceMappingURL=poi.js.map
-
-/***/ }),
-
-/***/ 156:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PointInterest; });
-/* unused harmony export GroupMinifyDto */
-/* unused harmony export VehiculesMinifyDto */
-/* unused harmony export GroupsVehicules */
-/* unused harmony export GroupDto */
-/* unused harmony export VehiculesDto */
-/* unused harmony export Driver */
-var PointInterest = (function () {
-    function PointInterest() {
-        this.ray = 100;
-        this.decode = [];
-    }
-    return PointInterest;
-}());
-
-var GroupMinifyDto = (function () {
-    function GroupMinifyDto() {
-        this.idGroupe = 0;
-        this.nom = "";
-    }
-    return GroupMinifyDto;
-}());
-
-var VehiculesMinifyDto = (function () {
-    function VehiculesMinifyDto() {
-        this.idVehicule = 0;
-        this.matricule = "";
-        this.mark = "";
-    }
-    return VehiculesMinifyDto;
-}());
-
-var GroupsVehicules = (function () {
-    function GroupsVehicules() {
-        this.vehicules = [];
-        this.groups = [];
-    }
-    return GroupsVehicules;
-}());
-
-var GroupDto = (function () {
-    function GroupDto() {
-        this.vehicules = [];
-    }
-    return GroupDto;
-}());
-
-var VehiculesDto = (function () {
-    function VehiculesDto() {
-    }
-    return VehiculesDto;
-}());
-
-var Driver = (function () {
-    function Driver() {
-    }
-    return Driver;
-}());
-
-//# sourceMappingURL=data-management.js.map
 
 /***/ }),
 
@@ -1388,7 +1368,7 @@ webpackEmptyAsyncContext.id = 199;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoricalForm; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_historical_service__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_historical_service__ = __webpack_require__(76);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1432,7 +1412,7 @@ var HistoricalForm = (function () {
 }());
 HistoricalForm = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-historical-form',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical-form\historical-form.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title style="text-align: center"><a>Selectionner le véhicule</a> </ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="closeModal()">\n      <ion-icon name="arrow-down"></ion-icon>\n    </button>\n    </ion-buttons>\n  </ion-navbar>\n  \n</ion-header>\n\n\n<ion-content padding text-center style="background-color: rgba(255, 255, 255, 0.69) !important;">\n    <a>date</a>\n  <ion-item style="margin-top: 200px">\n        <ion-label>Date début</ion-label>\n        <ion-datetime name="startDate" displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="startDate"></ion-datetime>\n      </ion-item>\n  \n      <ion-item style="margin-bottom: 20px">\n          <ion-label>Date fin</ion-label>\n          <ion-datetime name="endDate" displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="endDate"> </ion-datetime>\n        </ion-item>\n  <!--<ion-item>\n    <ion-label>Date de début</ion-label>\n    <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="firstDate"></ion-datetime>\n  </ion-item>\n  <ion-item>\n    <ion-label>Date de fin</ion-label>\n    <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="lastDate"></ion-datetime>\n  </ion-item>-->\n  \n  <button ion-button center round (click)="getAllPaths()">Chercher  \n      <!--<ion-icon style ="margin-left: 5px" name="search"></ion-icon>-->\n  </button>\n  <button ion-button center round (click)="closeModal()">Annuler  \n      <!--<ion-icon style="margin-left: 5px" name="close"></ion-icon>-->\n  </button>\n</ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical-form\historical-form.html"*/,
+        selector: 'page-historical-form',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical-form\historical-form.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title style="text-align: center"><a>Selectionner le véhicule</a> </ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="closeModal()">\n      <ion-icon name="arrow-down"></ion-icon>\n    </button>\n    </ion-buttons>\n  </ion-navbar>\n  \n</ion-header>\n\n\n<ion-content padding text-center style="background-color: rgba(255, 255, 255, 0.69) !important;">\n    \n  <ion-item style="margin-top: 200px">\n        <ion-label>Date début</ion-label>\n        <ion-datetime name="startDate" displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="startDate"></ion-datetime>\n      </ion-item>\n  \n      <ion-item style="margin-bottom: 20px">\n          <ion-label>Date fin</ion-label>\n          <ion-datetime name="endDate" displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="endDate"> </ion-datetime>\n        </ion-item>\n  <!--<ion-item>\n    <ion-label>Date de début</ion-label>\n    <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="firstDate"></ion-datetime>\n  </ion-item>\n  <ion-item>\n    <ion-label>Date de fin</ion-label>\n    <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="lastDate"></ion-datetime>\n  </ion-item>-->\n  \n  <button ion-button center round (click)="getAllPaths()">Chercher  \n      <!--<ion-icon style ="margin-left: 5px" name="search"></ion-icon>-->\n  </button>\n  <button ion-button center round (click)="closeModal()">Annuler  \n      <!--<ion-icon style="margin-left: 5px" name="close"></ion-icon>-->\n  </button>\n</ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical-form\historical-form.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__providers_historical_service__["a" /* HistoricalService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]])
 ], HistoricalForm);
@@ -1478,7 +1458,7 @@ var PathsList = (function () {
 }());
 PathsList = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-paths-list',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\paths-list\paths-list.html"*/'<!--\n  Generated template for the PathsList page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Liste des trajets</ion-title>\n    <ion-buttons end>\n            <button ion-button icon-only (click)="closeModal()">\n        <ion-icon name="arrow-down"></ion-icon>\n      </button>\n        </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding style="background-color: rgba(255, 255, 255, 0.69) !important;">\n  <div style = "overflow: auto ; height: auto;">\n  <table style="font-family: Consolas;font-size: 12px;" >\n    <thead>\n      <tr style="background-color: #F5F5F5;opacity: 0.65">\n        <th  style="text-align: center;"><i class="fa fa-clock-o" aria-hidden="true"></i> Date Départ\n        </th>\n        <th  style="text-align: center;padding-left: 15px;padding-right: 15px;font-size:12px;">Lieu Départ</th>\n        <th  style="text-align: center;padding-left: 15px;padding-right: 15px"><i class="fa fa-clock-o" aria-hidden="true"></i> Date Arrivée\n        </th>\n        <th style="text-align: center;padding-left: 15px;padding-right: 15px">Lieu Arrivée</th>\n        <th style="text-align: center; padding-right: 15px;padding-left: 15px">Kilométrage</th>\n        <th style="text-align: center; padding-right: 15px; padding-left: 15px">   V Max   </th>\n        <th style="text-align: center;padding-right: 15px; padding-left: 15px">Durée Trajet</th>\n        <th style="text-align: center;padding-right: 15px; padding-left: 15px">Durée Arrêt</th>\n      </tr>\n    </thead>\n    <tbody style="background-color: #FFFAFA;opacity: 0.7;font: bolder;">\n      <tr *ngFor="let path of paths" (click)="drawPath(path)" style="border-top: solid black 1px;">\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.beginPathTime}};">\n            {{path.displayBeginPathTime | date:\'dd-MM HH:mm\'}}\n        </td>\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.beginPathGeocodingDetails}}">\n          {{path.beginPathGeocoding }}\n        </td>\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.endPathTime}}">\n          {{path.displayEndPathTime  | date:\'dd-MM HH:mm\'}}\n        </td>\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.endPathGeocodingDetails}}">\n          {{path.endPathGeocoding}}\n        </td>\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.distanceDriven">{{path.distanceDriven | number:\'1.2-2\'}}\n        </td>\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.maxSpeed}}">\n          {{path.maxSpeed}}\n        </td>\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.pathDurationStr}}">\n          {{path.pathDurationStr}}\n        </td>\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.nextStopDurationStr}}">\n          {{path.nextStopDurationStr}}\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n</ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\paths-list\paths-list.html"*/,
+        selector: 'page-paths-list',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\paths-list\paths-list.html"*/'<!--\n  Generated template for the PathsList page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Liste des trajets</ion-title>\n    <ion-buttons end>\n            <button ion-button icon-only (click)="closeModal()">\n        <ion-icon name="arrow-down"></ion-icon>\n      </button>\n        </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding style="background-color: rgba(255, 255, 255, 0.69) !important;">\n  <div style = "overflow: auto ; height: auto;">\n  <table style="font-size: 15px;" >\n    <thead>\n      <tr style="background-color: #F5F5F5;opacity: 0.65">\n        <th  style="text-align: center;width:1px;"><i class="fa fa-clock-o" aria-hidden="true"></i> Date Départ\n        </th>\n        <th  style="text-align: center;padding-left: 15px;padding-right: 15px;">Lieu Départ</th>\n        <th  style="text-align: center;padding-left: 15px;padding-right: 15px"><i class="fa fa-clock-o" aria-hidden="true"></i> Date Arrivée\n        </th>\n        <th style="text-align: center;padding-left: 15px;padding-right: 15px">Lieu Arrivée</th>\n        <th style="text-align: center; padding-right: 15px;padding-left: 15px">KM</th>\n        <th style="text-align: center; padding-right: 15px; padding-left: 15px">V Max</th>\n        <th style="text-align: center;padding-right: 15px; padding-left: 15px">Durée Trajet</th>\n        <th style="text-align: center;padding-right: 15px; padding-left: 15px">Durée Arrêt</th>\n      </tr>\n    </thead>\n    <tbody style="background-color: #FFFAFA;opacity: 0.5;font: bolder;">\n      <tr *ngFor="let path of paths" (click)="drawPath(path)" style="border-top: solid black 1px;">\n        <td style="text-align: center" data-toggle="tooltip" title="{{path.beginPathTime}};">\n            {{path.displayBeginPathTime | date:\'dd-MM HH:mm\'}}\n        </td>\n        <td style="text-align: center;padding-left: 10px;padding-right: 10px" data-toggle="tooltip" title="{{path.beginPathGeocodingDetails}}">\n          {{path.beginPathGeocoding }}\n        </td>\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.endPathTime}}">\n          {{path.displayEndPathTime  | date:\'dd-MM HH:mm\'}}\n        </td>\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.endPathGeocodingDetails}}">\n          {{path.endPathGeocoding}}\n        </td>\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.distanceDriven">{{path.distanceDriven | number:\'1.2-2\'}}\n        </td>\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.maxSpeed}}">\n          {{path.maxSpeed}}\n        </td>\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.pathDurationStr}}">\n          {{path.pathDurationStr}}\n        </td>\n        <td style="text-align: center;padding-left: 15px;padding-right: 15px" data-toggle="tooltip" title="{{path.nextStopDurationStr}}">\n          {{path.nextStopDurationStr}}\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  </div>\n</ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\paths-list\paths-list.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]])
 ], PathsList);
@@ -1512,7 +1492,7 @@ function createAuthorizationHeader(headers) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_real_time_service__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_real_time_service__ = __webpack_require__(77);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1695,34 +1675,36 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_native_call_number__ = __webpack_require__(150);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_poi_poi__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_common__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(239);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__ = __webpack_require__(240);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__(316);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_home__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_login__ = __webpack_require__(267);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_historical_historical__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_groups_page_groups_page__ = __webpack_require__(266);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_historical_form_historical_form__ = __webpack_require__(241);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_paths_list_paths_list__ = __webpack_require__(242);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__utils_geocoding_service__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__utils_map_service__ = __webpack_require__(86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_real_time_service__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_historical_service__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_data_management_service__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_storage__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_native_geolocation__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_call_number__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_poi_poi__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_status_bar__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(317);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_home_home__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_login__ = __webpack_require__(267);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_historical_historical__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_groups_page_groups_page__ = __webpack_require__(266);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_historical_form_historical_form__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_paths_list_paths_list__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__utils_geocoding_service__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__utils_map_service__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_real_time_service__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_historical_service__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_data_management_service__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_storage__ = __webpack_require__(138);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1751,47 +1733,48 @@ var AppModule = (function () {
     return AppModule;
 }());
 AppModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["L" /* NgModule */])({
+    Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["L" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */],
-            __WEBPACK_IMPORTED_MODULE_10__pages_home_home__["a" /* HomePage */],
-            __WEBPACK_IMPORTED_MODULE_1__pages_poi_poi__["a" /* Poi */],
-            __WEBPACK_IMPORTED_MODULE_12__pages_historical_historical__["a" /* Historical */],
-            __WEBPACK_IMPORTED_MODULE_13__pages_groups_page_groups_page__["a" /* GroupsPage */],
-            __WEBPACK_IMPORTED_MODULE_14__pages_historical_form_historical_form__["a" /* HistoricalForm */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_paths_list_paths_list__["a" /* PathsList */]
+            __WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* MyApp */],
+            __WEBPACK_IMPORTED_MODULE_11__pages_home_home__["a" /* HomePage */],
+            __WEBPACK_IMPORTED_MODULE_2__pages_poi_poi__["a" /* Poi */],
+            __WEBPACK_IMPORTED_MODULE_13__pages_historical_historical__["a" /* Historical */],
+            __WEBPACK_IMPORTED_MODULE_14__pages_groups_page_groups_page__["a" /* GroupsPage */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_historical_form_historical_form__["a" /* HistoricalForm */],
+            __WEBPACK_IMPORTED_MODULE_16__pages_paths_list_paths_list__["a" /* PathsList */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_http__["c" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_21__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
-            __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */], {
+            __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_5__angular_http__["c" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_22__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* MyApp */], {
                 swipeBackEnabled: 'false'
             })
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_5_ionic_angular__["c" /* IonicApp */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_6_ionic_angular__["c" /* IonicApp */]],
         entryComponents: [
-            __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */],
-            __WEBPACK_IMPORTED_MODULE_10__pages_home_home__["a" /* HomePage */],
-            __WEBPACK_IMPORTED_MODULE_12__pages_historical_historical__["a" /* Historical */],
-            __WEBPACK_IMPORTED_MODULE_13__pages_groups_page_groups_page__["a" /* GroupsPage */],
-            __WEBPACK_IMPORTED_MODULE_14__pages_historical_form_historical_form__["a" /* HistoricalForm */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_paths_list_paths_list__["a" /* PathsList */],
-            __WEBPACK_IMPORTED_MODULE_1__pages_poi_poi__["a" /* Poi */]
+            __WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* MyApp */],
+            __WEBPACK_IMPORTED_MODULE_11__pages_home_home__["a" /* HomePage */],
+            __WEBPACK_IMPORTED_MODULE_13__pages_historical_historical__["a" /* Historical */],
+            __WEBPACK_IMPORTED_MODULE_14__pages_groups_page_groups_page__["a" /* GroupsPage */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_historical_form_historical_form__["a" /* HistoricalForm */],
+            __WEBPACK_IMPORTED_MODULE_16__pages_paths_list_paths_list__["a" /* PathsList */],
+            __WEBPACK_IMPORTED_MODULE_2__pages_poi_poi__["a" /* Poi */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_8__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__["a" /* SplashScreen */],
-            __WEBPACK_IMPORTED_MODULE_11__providers_login__["a" /* Login */],
-            __WEBPACK_IMPORTED_MODULE_16__utils_geocoding_service__["a" /* GeocodingService */],
-            __WEBPACK_IMPORTED_MODULE_17__utils_map_service__["a" /* MapService */],
-            __WEBPACK_IMPORTED_MODULE_18__providers_real_time_service__["a" /* RealTimeService */],
-            __WEBPACK_IMPORTED_MODULE_20__providers_data_management_service__["a" /* DataManagementService */],
-            __WEBPACK_IMPORTED_MODULE_19__providers_historical_service__["a" /* HistoricalService */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_common__["d" /* DecimalPipe */],
-            __WEBPACK_IMPORTED_MODULE_0__ionic_native_call_number__["a" /* CallNumber */],
-            __WEBPACK_IMPORTED_MODULE_21__ionic_storage__["a" /* IonicStorageModule */],
-            { provide: __WEBPACK_IMPORTED_MODULE_3__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["d" /* IonicErrorHandler */] }
+            __WEBPACK_IMPORTED_MODULE_9__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_12__providers_login__["a" /* Login */],
+            __WEBPACK_IMPORTED_MODULE_17__utils_geocoding_service__["a" /* GeocodingService */],
+            __WEBPACK_IMPORTED_MODULE_18__utils_map_service__["a" /* MapService */],
+            __WEBPACK_IMPORTED_MODULE_19__providers_real_time_service__["a" /* RealTimeService */],
+            __WEBPACK_IMPORTED_MODULE_21__providers_data_management_service__["a" /* DataManagementService */],
+            __WEBPACK_IMPORTED_MODULE_0__ionic_native_geolocation__["a" /* Geolocation */],
+            __WEBPACK_IMPORTED_MODULE_20__providers_historical_service__["a" /* HistoricalService */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_common__["d" /* DecimalPipe */],
+            __WEBPACK_IMPORTED_MODULE_1__ionic_native_call_number__["a" /* CallNumber */],
+            __WEBPACK_IMPORTED_MODULE_22__ionic_storage__["a" /* IonicStorageModule */],
+            { provide: __WEBPACK_IMPORTED_MODULE_4__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["d" /* IonicErrorHandler */] }
         ]
     })
 ], AppModule);
@@ -1800,7 +1783,74 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 316:
+/***/ 280:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PointInterest; });
+/* unused harmony export GroupMinifyDto */
+/* unused harmony export VehiculesMinifyDto */
+/* unused harmony export GroupsVehicules */
+/* unused harmony export GroupDto */
+/* unused harmony export VehiculesDto */
+/* unused harmony export Driver */
+var PointInterest = (function () {
+    function PointInterest() {
+        this.ray = 100;
+        this.decode = [];
+    }
+    return PointInterest;
+}());
+
+var GroupMinifyDto = (function () {
+    function GroupMinifyDto() {
+        this.idGroupe = 0;
+        this.nom = "";
+    }
+    return GroupMinifyDto;
+}());
+
+var VehiculesMinifyDto = (function () {
+    function VehiculesMinifyDto() {
+        this.idVehicule = 0;
+        this.matricule = "";
+        this.mark = "";
+    }
+    return VehiculesMinifyDto;
+}());
+
+var GroupsVehicules = (function () {
+    function GroupsVehicules() {
+        this.vehicules = [];
+        this.groups = [];
+    }
+    return GroupsVehicules;
+}());
+
+var GroupDto = (function () {
+    function GroupDto() {
+        this.vehicules = [];
+    }
+    return GroupDto;
+}());
+
+var VehiculesDto = (function () {
+    function VehiculesDto() {
+    }
+    return VehiculesDto;
+}());
+
+var Driver = (function () {
+    function Driver() {
+    }
+    return Driver;
+}());
+
+//# sourceMappingURL=data-management.js.map
+
+/***/ }),
+
+/***/ 317:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1827,17 +1877,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var MyApp = (function () {
-    function MyApp(platform, statusBar, splashScreen) {
+    function MyApp(platform, statusBar, splashScreen, toastCtrl) {
         var _this = this;
+        this.toastCtrl = toastCtrl;
         this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */];
         platform.ready().then(function () {
+            platform.registerBackButtonAction(function () { return _this.myHandlerFunction(); });
+            _this.checkPreviousAuthorization();
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
             statusBar.styleDefault();
             splashScreen.hide();
-            _this.checkPreviousAuthorization();
         });
     }
+    MyApp.prototype.myHandlerFunction = function () {
+    };
     MyApp.prototype.checkPreviousAuthorization = function () {
         if ((window.localStorage.getItem('username') === "undefined" || window.localStorage.getItem('username') === null) &&
             (window.localStorage.getItem('password') === "undefined" || window.localStorage.getItem('password') === null)) {
@@ -1852,7 +1906,7 @@ var MyApp = (function () {
 MyApp = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\app\app.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */]])
 ], MyApp);
 
 //# sourceMappingURL=app.component.js.map
@@ -1877,7 +1931,7 @@ var time_difference = -3600000;
 
 /***/ }),
 
-/***/ 582:
+/***/ 583:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1915,7 +1969,7 @@ var Vehicule = (function () {
 
 /***/ }),
 
-/***/ 64:
+/***/ 65:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2026,7 +2080,7 @@ DataManagementService = __decorate([
 
 /***/ }),
 
-/***/ 75:
+/***/ 76:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2084,7 +2138,7 @@ HistoricalService = __decorate([
 
 /***/ }),
 
-/***/ 76:
+/***/ 77:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2218,7 +2272,7 @@ GeocodingService = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_leaflet__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_leaflet__ = __webpack_require__(156);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_leaflet__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_global_config__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {

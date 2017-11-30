@@ -25410,3 +25410,10 @@ ion-content ul {
   overflow: hidden;
   overflow-y: scroll;
 }
+
+ion-content ul {
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
