@@ -79,13 +79,18 @@
     </platform>
     <gap:plugin name="cordova-plugin-console" source="npm" />
     <gap:plugin name="cordova-plugin-device" source="npm" />
+    <gap:plugin name="mx.ferreyra.callnumber" source="npm" />
     <gap:plugin name="cordova-plugin-inappbrowser" source="npm" />
     <gap:plugin name="cordova-plugin-splashscreen" source="npm" />
     <gap:plugin name="cordova-plugin-statusbar" source="npm" />
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <gap:plugin name="ionic-plugin-keyboard" source="npm" />
     <gap:plugin name="phonegap-plugin-push" source="npm"/>
+<<<<<<< Updated upstream
 
+=======
+     <gap:plugin name="cordova-plugin-geolocation" source="npm">
+>>>>>>> Stashed changes
     <variable name="SENDER_ID" value="XXXXX" />
 
 </widget>
