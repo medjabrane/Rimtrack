@@ -26,6 +26,7 @@ webpackJsonp([0],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__poi_poi__ = __webpack_require__(154);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_call_number__ = __webpack_require__(153);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_storage__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_geolocation__ = __webpack_require__(273);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57,10 +58,11 @@ var Icon = L.Icon;
 
 
 
-/*import { Geolocation } from '@ionic-native/geolocation';*/
+
 var Historical = (function () {
-    function Historical(alertCtrl /*, private geolocation: Geolocation*/, actionSheetCtrl, viewCtrl, callNumber, storage, pipe, toastController, realTimeService, geocodingService, dataManagementService, _app, historicalService, loadingCtrl, modalCtrl, navCtrl, navParams, mapService) {
-        this.alertCtrl = alertCtrl; /*, private geolocation: Geolocation*/
+    function Historical(alertCtrl, geolocation, actionSheetCtrl, viewCtrl, callNumber, storage, pipe, toastController, realTimeService, geocodingService, dataManagementService, _app, historicalService, loadingCtrl, modalCtrl, navCtrl, navParams, mapService) {
+        this.alertCtrl = alertCtrl;
+        this.geolocation = geolocation;
         this.actionSheetCtrl = actionSheetCtrl;
         this.viewCtrl = viewCtrl;
         this.callNumber = callNumber;
@@ -93,17 +95,17 @@ var Historical = (function () {
         this.username = window.localStorage.getItem('username');
     }
     Historical.prototype.ngOnInit = function () {
+        var _this = this;
         this.initMap();
         this.init();
-        /*  this.geolocation.getCurrentPosition().then((resp) => {
-            this.currentlocationlat=resp.coords.latitude;
-            this.currentlocationlng=resp.coords.longitude;
-            this.coords=resp.coords;
-          
-           }).catch((error) => {
-             console.log('Error getting location', error);
-           });
-           */
+        this.geolocation.getCurrentPosition().then(function (resp) {
+            _this.currentlocationlat = resp.coords.latitude;
+            _this.currentlocationlng = resp.coords.longitude;
+            _this.coords = resp.coords;
+            console.log(_this.coords);
+        }).catch(function (error) {
+            console.log('Error getting location', error);
+        });
     };
     /* getIntineraire(){
        let polyline = L.polyline(this.coords, {color: '#0031D9', weight: 3});
@@ -186,6 +188,16 @@ var Historical = (function () {
         });
         L.control.zoom({ position: 'topright' }).addTo(map);
         this.mapService.map = map;
+        // map.on('click', ()=>{});
+        // var tempMarker;
+        // function onMapClick(e) {
+        //   if(false){
+        //     var clickPosition = e.latlang;
+        //     var tempMarker = L.marker(e.latlng)
+        //     .on('click', (e)=>{this.onMapClick(e)})
+        //     .addTo(map);
+        //     console.log(e.latlng.lng, e.latlng.lat);
+        //   }
     };
     // (open modal) liste des groupes et véhicules (temps réel) 
     Historical.prototype.openGroupsModal = function () {
@@ -508,12 +520,12 @@ var Historical = (function () {
         this.mapService.removeMarkersFromMap();
         var pathsListModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_7__paths_list_paths_list__["a" /* PathsList */], { paths: this.paths });
         if (this.paths == null) {
-            var alert_1 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'Historique',
                 subTitle: 'Aucune informations',
                 buttons: ['Ok']
             });
-            alert_1.present();
+            alert.present();
         }
         else {
             pathsListModal.present();
@@ -639,7 +651,6 @@ var Historical = (function () {
                 _this.pathDrawn = true;
             }
             _this.previousPathdrawn = true;
-            _this.loader.dismiss();
         }, function (err) {
             _this.previousPathdrawn = false;
         });
@@ -666,12 +677,12 @@ var Historical = (function () {
                 .catch(function () { return console.log('Error launching dialer'); });
         }
         else {
-            var alert_2 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'Error',
                 subTitle: 'Numéro introuvable',
                 buttons: ['Ok']
             });
-            alert_2.present();
+            alert.present();
         }
     };
     //
@@ -848,12 +859,12 @@ var Historical = (function () {
             _this.loader.present();
             if (form.startDate == null && form.endDate == null) {
                 _this.loader.dismiss();
-                var alert_3 = _this.alertCtrl.create({
+                var alert = _this.alertCtrl.create({
                     title: 'Error',
                     subTitle: 'Informations erronées',
                     buttons: ['Ok']
                 });
-                alert_3.present();
+                alert.present();
             }
             _this.allPaths = _this.historicalService.getAllPaths(_this.selectedDevice, {
                 startDate: firstDateTime,
@@ -972,11 +983,12 @@ var Historical = (function () {
 }());
 Historical = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-historical',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/'<ion-header style="margin-top:20px;height:48px;">\n  <ion-fab top right class="ion-fab2" style="margin-top:-7px">\n    <button ion-fab mini round outline strong  style="margin-top:0px;margin-right:60px;background-color:rgba(0,0,0,0.6)" (click)="openGroupsModal()"><ion-icon name="arrow-up"></ion-icon></button>\n  </ion-fab>\n  <ion-fab top right style="margin-top:-7px">\n      <button  ion-fab mini round outline strong (click)="calldriver(driverphone)" color="primary" style="margin-top:0px;background-color:rgb(70, 238, 14)" ><ion-icon name="call"></ion-icon></button>\n  </ion-fab>\n  <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px">\n    <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6)"  ><ion-icon name="list"></ion-icon></button>\n    <ion-fab-list side="bottom"  >\n      <button ion-button round outline strong (click)="openFormModal(fab)" color="light"style="background-color:rgba(0,0,0,0.4);width:80%"><ion-icon name="list"></ion-icon> Historique </button>\n      <button ion-button round outline strong (click)="AlertLancementMoteur(selectedDevice)" color="secondary" style="width:80%;background-color:rgba(70, 238, 14, 0.4);color:#FFF" >Lancement</button>\n      <button ion-button round outline strong (click)="AlertArretMoteur(selectedDevice)" color="danger" style="width:80%;background-color:rgba(242, 11, 11, 0.4);color:#FFF" >Arrêt (Moteur)</button>\n    </ion-fab-list>\n  </ion-fab>\n  <ion-navbar hideBackButton="true"> </ion-navbar>\n  <ion-title><button style="background-color:rgba(0,0,0,0)" (click)="presentConfirm()"><a>RimTelecom</a></button></ion-title>\n</ion-header>\n\n<ion-content>\n  <ion-fab bottom left *ngIf="pathDrawn == true">\n    <button ion-fab mini (click)="clearPolylines()" color="danger">\n      <ion-icon name="close"></ion-icon>\n    </button>\n  </ion-fab>    \n  <ion-fab bottom left *ngIf="pathDrawn == false && previousPathdrawn==true && DeviceId!==null">\n    <button ion-fab mini (click)="displayCurrentPath(DeviceId)"  [ngStyle]="{\'background-color\': \'rgb(70, 238, 14)\'}">\n      <ion-icon name="arrow-forward" ></ion-icon>\n    </button>\n  </ion-fab>\n  \n  <div class="pois-toggle leaflet-bottom leaflet-right" (click)="drawPointInterests()"> \n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:550px !important;margin-right:12px;" >\n        <button  class="fa fa-eye-slash leaflet-bar-part" title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;">  <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon></button>\n    </div>\n  </div>\n  \n  \n\n  <!--================== /Leaflet Draw plugin ======================-->\n  \n  \n \n  <div id="historicalMap" class="leaflet-pseudo-fullscreen leaflet-fullscreen-on" style="height: 93%!important; top: 8.5% !important;"></div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/,
+        selector: 'page-historical',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/'<ion-header style=" height:48px;margin-top:20px;">\n  <ion-fab top right class="ion-fab2" style="margin-top:-7px">\n    <button ion-fab mini round outline strong  style="margin-top:0px;margin-right:60px;background-color:rgba(0,0,0,0.6)" (click)="openGroupsModal()"><ion-icon name="arrow-up"></ion-icon></button>\n  </ion-fab>\n  <ion-fab top right style="margin-top:-7px">\n      <button  ion-fab mini round outline strong (click)="calldriver(driverphone)" color="primary" style="margin-top:0px;background-color:rgb(70, 238, 14)" ><ion-icon name="call"></ion-icon></button>\n  </ion-fab>\n  <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px">\n    <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6)"  ><ion-icon name="list"></ion-icon></button>\n    <ion-fab-list side="bottom"  >\n      <button ion-button round outline strong (click)="openFormModal(fab)" color="light"style="background-color:rgba(0,0,0,0.4);width:80%"><ion-icon name="list"></ion-icon> Historique </button>\n      <button ion-button round outline strong (click)="AlertLancementMoteur(selectedDevice)" color="secondary" style="width:80%;background-color:rgba(70, 238, 14, 0.4);color:#FFF" >Lancement</button>\n      <button ion-button round outline strong (click)="AlertArretMoteur(selectedDevice)" color="danger" style="width:80%;background-color:rgba(242, 11, 11, 0.4);color:#FFF" >Arrêt (Moteur)</button>\n    </ion-fab-list>\n  </ion-fab>\n  \n  <ion-title><button style="background-color:rgba(0,0,0,0)" (click)="presentConfirm()"><a>RimTelecom</a></button></ion-title>\n\n</ion-header>\n\n<ion-content>\n  <ion-fab bottom left *ngIf="pathDrawn == true">\n    <button ion-fab mini (click)="clearPolylines()" color="danger">\n      <ion-icon name="close"></ion-icon>\n    </button>\n  </ion-fab>    \n  <ion-fab bottom left *ngIf="pathDrawn == false && previousPathdrawn==true && DeviceId!==null">\n    <button ion-fab mini (click)="displayCurrentPath(DeviceId)"  [ngStyle]="{\'background-color\': \'rgb(70, 238, 14)\'}">\n      <ion-icon name="arrow-forward" ></ion-icon>\n    </button>\n  </ion-fab>\n  \n  <div class="pois-toggle leaflet-bottom leaflet-right" (click)="drawPointInterests()"> \n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:500px !important;margin-right:12px;" >\n        <button  class="fa fa-eye-slash leaflet-bar-part" title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;">  <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon></button>\n    </div>\n  </div>\n <!-- <div class="pois-toggle leaflet-bottom leaflet-right" (click)="openPoiModal()"> \n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:400px !important;margin-right:12px;" >\n        <button  class="fa fa-eye-slash leaflet-bar-part" title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;">  <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon></button>\n    </div>\n  </div>-->\n  \n  \n\n  <!--================== /Leaflet Draw plugin ======================-->\n  \n  \n \n  <div id="historicalMap" class="leaflet-pseudo-fullscreen leaflet-fullscreen-on" style="height: 93%!important; top: 8.5% !important;"></div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] /*, private geolocation: Geolocation*/, __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */], __WEBPACK_IMPORTED_MODULE_17__ionic_native_call_number__["a" /* CallNumber */], __WEBPACK_IMPORTED_MODULE_18__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_2__angular_common__["d" /* DecimalPipe */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */], __WEBPACK_IMPORTED_MODULE_11__providers_real_time_service__["a" /* RealTimeService */], __WEBPACK_IMPORTED_MODULE_9__utils_geocoding_service__["a" /* GeocodingService */], __WEBPACK_IMPORTED_MODULE_5__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_4__providers_historical_service__["a" /* HistoricalService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__utils_map_service__["a" /* MapService */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_19__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_19__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_17__ionic_native_call_number__["a" /* CallNumber */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_17__ionic_native_call_number__["a" /* CallNumber */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_18__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_18__ionic_storage__["b" /* Storage */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common__["d" /* DecimalPipe */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common__["d" /* DecimalPipe */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_11__providers_real_time_service__["a" /* RealTimeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_11__providers_real_time_service__["a" /* RealTimeService */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_9__utils_geocoding_service__["a" /* GeocodingService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__utils_geocoding_service__["a" /* GeocodingService */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_5__providers_data_management_service__["a" /* DataManagementService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_data_management_service__["a" /* DataManagementService */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_4__providers_historical_service__["a" /* HistoricalService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_historical_service__["a" /* HistoricalService */]) === "function" && _o || Object, typeof (_p = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */]) === "function" && _p || Object, typeof (_q = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */]) === "function" && _q || Object, typeof (_r = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _r || Object, typeof (_s = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _s || Object, typeof (_t = typeof __WEBPACK_IMPORTED_MODULE_3__utils_map_service__["a" /* MapService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__utils_map_service__["a" /* MapService */]) === "function" && _t || Object])
 ], Historical);
 
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
 //# sourceMappingURL=historical.js.map
 
 /***/ }),
@@ -1167,6 +1179,7 @@ var Poi = (function () {
             { text: "house1", uri: __WEBPACK_IMPORTED_MODULE_6__providers_global_config__["b" /* imagesDir */] + "house1.png" },
             { text: "house2", uri: __WEBPACK_IMPORTED_MODULE_6__providers_global_config__["b" /* imagesDir */] + "house.png" }
         ];
+        this.rayonpoi = 100;
         this.selectedImage = this.images[0];
         this.addresspoi = this.navParams.get('addresspoi');
         this.latpoi = this.navParams.get('latpoi');
@@ -1327,7 +1340,7 @@ __decorate([
 ], Poi.prototype, "pointInterest", void 0);
 Poi = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["n" /* Component */])({
-        selector: 'app-poi',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\poi\poi.html"*/'<ion-header>\n\n    <ion-navbar>\n\n      <ion-title style="text-align: center"><a> Ajouter comme POI</a> </ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only (click)="closeModal()">\n\n        <ion-icon name="arrow-down"></ion-icon>\n\n      </button>\n\n      </ion-buttons>\n\n    </ion-navbar>\n\n    \n\n  </ion-header>\n\n  <ion-content padding text-center style="background-color: rgba(255, 255, 255, 0.69) !important;">\n\n        <ion-list style="margin-top:40px;" >\n\n                <ion-item  >\n\n               \n\n                  <ion-input placeholder="Nom..."[(ngModel)]="nompoi" ></ion-input>\n\n                </ion-item>\n\n\n\n                <ion-item>\n\n                    \n\n                    <ion-input   [(ngModel)]="addresspoi"></ion-input>\n\n                </ion-item>\n\n                <ion-item>\n\n                        <ion-input type="number" placeholder="Rayon" [(ngModel)]="rayonpoi"></ion-input>\n\n                </ion-item>\n\n       </ion-list>\n\n       <p>[lat],[lng]\n\n       \n\n        {{latpoi}},{{lngpoi}}\n\n       </p>\n\n       \n\n                <div class="form-group">\n\n        <div class="dropdown">\n\n            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"\n\n                    data-toggle="dropdown" aria-haspopup="true"\n\n                    aria-expanded="true" style="border-radius: 0px;">\n\n                <img src="{{selectedImage.uri}}" width="17px"/> {{selectedImage.text}}\n\n                <span class="caret"></span>\n\n            </button>\n\n            <ul class="dropdown-menu" style="border-radius: 0px;">\n\n                <li *ngFor="let image of images" (click)="selectedImage = image;">\n\n                    <a>\n\n                        <img src="{{image.uri}}" width="30px"/> {{image.text}}\n\n                    </a>\n\n                </li>\n\n            </ul>\n\n        </div>\n\n    </div>\n\n                \n\n                       \n\n                      \n\n                       \n\n       <button ion-button center round (click)="addpoi()">Add POI\n\n            <!--<ion-icon style ="margin-left: 5px" name="search"></ion-icon>-->\n\n        </button>\n\n\n\n  </ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\poi\poi.html"*/
+        selector: 'app-poi',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\poi\poi.html"*/'<ion-header>\n\n    <ion-navbar>\n\n      <ion-title style="text-align: center"><a> Ajouter comme POI</a> </ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only (click)="closeModal()">\n\n        <ion-icon name="arrow-down"></ion-icon>\n\n      </button>\n\n      </ion-buttons>\n\n    </ion-navbar>\n\n    \n\n  </ion-header>\n\n  <ion-content padding text-center style="background-color: rgba(255, 255, 255, 0.69) !important;">\n\n        <ion-list style="margin-top:40px;" >\n\n                <ion-item  >\n\n               \n\n                  <ion-input placeholder="Nom..."[(ngModel)]="nompoi" ></ion-input>\n\n                </ion-item>\n\n\n\n                <ion-item>\n\n                    \n\n                    <textarea style="witdh:700px" rows="4" placeholder="Adresse ..."[(ngModel)]="addresspoi"></textarea>\n\n                </ion-item>\n\n                <ion-item>\n\n                        <ion-input type="number" placeholder="Rayon" [(ngModel)]="rayonpoi"></ion-input>\n\n                </ion-item>\n\n       </ion-list>\n\n       <p>[lat],[lng]\n\n       \n\n        {{latpoi}},{{lngpoi}}\n\n       </p>\n\n       \n\n                <div class="form-group">\n\n        <div class="dropdown">\n\n            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"\n\n                    data-toggle="dropdown" aria-haspopup="true"\n\n                    aria-expanded="true" style="border-radius: 0px;">\n\n                <img src="{{selectedImage.uri}}" width="17px"/> {{selectedImage.text}}\n\n                <span class="caret"></span>\n\n            </button>\n\n            <ul class="dropdown-menu" style="border-radius: 0px;">\n\n                <li *ngFor="let image of images" (click)="selectedImage = image;">\n\n                    <a>\n\n                        <img src="{{image.uri}}" width="30px"/> {{image.text}}\n\n                    </a>\n\n                </li>\n\n            </ul>\n\n        </div>\n\n    </div>\n\n                \n\n                       \n\n                      \n\n                       \n\n       <button ion-button center round (click)="addpoi()">Add POI\n\n            <!--<ion-icon style ="margin-left: 5px" name="search"></ion-icon>-->\n\n        </button>\n\n\n\n  </ion-content>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\poi\poi.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__utils_map_service__["a" /* MapService */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["l" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["m" /* ViewController */], __WEBPACK_IMPORTED_MODULE_0__utils_geocoding_service__["a" /* GeocodingService */]])
 ], Poi);
@@ -1878,10 +1891,9 @@ var MyApp = (function () {
         platform.ready().then(function () {
             platform.registerBackButtonAction(function () { return _this.myHandlerFunction(); });
             _this.checkPreviousAuthorization();
-            statusBar.styleDefault();
             splashScreen.hide();
             statusBar.show();
-            statusBar.backgroundColorByHexString('#c42e36');
+            statusBar.styleDefault();
         });
     }
     MyApp.prototype.myHandlerFunction = function () {
@@ -1901,9 +1913,10 @@ var MyApp = (function () {
 MyApp = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\app\app.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ToastController */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["k" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["b" /* Storage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ToastController */]) === "function" && _e || Object])
 ], MyApp);
 
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
