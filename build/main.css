@@ -25246,18 +25246,26 @@ textarea#note {
   transition: box-shadow 0.5s ease, -webkit-box-shadow 0.5s ease;
   -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
-  font-smoothing: subpixel-antialiased;
 }
 
 @media screen and (max-width: 768px) {
   .app-content,
   .leaflet-fullscreen-on {
-    z-index: 6;
+    z-index: -1;
     width: 100% !important;
     height: 100% !important;
     margin-left: 0px !important;
     margin-top: 0px !important;
   }
+}
+
+.leaflet-pseudo-fullscreen .leaflet-routing-container {
+  height: 135px;
+  width: 85%;
+  margin-top: -20%;
+  margin-right: 15%;
+  overflow-y: scroll;
+  color: white;
 }
 
 ion-header ion-title {
@@ -25268,12 +25276,7 @@ ion-header ion-title {
   width: 100%;
   height: 100%;
   text-align: center;
-  background-color: #c42e36;
-}
-
-ion-header ion-title a {
-  color: white;
-  font-size: 20px;
+  background-color: #dbbec0;
 }
 
 .page-login {
@@ -25367,7 +25370,7 @@ ion-header ion-title {
 
 ion-header ion-title a {
   color: white;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 ion-footer {
@@ -25419,13 +25422,10 @@ ion-content .item .ion-label {
 ion-content ul {
   height: 100px;
   width: 100%;
-  overflow: hidden;
   overflow-y: scroll;
 }
 
-ion-content ul {
-  height: 100px;
-  width: 100%;
-  overflow: hidden;
-  overflow-y: scroll;
+.avatarImage {
+  width: auto;
+  height: auto;
 }
