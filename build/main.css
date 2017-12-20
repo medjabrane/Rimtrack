@@ -25386,27 +25386,31 @@ ion-footer ion-toolbar {
 }
 
 ion-content .item .text-input {
-  color: black;
+  color: white;
+}
+
+ion-content .item .text-input .textarea {
+  color: white;
 }
 
 ion-content .item .text-input::-moz-placeholder {
-  color: black;
+  color: white;
 }
 
 ion-content .item .text-input:-ms-input-placeholder {
-  color: black;
+  color: white;
 }
 
 ion-content .item .text-input::-webkit-input-placeholder {
-  color: black;
+  color: white;
 }
 
 ion-content .item input::-moz-placeholder {
-  color: black;
+  color: white;
 }
 
 ion-content .item input:-moz-placeholder {
-  color: black;
+  color: white;
 }
 
 ion-content .item .spinner {
