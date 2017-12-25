@@ -25216,6 +25216,12 @@ ion-header ion-title a {
 }
 
 ion-header ion-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 90px 1px;
+  width: 100%;
+  height: 100%;
   text-align: center;
   background-color: #c42e36;
 }
@@ -25281,7 +25287,7 @@ ion-header ion-title {
 }
 
 .page-login {
-  background-image: url("http://37.187.171.84/images/4.jpg");
+  background-image: url("../../assets/img/4.jpg");
   background-color: #FFF;
   background-size: cover;
   background-repeat: no-repeat;
