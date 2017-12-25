@@ -25266,6 +25266,7 @@ textarea#note {
   margin-right: 15%;
   overflow-y: scroll;
   color: white;
+  font-family: 'Shadows Into Light', cursive;
 }
 
 ion-header ion-title {
@@ -25280,7 +25281,7 @@ ion-header ion-title {
 }
 
 .page-login {
-  background-image: url("../assets/img/bg.jpg");
+  background-image: url("http://37.187.171.84/images/4.jpg");
   background-color: #FFF;
   background-size: cover;
   background-repeat: no-repeat;
@@ -25289,7 +25290,7 @@ ion-header ion-title {
 
 .page-login .login-card {
   position: absolute;
-  top: 62%;
+  top: 60%;
   -webkit-transform: translateY(-42%);
   transform: translateY(-42%);
   width: 90%;
@@ -25378,7 +25379,7 @@ ion-footer {
 }
 
 ion-footer ion-toolbar {
-  height: 100px;
+  height: 60px;
   -webkit-align-content: bottom;
   -ms-flex-line-pack: bottom;
   align-content: bottom;

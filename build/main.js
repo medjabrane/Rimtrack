@@ -1,17 +1,134 @@
 webpackJsonp([0],{
 
-/***/ 131:
+/***/ 130:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VehiculeService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(25);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var VehiculeService = (function () {
+    function VehiculeService(_http) {
+        this._http = _http;
+        this.vehicules = [];
+        this.toastyAdd = false;
+        this.toastyUpdate = false;
+        this.groupLabels = [];
+        this.driverLabels = [];
+        this.deviceLabels = [];
+        this.bigCurrentPage = 1;
+        this.currentuser = JSON.parse(localStorage.getItem('currentuser'));
+    }
+    VehiculeService.prototype.add = function (vehicule, idDevice, idGroups, idDriver, deviceNumber) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var body = JSON.stringify(vehicule);
+        return this._http.post(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/?idDevice=' + idDevice + '&idGroups=' + idGroups + '&idDriver=' + idDriver + '&deviceNumber=' + deviceNumber, vehicule, options).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.update = function (vehicule, idGroups, idDriver, deviceNumber) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var body = JSON.stringify(vehicule);
+        return this._http.put(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/?idGroups=' + idGroups + '&idDriver=' + idDriver + '&deviceNumber=' + deviceNumber, vehicule, options).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.addGroup = function (name) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'groupes/byName/?groupeName=' + name, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.addDriver = function (name) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'drivers/byName/?driverName=' + name, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.getGroupsVehicule = function (id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/groups/' + id, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.getOne = function (id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/' + id, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.assignement = function (idVehicule, idDriver) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/assignement/?idVehicule=' + idVehicule + '&idDriver=' + idDriver, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.getListVehicules = function (page, size) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/list' + '?page=' + page + '&size=' + size, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.delete = function (id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.delete(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/' + id, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.getGroupsLabel = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'groupes/labels', { headers: headers }).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.getDriversLabel = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'drivers/labels', { headers: headers }).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.getDevicesLabel = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'devices/labels', { headers: headers }).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.getVehicule = function (idVehicule) {
+        if (this.vehicules.length != 0) {
+            console.log(this.vehicules);
+            return this.vehicules.find(function (vehicule) { return vehicule.idVehicule === idVehicule; });
+        }
+        return null;
+    };
+    return VehiculeService;
+}());
+VehiculeService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]])
+], VehiculeService);
+
+//# sourceMappingURL=vehicule.service.js.map
+
+/***/ }),
+
+/***/ 132:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Poi; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_geocoding_service__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_geocoding_service__ = __webpack_require__(133);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_data_management_service__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_map_service__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__objects_data_management__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__objects_data_management__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_global_config__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_global_config__ = __webpack_require__(25);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -95,14 +212,14 @@ Poi = __decorate([
 
 /***/ }),
 
-/***/ 132:
+/***/ 133:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GeocodingService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_global_config__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_global_config__ = __webpack_require__(25);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -148,7 +265,7 @@ GeocodingService = __decorate([
 
 /***/ }),
 
-/***/ 134:
+/***/ 135:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -173,37 +290,38 @@ var Driver = (function () {
 
 /***/ }),
 
-/***/ 135:
+/***/ 137:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Historical; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_global_config__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__objects_real_time__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__stop_list_stop_list__ = __webpack_require__(243);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__objects_data_management__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_common__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_map_service__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_historical_service__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_data_management_service__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__historical_form_historical_form__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__paths_list_paths_list__ = __webpack_require__(245);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_global_config__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__utils_geocoding_service__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_leaflet__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_leaflet__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_real_time_service__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_Rx__ = __webpack_require__(327);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_rxjs_Rx__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__groups_page_groups_page__ = __webpack_require__(269);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__objects_real_time__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__poi_poi__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_call_number__ = __webpack_require__(240);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_storage__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_geolocation__ = __webpack_require__(236);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__mileage_mileage__ = __webpack_require__(270);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_native_status_bar__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_global_config__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objects_real_time__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__stop_list_stop_list__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__objects_data_management__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_map_service__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_historical_service__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_data_management_service__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__historical_form_historical_form__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__paths_list_paths_list__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_global_config__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__utils_geocoding_service__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_leaflet__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_leaflet__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_real_time_service__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_Rx__ = __webpack_require__(332);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_rxjs_Rx__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__groups_page_groups_page__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__objects_real_time__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__poi_poi__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_call_number__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_storage__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_geolocation__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__mileage_mileage__ = __webpack_require__(272);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -213,6 +331,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -241,9 +360,9 @@ var Icon = L.Icon;
 
 
 
-var Routing = __webpack_require__(592);
+var Routing = __webpack_require__(597);
 var Historical = (function () {
-    function Historical(menu, alertCtrl, geolocation, actionSheetCtrl, viewCtrl, callNumber, storage, pipe, toastController, realTimeService, geocodingService, dataManagementService, _app, historicalService, loadingCtrl, modalCtrl, navCtrl, navParams, mapService) {
+    function Historical(menu, statusBar, alertCtrl, geolocation, actionSheetCtrl, viewCtrl, callNumber, storage, pipe, toastController, realTimeService, geocodingService, dataManagementService, _app, historicalService, loadingCtrl, modalCtrl, navCtrl, navParams, mapService) {
         this.menu = menu;
         this.alertCtrl = alertCtrl;
         this.geolocation = geolocation;
@@ -287,7 +406,8 @@ var Historical = (function () {
         this.mileages = [];
         this.pathpoirealtime = false;
         this.navCtrl.swipeBackEnabled = false;
-        this.totalMileage = new __WEBPACK_IMPORTED_MODULE_1__objects_real_time__["a" /* Mileage */]();
+        this.totalMileage = new __WEBPACK_IMPORTED_MODULE_2__objects_real_time__["a" /* Mileage */]();
+        statusBar.show();
     }
     // initialisation du map + get current coordinate user
     Historical.prototype.ngOnInit = function () {
@@ -311,7 +431,7 @@ var Historical = (function () {
         var _this = this;
         this.mapService.removeAllRtMarkers();
         this.loadGroups();
-        __WEBPACK_IMPORTED_MODULE_16_rxjs_Rx__["Observable"].interval(1000 * 60).subscribe(function (x) {
+        __WEBPACK_IMPORTED_MODULE_17_rxjs_Rx__["Observable"].interval(1000 * 60).subscribe(function (x) {
             _this.getAllRealTimeRecords();
         });
     };
@@ -323,7 +443,7 @@ var Historical = (function () {
             _this.openGroupsModal();
             _this.groups.forEach(function (group) {
                 group.vehicules.forEach(function (vehicule) {
-                    vehicule.realTimeRecord = new __WEBPACK_IMPORTED_MODULE_18__objects_real_time__["b" /* RealTimeRecord */]();
+                    vehicule.realTimeRecord = new __WEBPACK_IMPORTED_MODULE_19__objects_real_time__["b" /* RealTimeRecord */]();
                     _this.getAllRealTimeRecords();
                 });
             });
@@ -390,7 +510,8 @@ var Historical = (function () {
             return;
         }
         else {
-            var L = __webpack_require__(133);
+            console.log(this.iconitineraire);
+            var L = __webpack_require__(134);
             if (this.mapService.map)
                 this.mapService.map.remove();
             var map = L.map('historicalMap', {
@@ -409,10 +530,10 @@ var Historical = (function () {
                 createMarker: function (i, wp, n) {
                     var url = null;
                     if (i == 0) {
-                        url = __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + 'startMarker.png';
+                        url = __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + 'startMarker.png';
                     }
                     else if (i == n - 1) {
-                        url = __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + 'endMarker.png';
+                        return null;
                     }
                     return L.marker(wp.latLng, {
                         draggable: true,
@@ -425,7 +546,7 @@ var Historical = (function () {
                     });
                 },
                 waypoints: [
-                    L.latLng(this.currentlocationlat, this.currentlocationlng),
+                    L.latLng(33.573110, -7.589843),
                     L.latLng(this.latpoi, this.lngpoi),
                 ],
                 language: 'fr',
@@ -447,7 +568,7 @@ var Historical = (function () {
         this.resultopened = false;
         this.openStopResult = false;
         this.openMileageResult = false;
-        var groupModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_17__groups_page_groups_page__["a" /* GroupsPage */], { groups: this.groups });
+        var groupModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_18__groups_page_groups_page__["a" /* GroupsPage */], { groups: this.groups });
         groupModal.present();
         groupModal.onDidDismiss(function (selectedDevice) {
             if (selectedDevice != null && selectedDevice != 0) {
@@ -464,11 +585,11 @@ var Historical = (function () {
     //open POI Modal
     Historical.prototype.openPoiModal = function () {
         var _this = this;
-        var pointInterest = new __WEBPACK_IMPORTED_MODULE_3__objects_data_management__["a" /* PointInterest */]();
+        var pointInterest = new __WEBPACK_IMPORTED_MODULE_4__objects_data_management__["a" /* PointInterest */]();
         pointInterest.address = this.addresspoi;
         pointInterest.coordinate.lat = this.latpoi;
         pointInterest.coordinate.lng = this.lngpoi;
-        var PoiModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_19__poi_poi__["a" /* Poi */], { pointInterest: pointInterest });
+        var PoiModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_20__poi_poi__["a" /* Poi */], { pointInterest: pointInterest });
         PoiModal.present();
         PoiModal.onDidDismiss(function (form) {
             if (form.pointinterest.name != null) {
@@ -547,7 +668,7 @@ var Historical = (function () {
     };
     // get vehicule
     Historical.prototype.getVehicule = function (idDevice) {
-        var foundVehicule = new __WEBPACK_IMPORTED_MODULE_18__objects_real_time__["d" /* Vehicule */]();
+        var foundVehicule = new __WEBPACK_IMPORTED_MODULE_19__objects_real_time__["d" /* Vehicule */]();
         for (var i = 0; i < this.groups.length; i++) {
             for (var j = 0; j < this.groups[i].vehicules.length; j++) {
                 if (this.groups[i].vehicules[j].idDevice == idDevice) {
@@ -618,35 +739,35 @@ var Historical = (function () {
         var imageUri = "http://37.187.171.84/images/c1x0.png";
         if (realTimeRecord.realTimeRecordStatus == 'VALID' && realTimeRecord.speed == 0 && realTimeRecord.ignition == true) {
             icon = new Icon({
-                iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "c4x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
+                iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "c4x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
                 iconAnchor: [-2, 30],
                 popupAnchor: [10, -10]
             });
-            imageUri = __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "c4x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
+            imageUri = __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "c4x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
         }
         if (realTimeRecord.realTimeRecordStatus == 'VALID' && realTimeRecord.speed > 0) {
             icon = new Icon({
-                iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "c1x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
+                iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "c1x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
                 iconAnchor: [-2, 30],
                 popupAnchor: [10, -25]
             });
-            imageUri = __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "c1x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
+            imageUri = __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "c1x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
         }
         if (realTimeRecord.realTimeRecordStatus == 'VALID' && realTimeRecord.speed == 0 && realTimeRecord.ignition == false) {
             icon = new Icon({
-                iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "c2x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
+                iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "c2x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
                 iconAnchor: [-2, 30],
                 popupAnchor: [10, -25]
             });
-            imageUri = __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "c2x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
+            imageUri = __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "c2x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
         }
         if (realTimeRecord.realTimeRecordStatus == 'NON_VALID' || realTimeRecord.realTimeRecordStatus == 'TECHNICAL_ISSUE') {
             icon = new Icon({
-                iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "c3x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
+                iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "c3x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
                 iconAnchor: [-2, 30],
                 popupAnchor: [10, -25]
             });
-            imageUri = __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "c3x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
+            imageUri = __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "c3x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
         }
         realTimeRecord.icon = imageUri;
         this.geocodingService.inverseGeoconding(realTimeRecord.coordinate.lat, realTimeRecord.coordinate.lng, 18).subscribe(function (adress) {
@@ -758,14 +879,14 @@ var Historical = (function () {
         var _this = this;
         this.mapService.removePolylinesFromMap();
         this.mapService.removeMarkersFromMap();
-        var pathsListModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_11__paths_list_paths_list__["a" /* PathsList */], { paths: this.paths });
+        var pathsListModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_12__paths_list_paths_list__["a" /* PathsList */], { paths: this.paths });
         if (this.paths == null) {
-            var alert_1 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'Historique',
                 subTitle: 'Aucune informations',
                 buttons: ['Ok']
             });
-            alert_1.present();
+            alert.present();
         }
         else {
             pathsListModal.present();
@@ -789,7 +910,7 @@ var Historical = (function () {
         }).subscribe(function (points) {
             var stopMarkers = [];
             points.stops.forEach(function (stop) {
-                var popup = "<img src='" + __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "stop_smal.png" + "'/> Durée d'arrêt : " + stop.stopDurationStr;
+                var popup = "<img src='" + __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "stop_smal.png" + "'/> Durée d'arrêt : " + stop.stopDurationStr;
                 var stopMarker = L.marker({ lat: stop.stopLatitude, lng: stop.stopLongitude });
                 stopMarker.addTo(_this.mapService.map);
                 stopMarker.on('click', function () { _this.mapService.map.setView({ lat: stop.stopLatitude, lng: stop.stopLongitude }, 14); });
@@ -809,7 +930,7 @@ var Historical = (function () {
                     stopMarker.bindPopup(popup);
                 });
                 stopMarker.setIcon(new Icon({
-                    iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "stop_smal.png",
+                    iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "stop_smal.png",
                     iconAnchor: [-2, 30],
                     popupAnchor: [10, -25]
                 }));
@@ -820,10 +941,10 @@ var Historical = (function () {
                 var marker = L.marker(coordinate);
                 if (i != 0 && i != points.coordinates.length - 1) {
                     marker.setIcon(new Icon({
-                        iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "green-point.png",
+                        iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "green-point.png",
                         iconAnchor: [2, 2]
                     }));
-                    var pointDatePipe = new __WEBPACK_IMPORTED_MODULE_6__angular_common__["c" /* DatePipe */](coordinate.date);
+                    var pointDatePipe = new __WEBPACK_IMPORTED_MODULE_7__angular_common__["c" /* DatePipe */](coordinate.date);
                     var popup = '<b>Heure:</b> ' + pointDatePipe.transform(coordinate.date, 'dd/MM/yyyy HH:mm:ss') + '<b><br>vitesse:</b> ' + coordinate.speed + ' Km/h';
                     marker.bindPopup(popup);
                     marker.on('click', function () {
@@ -834,10 +955,10 @@ var Historical = (function () {
             });
             var startMarker = L.marker({ lat: path.beginPathLatitude, lng: path.beginPathLongitude });
             var startTime = path.beginPathTime;
-            var startDatePipe = new __WEBPACK_IMPORTED_MODULE_6__angular_common__["c" /* DatePipe */](startTime);
+            var startDatePipe = new __WEBPACK_IMPORTED_MODULE_7__angular_common__["c" /* DatePipe */](startTime);
             startMarker.bindPopup('<b> Lieu de début: </b>' + path.beginPathGeocoding + '<b></i><br>Temps de début du trajet : </b>' + startDatePipe.transform(startTime, 'dd/MM/yyyy HH:mm:ss'));
             startMarker.setIcon(new Icon({
-                iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "startMarker.png",
+                iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "startMarker.png",
                 iconAnchor: [-2, 30],
                 popupAnchor: [10, -25]
             }));
@@ -845,12 +966,12 @@ var Historical = (function () {
             if (path.endPathLatitude != null && path.endPathLongitude != null && path.endPathTime != null) {
                 var endMarker = L.marker({ lat: path.endPathLatitude, lng: path.endPathLongitude });
                 var endTime = path.endPathTime;
-                var endDatePipe = new __WEBPACK_IMPORTED_MODULE_6__angular_common__["c" /* DatePipe */](endTime);
+                var endDatePipe = new __WEBPACK_IMPORTED_MODULE_7__angular_common__["c" /* DatePipe */](endTime);
                 endMarker.bindPopup('<b> Lieu de fin: </b>' + path.endPathGeocoding + '<br><b>Temps de fin du trajet : </b>' + endDatePipe.transform(endTime, 'dd/MM/yyyy HH:mm:ss')
                     + '<br><b> Durée du trajet : </b>' + path.pathDurationStr + "<br><b> Durée d'arrêt : </b>" + path.nextStopDurationStr + "<br><b> Vitesse maximum : </b>"
                     + path.maxSpeed + " Km/h <br><b> Kilometrage parcouru : </b>" + path.distanceDriven.toFixed(2) + ' Km');
                 endMarker.setIcon(new Icon({
-                    iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "endMarker.png",
+                    iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "endMarker.png",
                     iconAnchor: [-2, 30],
                     popupAnchor: [10, -25]
                 }));
@@ -872,7 +993,7 @@ var Historical = (function () {
                     var marker = new Marker(coordinate);
                     if (i != 0 && i != currentPath.coordinates.length - 1) {
                         marker.setIcon(new Icon({
-                            iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "green-point.png",
+                            iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "green-point.png",
                             iconAnchor: [2, 2]
                         }));
                         _this.mapService.addMarker(marker);
@@ -880,7 +1001,7 @@ var Historical = (function () {
                 });
                 var startMarker = L.marker({ lat: currentPath.beginPathLatitude, lng: currentPath.beginPathLongitude });
                 startMarker.setIcon(new Icon({
-                    iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "startMarker.png",
+                    iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "startMarker.png",
                     iconAnchor: [-2, 30],
                     popupAnchor: [10, -25]
                 }));
@@ -917,12 +1038,12 @@ var Historical = (function () {
                 .catch(function () { return console.log('Error launching dialer'); });
         }
         else {
-            var alert_2 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'Error',
                 subTitle: 'Numéro introuvable',
                 buttons: ['Ok']
             });
-            alert_2.present();
+            alert.present();
         }
     };
     //draw all point interests
@@ -986,7 +1107,7 @@ var Historical = (function () {
         this.pathDrawn = false;
         this.previousPathdrawn = false;
         this.mapService.removeAllRtMarkers();
-        var formModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_10__historical_form_historical_form__["a" /* HistoricalForm */]);
+        var formModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_11__historical_form_historical_form__["a" /* HistoricalForm */]);
         formModal.present();
         formModal.onDidDismiss(function (form) {
             //historique des trajets
@@ -999,12 +1120,12 @@ var Historical = (function () {
                 _this.loader.present();
                 if (form.startDate == null && form.endDate == null) {
                     _this.loader.dismiss();
-                    var alert_3 = _this.alertCtrl.create({
+                    var alert = _this.alertCtrl.create({
                         title: 'Error',
                         subTitle: 'Informations erronées',
                         buttons: ['Ok']
                     });
-                    alert_3.present();
+                    alert.present();
                 }
                 _this.allPaths = _this.historicalService.getAllPaths(_this.selectedDevice, {
                     startDate: firstDateTime,
@@ -1017,11 +1138,11 @@ var Historical = (function () {
                         var i_1 = 0;
                         _this.paths.forEach(function (path) {
                             var startHour = path.beginPathTime;
-                            var startTime = startHour + __WEBPACK_IMPORTED_MODULE_12__providers_global_config__["d" /* time_difference */];
+                            var startTime = startHour + __WEBPACK_IMPORTED_MODULE_13__providers_global_config__["d" /* time_difference */];
                             path.displayBeginPathTime = startTime;
                             if (path.endPathTime != null) {
                                 var endHour = path.endPathTime;
-                                var endTime = endHour + __WEBPACK_IMPORTED_MODULE_12__providers_global_config__["d" /* time_difference */];
+                                var endTime = endHour + __WEBPACK_IMPORTED_MODULE_13__providers_global_config__["d" /* time_difference */];
                                 path.displayEndPathTime = endTime;
                             }
                             path.beginPathGeocodingDetails = _this.dataManagementService.getRelativePosition(path.beginPathLatitude, path.beginPathLongitude);
@@ -1102,12 +1223,12 @@ var Historical = (function () {
                 _this.loader.present();
                 if (form.startDate == null && form.endDate == null) {
                     _this.loader.dismiss();
-                    var alert_4 = _this.alertCtrl.create({
+                    var alert = _this.alertCtrl.create({
                         title: 'Error',
                         subTitle: 'Informations erronées',
                         buttons: ['Ok']
                     });
-                    alert_4.present();
+                    alert.present();
                 }
                 _this.allPaths = _this.historicalService.getAllStops(_this.selectedDevice, {
                     startDate: firstDateTime,
@@ -1118,7 +1239,7 @@ var Historical = (function () {
                         _this.stops.forEach(function (stop) {
                             stop.geocodingDetails = _this.dataManagementService.getRelativePosition(stop.stopLatitude, stop.stopLongitude);
                             stop.geocoding = stop.geocodingDetails;
-                            stop.beginStopTime = stop.beginStopTime + 2 * __WEBPACK_IMPORTED_MODULE_12__providers_global_config__["d" /* time_difference */];
+                            stop.beginStopTime = stop.beginStopTime + 2 * __WEBPACK_IMPORTED_MODULE_13__providers_global_config__["d" /* time_difference */];
                             if (stop.geocodingDetails == null) {
                                 _this.geocodingService.inverseGeoconding(stop.stopLatitude, stop.stopLongitude, 17).subscribe(function (adress) {
                                     stop.geocodingDetails = adress.display_name;
@@ -1164,12 +1285,12 @@ var Historical = (function () {
                 _this.loader.present();
                 if (form.startDate == null && form.endDate == null) {
                     _this.loader.dismiss();
-                    var alert_5 = _this.alertCtrl.create({
+                    var alert = _this.alertCtrl.create({
                         title: 'Error',
                         subTitle: 'Informations erronées',
                         buttons: ['Ok']
                     });
-                    alert_5.present();
+                    alert.present();
                 }
                 _this.AllPaths = _this.historicalService.getAllMileages(_this.selectedDevice, {
                     startDate: startHour - (24 * 60 * 60 * 1000),
@@ -1193,7 +1314,7 @@ var Historical = (function () {
     Historical.prototype.drawStop = function (stop) {
         var _this = this;
         if (this.stopClicked == null || this.stopClicked.beginStopTime != stop.beginStopTime) {
-            this.stopClicked = new __WEBPACK_IMPORTED_MODULE_18__objects_real_time__["c" /* Stop */]();
+            this.stopClicked = new __WEBPACK_IMPORTED_MODULE_19__objects_real_time__["c" /* Stop */]();
             this.stopClicked.beginStopTime = stop.beginStopTime;
             this.stopClicked.endStopTime = stop.endStopTime;
         }
@@ -1201,10 +1322,10 @@ var Historical = (function () {
         var marker = L.marker({ lat: stop.stopLatitude, lng: stop.stopLongitude });
         var date = new Date(stop.beginStopTime);
         var beginStopTime = stop.beginStopTime;
-        var pointDatePipe = new __WEBPACK_IMPORTED_MODULE_6__angular_common__["c" /* DatePipe */](beginStopTime);
+        var pointDatePipe = new __WEBPACK_IMPORTED_MODULE_7__angular_common__["c" /* DatePipe */](beginStopTime);
         var popup = "<b>Date debut d'arrêt: </b>" + pointDatePipe.transform(stop.beginStopTime, 'dd/MM/yyyy HH:mm:ss') + "<br><b>Durée d'arrêt: </b>" + stop.stopDurationStr + "<br><hr><b>" + stop.geocodingDetails + "</b>";
         marker.setIcon(new Icon({
-            iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "endMarker.png",
+            iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "endMarker.png",
             iconAnchor: [-2, 30],
             popupAnchor: [10, -25]
         }));
@@ -1223,14 +1344,14 @@ var Historical = (function () {
         var _this = this;
         this.mapService.removePolylinesFromMap();
         this.mapService.removeMarkersFromMap();
-        var mileageListModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_23__mileage_mileage__["a" /* MileageComponent */], { mileages: this.mileages, totalMileage: this.totalMileage });
+        var mileageListModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_24__mileage_mileage__["a" /* MileageComponent */], { mileages: this.mileages, totalMileage: this.totalMileage });
         if (this.mileages == null) {
-            var alert_6 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'Historique',
                 subTitle: 'Aucune informations',
                 buttons: ['Ok']
             });
-            alert_6.present();
+            alert.present();
         }
         else {
             mileageListModal.present();
@@ -1247,7 +1368,7 @@ var Historical = (function () {
     Historical.prototype.drawMileage = function (mileage) {
         var _this = this;
         if (this.mileageClicked == null || this.mileageClicked.startHour != mileage.startHour) {
-            this.mileageClicked = new __WEBPACK_IMPORTED_MODULE_1__objects_real_time__["a" /* Mileage */]();
+            this.mileageClicked = new __WEBPACK_IMPORTED_MODULE_2__objects_real_time__["a" /* Mileage */]();
             this.mileageClicked.startHour = mileage.startHour;
             this.mileageClicked.endHour = mileage.endHour;
         }
@@ -1263,10 +1384,10 @@ var Historical = (function () {
                 var marker = L.marker(coordinate);
                 if (i != 0 && i != points.length - 1) {
                     marker.setIcon(new Icon({
-                        iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "green-point.png",
+                        iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "green-point.png",
                         iconAnchor: [2, 2]
                     }));
-                    var pointDatePipe = new __WEBPACK_IMPORTED_MODULE_6__angular_common__["c" /* DatePipe */](coordinate.date);
+                    var pointDatePipe = new __WEBPACK_IMPORTED_MODULE_7__angular_common__["c" /* DatePipe */](coordinate.date);
                     var popup = '<b>Heure:</b> ' + pointDatePipe.transform(coordinate.date, 'dd/MM/yyyy HH:mm:ss') + '<b><br>vitesse:</b> ' + coordinate.speed + ' Km/h';
                     marker.bindPopup(popup);
                     marker.on('click', function () {
@@ -1277,10 +1398,10 @@ var Historical = (function () {
             });
             stops.forEach(function (stop, i) {
                 var marker = L.marker({ lat: stop.stopLatitude, lng: stop.stopLongitude });
-                var pointDatePipe = new __WEBPACK_IMPORTED_MODULE_6__angular_common__["c" /* DatePipe */](stop.beginStopTime);
+                var pointDatePipe = new __WEBPACK_IMPORTED_MODULE_7__angular_common__["c" /* DatePipe */](stop.beginStopTime);
                 var popup = "<b>Date debut d'arrêt: </b>" + pointDatePipe.transform(stop.beginStopTime, 'dd/MM/yyyy HH:mm:ss') + "<br><b>Durée d'arrêt: </b>" + stop.stopDurationStr;
                 marker.setIcon(new Icon({
-                    iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "stop_smal.png",
+                    iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "stop_smal.png",
                     iconAnchor: [-2, 30],
                     popupAnchor: [10, -25]
                 }));
@@ -1301,14 +1422,14 @@ var Historical = (function () {
         var _this = this;
         this.mapService.removePolylinesFromMap();
         this.mapService.removeMarkersFromMap();
-        var stopListModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_2__stop_list_stop_list__["a" /* StopList */], { stops: this.stops });
+        var stopListModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_3__stop_list_stop_list__["a" /* StopList */], { stops: this.stops });
         if (this.stops == null) {
-            var alert_7 = this.alertCtrl.create({
+            var alert = this.alertCtrl.create({
                 title: 'Historique',
                 subTitle: 'Aucune informations',
                 buttons: ['Ok']
             });
-            alert_7.present();
+            alert.present();
         }
         else {
             stopListModal.present();
@@ -1323,17 +1444,18 @@ var Historical = (function () {
     return Historical;
 }());
 Historical = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["n" /* Component */])({
-        selector: 'page-historical',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/'<ion-header style=" height:48px;margin-top:20px;">\n  <ion-fab top right class="ion-fab2" style="margin-top:-7px">\n    <button ion-fab mini round outline strong  style="margin-top:0px;margin-right:60px;background-color:rgba(0,0,0,0.6)" (click)="openGroupsModal()"><ion-icon name="arrow-up"></ion-icon></button>\n  </ion-fab>\n  <ion-fab top right style="margin-top:-7px">\n      <button  ion-fab mini round outline strong (click)="calldriver(driverphone)" color="primary" style="margin-top:0px;background-color:rgb(70, 238, 14)" ><ion-icon name="call"></ion-icon></button>\n  </ion-fab>\n  <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px">\n    <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6)"  ><ion-icon name="list"></ion-icon></button>\n    <ion-fab-list side="bottom"  >\n      <button ion-button round outline strong (click)="openFormModal(fab)" color="light"style="background-color:rgba(0,0,0,0.4);width:80%"><ion-icon name="list"></ion-icon> Historique </button>\n      <button ion-button round outline strong (click)="AlertLancementMoteur(selectedDevice)" color="secondary" style="width:80%;background-color:rgba(70, 238, 14, 0.4);color:#FFF" >Lancement</button>\n      <button ion-button round outline strong (click)="AlertArretMoteur(selectedDevice)" color="danger" style="width:80%;background-color:rgba(242, 11, 11, 0.4);color:#FFF" >Arrêt (Moteur)</button>\n    </ion-fab-list>\n  </ion-fab>\n  \n  <ion-title><button style="background-color:rgba(0,0,0,0)" (click)="presentConfirm()"><a>RimTelecom</a></button></ion-title>\n\n</ion-header>\n\n<ion-content>\n  <ion-fab bottom left *ngIf="pathDrawn == true">\n    <button ion-fab mini (click)="clearPolylines()" color="danger">\n      <ion-icon name="close"></ion-icon>\n    </button>\n  </ion-fab>    \n  <ion-fab bottom left *ngIf="pathDrawn == false && previousPathdrawn==true && DeviceId!==null">\n    <button ion-fab mini (click)="displayCurrentPath(DeviceId)"  [ngStyle]="{\'background-color\': \'rgb(70, 238, 14)\'}">\n      <ion-icon name="arrow-forward" ></ion-icon>\n    </button>\n  </ion-fab>\n  \n  <div class="pois-toggle leaflet-bottom leaflet-right" (click)="drawPointInterests()"> \n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:500px !important;margin-right:12px;" >\n        <button  class="fa fa-eye-slash leaflet-bar-part" title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;"></button>\n    </div>\n  </div>\n  <div class="pois-toggle leaflet-bottom leaflet-right" (click)="openPoiModal()"> \n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:465px !important;margin-right:12px;" >\n        <button *ngIf="pathpoirealtime == true" title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;">  <ion-icon ios="ios-add" md="md-add"></ion-icon></button>\n    </div>\n  </div>\n  <div class="pois-toggle leaflet-bottom leaflet-right" (click)="drawpath()"> \n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:430px !important;margin-right:12px;" >\n        <button *ngIf="pathpoirealtime == true" class="fa fa-road" title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;"> </button>\n    </div>\n  </div>\n <!-- <div class="pois-toggle leaflet-bottom leaflet-right" (click)="openPoiModal()"> \n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:400px !important;margin-right:12px;" >\n        <button  class="fa fa-eye-slash leaflet-bar-part" title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;">  <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon></button>\n    </div>\n  </div>-->\n  \n  \n\n  <!--================== /Leaflet Draw plugin ======================-->\n  \n  \n \n  <div id="historicalMap" class="leaflet-pseudo-fullscreen leaflet-fullscreen-on" style="height: 93%!important; top: 8.5% !important;"></div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/,
+    Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["n" /* Component */])({
+        selector: 'page-historical',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/'<ion-header style=" height:48px">\n\n     <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left:0px">\n\n      <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6)" (click)="openmenu()" ><i class="fa fa-list" aria-hidden="true"></i></button>\n\n  </ion-fab> \n\n  <ion-fab top right class="ion-fab2" style="margin-top:-7px">\n\n    <button ion-fab mini round outline strong  style="margin-top:0px;margin-right:60px;background-color:rgba(0,0,0,0.6)" (click)="openGroupsModal()"><ion-icon name="arrow-up"></ion-icon></button>\n\n  </ion-fab>\n\n  <ion-fab top right style="margin-top:-7px">\n\n    <button  ion-fab mini round outline strong (click)="calldriver(driverphone)" color="primary" style="margin-top:0px;background-color:rgb(70, 238, 14)" ><ion-icon name="call"></ion-icon></button>\n\n  </ion-fab>\n\n  <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left:50px;">\n\n    <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6)" ><i class="fa fa-history" aria-hidden="true"></i></button>\n\n    <ion-fab-list side="bottom"  >\n\n      <button ion-button round outline strong (click)="openFormModal(fab)" color="light"style="background-color:rgba(0,0,0,0.4);width:80%"><ion-icon name="list"></ion-icon> Historique </button>\n\n      <button ion-button round outline strong (click)="AlertLancementMoteur(selectedDevice)" color="secondary" style="width:80%;background-color:rgba(70, 238, 14, 0.4);color:#FFF" >Lancement</button>\n\n      <button ion-button round outline strong (click)="AlertArretMoteur(selectedDevice)" color="danger" style="width:80%;background-color:rgba(242, 11, 11, 0.4);color:#FFF" >Arrêt (Moteur)</button>\n\n    </ion-fab-list>\n\n  </ion-fab>\n\n  <ion-title><a>RimTelecom</a></ion-title>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <!-- Right Side button+result button -->\n\n  <ion-fab bottom left *ngIf="pathDrawn == true">\n\n    <button ion-fab mini (click)="clearPolylines()" color="danger">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n  </ion-fab>    \n\n  <ion-fab bottom left *ngIf="pathDrawn == false && previousPathdrawn==true && DeviceId!==null">\n\n    <button ion-fab mini (click)="displayCurrentPath(DeviceId)"  [ngStyle]="{\'background-color\': \'rgb(70, 238, 14)\'}">\n\n      <ion-icon name="arrow-forward" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab bottom left *ngIf="resultopened==true">\n\n    <button ion-fab mini (click)="openResultsModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab bottom left *ngIf="openStopResult==true">\n\n    <button ion-fab mini (click)="openStopsResultsModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab bottom left *ngIf="openMileageResult==true">\n\n    <button ion-fab mini (click)="openMileageResultModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <div class="pois-toggle leaflet-bottom leaflet-right" (click)="drawPointInterests()"> \n\n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:450px !important;margin-right:12px;" >\n\n        <button  class="fa fa-eye-slash leaflet-bar-part" title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;"></button>\n\n    </div>\n\n  </div>\n\n <div class="pois-toggle leaflet-bottom leaflet-right" (click)="openPoiModal()"> \n\n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:415px !important;margin-right:12px;" >\n\n        <button *ngIf="pathpoirealtime == true" title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;">  <ion-icon ios="ios-add" md="md-add"></ion-icon></button>\n\n    </div>\n\n  </div>\n\n  <div class="pois-toggle leaflet-bottom leaflet-right" (click)="drawpath()"> \n\n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:380px !important;margin-right:12px;" >\n\n        <button *ngIf="pathpoirealtime == true" class="fa fa-road" title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;"> </button>\n\n    </div>\n\n  </div>\n\n      <!-- Leaflet Map -->\n\n  <div id="historicalMap" class="leaflet-pseudo-fullscreen leaflet-fullscreen-on" style="height: 93%!important; top: 7.5% !important;"></div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5_ionic_angular__["h" /* MenuController */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_22__ionic_native_geolocation__["a" /* Geolocation */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["n" /* ViewController */], __WEBPACK_IMPORTED_MODULE_20__ionic_native_call_number__["a" /* CallNumber */], __WEBPACK_IMPORTED_MODULE_21__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_6__angular_common__["d" /* DecimalPipe */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_15__providers_real_time_service__["a" /* RealTimeService */], __WEBPACK_IMPORTED_MODULE_13__utils_geocoding_service__["a" /* GeocodingService */], __WEBPACK_IMPORTED_MODULE_9__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_8__providers_historical_service__["a" /* HistoricalService */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["i" /* ModalController */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_7__utils_map_service__["a" /* MapService */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["h" /* MenuController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["h" /* MenuController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["b" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_23__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_23__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["a" /* ActionSheetController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["a" /* ActionSheetController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["n" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["n" /* ViewController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_21__ionic_native_call_number__["a" /* CallNumber */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_21__ionic_native_call_number__["a" /* CallNumber */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_22__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_22__ionic_storage__["b" /* Storage */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_7__angular_common__["d" /* DecimalPipe */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__angular_common__["d" /* DecimalPipe */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["m" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["m" /* ToastController */]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_16__providers_real_time_service__["a" /* RealTimeService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_16__providers_real_time_service__["a" /* RealTimeService */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_14__utils_geocoding_service__["a" /* GeocodingService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_14__utils_geocoding_service__["a" /* GeocodingService */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_10__providers_data_management_service__["a" /* DataManagementService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_10__providers_data_management_service__["a" /* DataManagementService */]) === "function" && _o || Object, typeof (_p = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["c" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["c" /* App */]) === "function" && _p || Object, typeof (_q = typeof __WEBPACK_IMPORTED_MODULE_9__providers_historical_service__["a" /* HistoricalService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9__providers_historical_service__["a" /* HistoricalService */]) === "function" && _q || Object, typeof (_r = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["g" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["g" /* LoadingController */]) === "function" && _r || Object, typeof (_s = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["i" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["i" /* ModalController */]) === "function" && _s || Object, typeof (_t = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["j" /* NavController */]) === "function" && _t || Object, typeof (_u = typeof __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["k" /* NavParams */]) === "function" && _u || Object, typeof (_v = typeof __WEBPACK_IMPORTED_MODULE_8__utils_map_service__["a" /* MapService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__utils_map_service__["a" /* MapService */]) === "function" && _v || Object])
 ], Historical);
 
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
 //# sourceMappingURL=historical.js.map
 
 /***/ }),
 
-/***/ 136:
+/***/ 138:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1416,7 +1538,7 @@ var Mileage = (function () {
 
 /***/ }),
 
-/***/ 152:
+/***/ 154:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -1429,17 +1551,325 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 152;
+webpackEmptyAsyncContext.id = 154;
 
 /***/ }),
 
-/***/ 153:
+/***/ 155:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VehiculeForm; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objects_index__ = __webpack_require__(318);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_vehicule_service__ = __webpack_require__(130);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var VehiculeForm = (function () {
+    function VehiculeForm(navParams, vehiculeService, viewCtrl, toastCtrl) {
+        this.navParams = navParams;
+        this.vehiculeService = vehiculeService;
+        this.viewCtrl = viewCtrl;
+        this.toastCtrl = toastCtrl;
+        this.idDevice = 0;
+        this.idDriver = 0;
+        this.groupsofVehicule = null;
+        this.devicesToSelect = [];
+        this.email1 = "";
+        this.email2 = "";
+        this.email3 = "";
+        this.email4 = "";
+        this.email5 = "";
+        this.vehiculeInfo = null;
+        this.groupLabels = [];
+        this.groupsToSelect = [];
+        this.value = {};
+        this.showGroup = false;
+        this.idGroups = [];
+        this.showDriver = false;
+        this.idtest = [];
+        this.groupName = null;
+        this.driverLabels = [];
+        this.driverName = null;
+        this.deviceLabels = [];
+        this.request = false;
+        this.driversToSelect = [];
+        this.adding = false;
+        this.updating = false;
+        this.detaills = false;
+        this.affecting = false;
+        this.mode = 0;
+        this.vehicule = navParams.get('vehicule');
+    }
+    VehiculeForm.prototype.ngOnInit = function () {
+        var _this = this;
+        this.groupLabels = this.vehiculeService.groupLabels;
+        this.driverLabels = this.vehiculeService.driverLabels;
+        if (this.deviceLabels.length == 0) {
+            this.request = true;
+            this.vehiculeService.getDevicesLabel().subscribe(function (response) {
+                _this.deviceLabels = response;
+                _this.vehiculeService.deviceLabels = response;
+                _this.customInfoToSelectDevice();
+            });
+            this.vehiculeService.getGroupsLabel().subscribe(function (response) {
+                _this.groupLabels = response;
+                _this.vehiculeService.groupLabels = response;
+                _this.customInfoToSelectGroup(_this.groupLabels, _this.groupsToSelect, true);
+            });
+            this.vehiculeService.getDriversLabel().subscribe(function (response) {
+                _this.driverLabels = response;
+                _this.vehiculeService.driverLabels = response;
+                _this.customInfoToSelectDriver();
+            });
+        }
+        this.vehicule.emails = "";
+        var params = this.vehicule.idVehicule;
+        this.mode = +params;
+        if (!this.request) {
+            this.customInfoToSelectGroup(this.groupLabels, this.groupsToSelect, true);
+            this.customInfoToSelectDriver();
+            this.customInfoToSelectDevice();
+            this.showAffecting();
+            this.manipulationData(this.mode);
+        }
+        else {
+            this.showDetaills();
+            this.manipulationData(-this.mode);
+        }
+    };
+    VehiculeForm.prototype.selectGroup = function () {
+        for (var i = 0; i < this.groupLabels.length; i++) {
+            for (var j = 0; j < this.idtest.length; j++) {
+                if (this.idtest[j] == this.groupsToSelect[i].text) {
+                    this.idGroups[j] = this.groupsToSelect[i].id;
+                }
+            }
+        }
+    };
+    VehiculeForm.prototype.refreshValueGroups = function (value) {
+        this.value = value;
+        this.selectedItems = value;
+    };
+    VehiculeForm.prototype.selectedGroup = function (value) {
+        if (value.id == -1) {
+            this.showGroup = true;
+            this.showDriver = false;
+        }
+        else {
+            this.idGroups.push(value.id);
+        }
+    };
+    VehiculeForm.prototype.removedGroup = function (value) {
+        this.idGroups = this.idGroups.filter(function (id) { return id !== value.id; });
+    };
+    VehiculeForm.prototype.customInfoToSelectGroup = function (list, listPush, addOption) {
+        for (var i = 0; i < list.length; i++) {
+            var group = new __WEBPACK_IMPORTED_MODULE_2__objects_index__["a" /* CustomSelectInfo */](list[i].nom, list[i].idGroupe);
+            listPush.push(group);
+        }
+        if (addOption) {
+            var group = new __WEBPACK_IMPORTED_MODULE_2__objects_index__["a" /* CustomSelectInfo */]("Autres", -1);
+            this.groupsToSelect.push(group);
+        }
+    };
+    VehiculeForm.prototype.closeModal = function () {
+        this.viewCtrl.dismiss(null);
+    };
+    VehiculeForm.prototype.customInfoToSelectDevice = function () {
+        for (var i = 0; i < this.deviceLabels.length; i++) {
+            var device = new __WEBPACK_IMPORTED_MODULE_2__objects_index__["a" /* CustomSelectInfo */](this.deviceLabels[i].idDevice.toString(), this.deviceLabels[i].idDevice);
+            this.devicesToSelect.push(device);
+        }
+    };
+    VehiculeForm.prototype.customInfoToSelectDriver = function () {
+        for (var i = 0; i < this.driverLabels.length; i++) {
+            var driver_1 = new __WEBPACK_IMPORTED_MODULE_2__objects_index__["a" /* CustomSelectInfo */](this.driverLabels[i].firstName, this.driverLabels[i].idDriver);
+            this.driversToSelect.push(driver_1);
+        }
+        var driver = new __WEBPACK_IMPORTED_MODULE_2__objects_index__["a" /* CustomSelectInfo */]("Autres", -1);
+        this.driversToSelect.push(driver);
+    };
+    VehiculeForm.prototype.showAdd = function () {
+        this.adding = true;
+        this.updating = false;
+        this.detaills = false;
+        this.affecting = false;
+    };
+    VehiculeForm.prototype.showUpdate = function () {
+        this.adding = false;
+        this.updating = true;
+        this.detaills = false;
+        this.affecting = false;
+    };
+    VehiculeForm.prototype.showDetaills = function () {
+        this.adding = false;
+        this.updating = false;
+        this.detaills = true;
+        this.affecting = false;
+    };
+    VehiculeForm.prototype.showAffecting = function () {
+        this.adding = false;
+        this.updating = false;
+        this.detaills = false;
+        this.affecting = true;
+    };
+    VehiculeForm.prototype.manipulationData = function (id) {
+        var _this = this;
+        this.vehiculeInfo = this.vehicule;
+        if (this.vehiculeInfo == null)
+            this.vehiculeService.getOne(id)
+                .subscribe(function (response) {
+                _this.vehiculeInfo = response;
+                _this.config(_this.vehicule, _this.vehiculeInfo);
+                _this.deviceNumber = _this.vehiculeInfo.device.deviceNumber;
+                console.log(_this.deviceNumber);
+                _this.formatEmails(_this.vehiculeInfo);
+                if (_this.vehiculeInfo.idDriver > 0)
+                    _this.driver = new __WEBPACK_IMPORTED_MODULE_2__objects_index__["a" /* CustomSelectInfo */](_this.vehiculeInfo.lastName, _this.vehiculeInfo.idDriver);
+                _this.device = new __WEBPACK_IMPORTED_MODULE_2__objects_index__["a" /* CustomSelectInfo */](_this.vehiculeInfo.device.deviceNumber.toString(), _this.vehiculeInfo.device.idDevice);
+                _this.idDevice = response.device.idDevice;
+                _this.idDriver = response.idDriver;
+            });
+        this.vehiculeService.getGroupsVehicule(id)
+            .subscribe(function (response) {
+            _this.groupsofVehicule = [];
+            _this.customInfoToSelectGroup(response, _this.groupsofVehicule, false);
+            for (var i = 0; i < response.length; i++) {
+                if (response[i].idGroupe != 1) {
+                    _this.idGroups.push(response[i].idGroupe);
+                }
+            }
+        });
+        if (this.vehiculeInfo != null) {
+            this.formatEmails(this.vehiculeInfo);
+            if (this.vehiculeInfo.idDriver > 0)
+                this.driver = new __WEBPACK_IMPORTED_MODULE_2__objects_index__["a" /* CustomSelectInfo */](this.vehiculeInfo.lastName, this.vehiculeInfo.idDriver);
+            this.device = new __WEBPACK_IMPORTED_MODULE_2__objects_index__["a" /* CustomSelectInfo */](this.vehiculeInfo.device.deviceNumber.toString(), this.vehiculeInfo.device.idDevice);
+            this.config(this.vehicule, this.vehiculeInfo);
+        }
+    };
+    VehiculeForm.prototype.config = function (vehicule, vehiculeInfo) {
+        this.idDevice = vehiculeInfo.device.idDevice;
+        this.idDriver = vehiculeInfo.idDriver;
+        vehicule.idVehicule = vehiculeInfo.idVehicule;
+        vehicule.matricule = vehiculeInfo.matricule;
+        vehicule.mark = vehiculeInfo.mark;
+        vehicule.alias = vehiculeInfo.alias;
+        vehicule.maxSpeed = vehiculeInfo.maxSpeed;
+        this.deviceNumber = vehiculeInfo.device.deviceNumber;
+    };
+    VehiculeForm.prototype.formatEmails = function (vehiculeInfo) {
+        var emails = vehiculeInfo.emails;
+        if (emails.length > 0)
+            this.email1 = emails.slice(0, emails.indexOf(";"));
+        emails = emails.substr(emails.indexOf(";") + 1);
+        if (emails.length > 0)
+            this.email2 = emails.slice(0, emails.indexOf(";"));
+        emails = emails.substr(emails.indexOf(";") + 1);
+        if (emails.length > 0)
+            this.email3 = emails.slice(0, emails.indexOf(";"));
+        emails = emails.substr(emails.indexOf(";") + 1);
+        if (emails.length > 0)
+            this.email4 = emails.slice(0, emails.indexOf(";"));
+        emails = emails.substr(emails.indexOf(";") + 1);
+        if (emails.length > 0)
+            this.email5 = emails.slice(0, emails.indexOf(";") + 1);
+    };
+    VehiculeForm.prototype.update = function () {
+        var _this = this;
+        this.selectGroup();
+        if (this.deviceNumber == null)
+            this.deviceNumber = 0;
+        if (this.vehicule.maxSpeed >= 0 || this.vehicule.maxSpeed == null) {
+            if (this.idDevice != 0) {
+                this.vehiculeService.update(this.vehicule, this.idGroups.toString(), this.idDriver, this.deviceNumber).subscribe(function (response) {
+                    _this.vehiculeService.toastyUpdate = true;
+                    var toast = _this.toastCtrl.create({
+                        message: '' + _this.vehicule.matricule + ' est modifié avec succés',
+                        duration: 3000,
+                        position: 'top'
+                    });
+                    toast.present();
+                    _this.viewCtrl.dismiss(null);
+                }, function () {
+                    var toast = _this.toastCtrl.create({
+                        message: 'Opération échouée',
+                        duration: 3000,
+                        position: 'top'
+                    });
+                    toast.present();
+                });
+            }
+            else {
+                var toast = this.toastCtrl.create({
+                    message: ' Veuillez selectionnée un boitier',
+                    duration: 3000,
+                    position: 'top'
+                });
+                toast.present();
+            }
+        }
+        else {
+            var toast = this.toastCtrl.create({
+                message: 'Vitesse max doit-etre supérieure  à 0',
+                duration: 3000,
+                position: 'top'
+            });
+            toast.present();
+        }
+    };
+    VehiculeForm.prototype.ionViewWillLeave = function () {
+    };
+    return VehiculeForm;
+}());
+VehiculeForm = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
+        selector: 'app-vehicule-form',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\vehicules\vehicule-form\vehicule-form.html"*/'<ion-header>\n\n        <ion-navbar>\n\n          <ion-title style="text-align: center"><a> Ajouter POI</a> </ion-title>\n\n          <ion-buttons end>\n\n            <button ion-button icon-only (click)="closeModal()" >\n\n            <ion-icon name="arrow-down"></ion-icon>\n\n          </button>\n\n          </ion-buttons>\n\n        </ion-navbar>\n\n </ion-header>\n\n <ion-content padding text-center style="background-color: rgba(194, 190, 190, 0.446) ;">\n\n        <ion-list style="margin-top:40px;" >\n\n                <ion-item  style=" background-color:rgba(0,0,0,0.2)!important;" >\n\n                  <ion-input disabled="true" [(ngModel)]="vehicule.device.idDevice"></ion-input>\n\n                </ion-item>\n\n                <ion-item style=" background-color:rgba(0,0,0,0.2)!important;width:100%!important">\n\n                 \n\n                    <ion-label>Groupes</ion-label> \n\n                <ion-select  *ngIf="groupsToSelect.length >0" [(ngModel)]="idtest"  [multiple]="true" (selected)="selectedGroup($event)" (removed)="removedGroup($event)" style="width:100%!important"> \n\n                    <ion-label>Groupes</ion-label> \n\n                  <ion-option  *ngFor="let groupToSelect of groupsToSelect">{{groupToSelect.text}}</ion-option>\n\n                  </ion-select>\n\n                </ion-item>\n\n                <ion-item style=" background-color:rgba(0,0,0,0.2)!important;">\n\n                    <ion-label>Matricule</ion-label>  \n\n                    <ion-input  placeholder="Matricule" [(ngModel)]="vehicule.matricule" ></ion-input>\n\n                </ion-item>\n\n                <ion-item style=" background-color:rgba(0,0,0,0.2)!important;">\n\n                    <ion-label>Surnom</ion-label>  \n\n                  <ion-input  placeholder="Surnom" [(ngModel)]="vehicule.alias" ></ion-input>\n\n              </ion-item>\n\n              <ion-item style=" background-color:rgba(0,0,0,0.2)!important;">\n\n                  <ion-label>Marque</ion-label>  \n\n                <ion-input  placeholder="Marque" [(ngModel)]="vehicule.mark" ></ion-input>\n\n            </ion-item>\n\n            <ion-item style=" background-color:rgba(0,0,0,0.2)!important;">\n\n                <ion-label>Vitesse Max</ion-label>  \n\n              <ion-input type="number" placeholder="Vitesse Max" [(ngModel)]="vehicule.maxSpeed" ></ion-input>\n\n          </ion-item>\n\n          <ion-item style=" background-color:rgba(0,0,0,0.2)!important;">\n\n              <ion-label>N° SIM</ion-label>  \n\n            <ion-input type="number" placeholder="N° SIM" [(ngModel)]="deviceNumber" ></ion-input>\n\n        </ion-item>\n\n        \n\n       </ion-list>\n\n     \n\n          <button ion-button center round (click)="update()">Modifier</button>\n\n          <button ion-button center round (click)="closeModal()">Annuler</button>\n\n     \n\n\n\n  </ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\vehicules\vehicule-form\vehicule-form.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_vehicule_service__["a" /* VehiculeService */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["n" /* ViewController */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["m" /* ToastController */]])
+], VehiculeForm);
+
+//# sourceMappingURL=vehicule-form.js.map
+
+/***/ }),
+
+/***/ 198:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 198;
+
+/***/ }),
+
+/***/ 238:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GestPoi; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_global_config__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_global_config__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_data_management_service__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1541,52 +1971,17 @@ GestPoi = __decorate([
 
 /***/ }),
 
-/***/ 196:
-/***/ (function(module, exports) {
-
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncatched exception popping up in devtools
-	return Promise.resolve().then(function() {
-		throw new Error("Cannot find module '" + req + "'.");
-	});
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 196;
-
-/***/ }),
-
-/***/ 23:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return dns; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return imagesDir; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return nominatim_dns; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return time_difference; });
-//export var dns: string = "http://79.137.75.178:8080/ws_rimtrack_all_dev/";
-//export var dns: string = "http://localhost:8080/rimtrack-all-v2/";
-var dns = "http://37.187.171.84/ws_rimtrack_all/";
-var imagesDir = "http://37.187.171.84/images/";
-var nominatim_dns = "http://37.187.171.84/nominatim";
-var time_difference = -3600000;
-//# sourceMappingURL=global.config.js.map
-
-/***/ }),
-
-/***/ 243:
+/***/ 245:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StopList; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_map_service__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_data_management_service__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objects_data_management__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objects_data_management__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__poi_poi__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__poi_poi__ = __webpack_require__(132);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1665,13 +2060,13 @@ StopList = __decorate([
 
 /***/ }),
 
-/***/ 244:
+/***/ 246:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoricalForm; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_historical_service__ = __webpack_require__(78);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1718,13 +2113,13 @@ HistoricalForm = __decorate([
 
 /***/ }),
 
-/***/ 245:
+/***/ 247:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PathsList; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1762,7 +2157,7 @@ PathsList = __decorate([
 
 /***/ }),
 
-/***/ 246:
+/***/ 248:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1780,13 +2175,31 @@ function createAuthorizationHeader(headers) {
 
 /***/ }),
 
-/***/ 269:
+/***/ 25:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return dns; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return imagesDir; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return nominatim_dns; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return time_difference; });
+//export var dns: string = "http://79.137.75.178:8080/ws_rimtrack_all_dev/";
+//export var dns: string = "http://localhost:8080/rimtrack-all-v2/";
+var dns = "http://37.187.171.84/ws_rimtrack_all/";
+var imagesDir = "http://37.187.171.84/images/";
+var nominatim_dns = "http://37.187.171.84/nominatim";
+var time_difference = -3600000;
+//# sourceMappingURL=global.config.js.map
+
+/***/ }),
+
+/***/ 271:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_real_time_service__ = __webpack_require__(79);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1903,7 +2316,7 @@ GroupsPage = __decorate([
 
 /***/ }),
 
-/***/ 270:
+/***/ 272:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1911,7 +2324,7 @@ GroupsPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_map_service__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_data_management_service__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(19);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1962,15 +2375,15 @@ MileageComponent = __decorate([
 
 /***/ }),
 
-/***/ 271:
+/***/ 273:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__historical_historical__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__historical_historical__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login__ = __webpack_require__(274);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_real_time_service__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_historical_service__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_data_management_service__ = __webpack_require__(44);
@@ -2052,7 +2465,7 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar >\n    <ion-title > <a>Bienvenue</a></ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content class="page-login">\n \n  <ion-card class="login-card">\n    <ion-card-content>\n      <ion-list no-line>\n       <ion-item>\n          <ion-input type="text" [(ngModel)]="login" name="login" placeholder="Identifiant"></ion-input>\n        </ion-item>\n\n        <ion-item>\n         \n          <ion-input type="password" [(ngModel)]="mdp" name="mdp" placeholder="Mot de passe"></ion-input>\n        </ion-item>\n      </ion-list>\n      <button  margin-top ion-button margin-right block (click)=Signing() [ngStyle]="{\'background-color\': buttonColor}">\n      Connexion\n      </button>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n\n<ion-footer>\n    <ion-toolbar>\n       <ion-title> <img src="assets/img/logorim.jpg" height="100" /></ion-title>\n    </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\home\home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar >\n    <ion-title > <a>Bienvenue</a></ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content class="page-login">\n \n  <ion-card class="login-card">\n    <ion-card-content>\n      <ion-list no-line>\n       <ion-item>\n          <ion-input type="text" [(ngModel)]="login" name="login" placeholder="Identifiant"></ion-input>\n        </ion-item>\n\n        <ion-item>\n         \n          <ion-input type="password" [(ngModel)]="mdp" name="mdp" placeholder="Mot de passe"></ion-input>\n        </ion-item>\n      </ion-list>\n      <button  margin-top ion-button margin-right block (click)=Signing() [ngStyle]="{\'background-color\': buttonColor}">\n      Connexion\n      </button>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n\n<ion-footer>\n    <ion-toolbar>\n       <ion-title> <img src="assets/img/logorim.jpg" height="60" /></ion-title>\n    </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\home\home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_7__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_5__providers_historical_service__["a" /* HistoricalService */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_4__providers_real_time_service__["a" /* RealTimeService */], __WEBPACK_IMPORTED_MODULE_6__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__providers_login__["a" /* SigningService */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* ToastController */]])
 ], HomePage);
@@ -2061,7 +2474,7 @@ HomePage = __decorate([
 
 /***/ }),
 
-/***/ 272:
+/***/ 274:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2070,8 +2483,8 @@ HomePage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_headers__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_headers__ = __webpack_require__(248);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2109,14 +2522,15 @@ SigningService = __decorate([
 
 /***/ }),
 
-/***/ 273:
+/***/ 275:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Vehicules; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_vehicule_service__ = __webpack_require__(274);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vehicule_form_vehicule_form__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_vehicule_service__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2129,18 +2543,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var Vehicules = (function () {
-    function Vehicules(menu, navctrl, vehiculeService) {
+    function Vehicules(menu, toastCtrl, modalCtrl, alertCtrl, navctrl, vehiculeService) {
         this.menu = menu;
+        this.toastCtrl = toastCtrl;
+        this.modalCtrl = modalCtrl;
+        this.alertCtrl = alertCtrl;
         this.navctrl = navctrl;
         this.vehiculeService = vehiculeService;
         this.bigCurrentPage = 1;
         this.itemsPerPage = 25;
         this.vehicules = [];
         this.bigTotalItems = 175;
+        this.deviceLabels = [];
     }
     Vehicules.prototype.ngOnInit = function () {
+        var _this = this;
         this.getListVehicules(this.bigCurrentPage - 1, this.itemsPerPage);
+        this.vehiculeService.getGroupsLabel().subscribe(function (response) {
+            _this.vehiculeService.groupLabels = response;
+        });
+        this.vehiculeService.getDriversLabel().subscribe(function (response) {
+            _this.vehiculeService.driverLabels = response;
+        });
+        this.vehiculeService.getDevicesLabel().subscribe(function (response) {
+            _this.vehiculeService.deviceLabels = response;
+            _this.deviceLabels = response;
+            _this.numberDeviceFree = _this.deviceLabels.length;
+        });
     };
     Vehicules.prototype.openmenu = function () {
         this.menu.open();
@@ -2150,6 +2581,7 @@ var Vehicules = (function () {
         this.vehiculeService.bigCurrentPage = this.bigCurrentPage;
         this.vehiculeService.getListVehicules(this.bigCurrentPage - 1, this.itemsPerPage).subscribe(function (response) {
             _this.vehicules = response.content;
+            console.log(_this.vehicules);
             _this.vehicules = _this.vehicules.sort(function (a, b) {
                 if (a.device.idDevice < b.device.idDevice) {
                     return -1;
@@ -2165,141 +2597,112 @@ var Vehicules = (function () {
             _this.bigTotalItems = response.totalElements;
         });
     };
+    Vehicules.prototype.presentConfirm = function (vehicule) {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Informations',
+            message: 'Equipement:' + vehicule.device.idDevice + '<br> Vitesse Max :' + vehicule.maxSpeed + '<br> Chauffeur : ' + vehicule.lastName + '<br> Email :' + vehicule.emails + '',
+            buttons: [
+                {
+                    text: 'Ok',
+                    role: 'cancel',
+                    handler: function () {
+                    }
+                },
+                {
+                    text: 'Modifier',
+                    role: '',
+                    handler: function () {
+                        _this.openModifModal(vehicule);
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    Vehicules.prototype.delete = function (vehicule) {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Attention',
+            message: 'Voulez vous vraiment supprimer :' + vehicule.matricule + '?',
+            buttons: [
+                {
+                    text: 'Cancel',
+                    role: 'cancel',
+                    handler: function () {
+                    }
+                },
+                {
+                    text: 'Supprimer',
+                    handler: function () {
+                        _this.deletevehicule(vehicule);
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    Vehicules.prototype.deletevehicule = function (vehicule) {
+        var _this = this;
+        this.vehiculeService.delete(vehicule.idVehicule).subscribe(function (suprimed) {
+            if (suprimed) {
+                if (_this.vehicules.length == 1) {
+                    _this.vehicules = [];
+                }
+                else {
+                    _this.getListVehicules(_this.bigCurrentPage - 1, _this.itemsPerPage);
+                }
+                _this.numberDeviceFree = _this.numberDeviceFree + 1;
+                var toast = _this.toastCtrl.create({
+                    message: '' + vehicule.matricule + ' est supprimé avec succés',
+                    duration: 3000,
+                    position: 'top'
+                });
+                toast.present();
+            }
+            else {
+                var toast = _this.toastCtrl.create({
+                    message: 'suppresion échoué',
+                    duration: 3000,
+                    position: 'top'
+                });
+                toast.present();
+            }
+        }, function () {
+            var toast = _this.toastCtrl.create({
+                message: 'suppresion échoué',
+                duration: 3000,
+                position: 'top'
+            });
+            toast.present();
+        });
+    };
+    Vehicules.prototype.openModifModal = function (vehicule) {
+        var PoiModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_0__vehicule_form_vehicule_form__["a" /* VehiculeForm */], { vehicule: vehicule });
+        PoiModal.present();
+        PoiModal.onDidDismiss(function (form) {
+        });
+    };
     return Vehicules;
 }());
 Vehicules = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({
-        selector: 'page-vehicules',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\vehicules\vehicules.html"*/'<ion-header>\n\n        <ion-navbar>\n\n          <ion-title>Véhicules</ion-title>\n\n        </ion-navbar>\n\n        <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left:0px">\n\n              <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6)" (click)="openmenu()" ><i class="fa fa-list" aria-hidden="true"></i></button>\n\n       </ion-fab>\n\n  </ion-header>\n\n  <ion-content>\n\n    <ion-list *ngFor="let vehicule of vehicules">\n\n      <ion-label>\n\n        {{vehicule.mark}}\n\n      </ion-label>\n\n    </ion-list>\n\n  </ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\vehicules\vehicules.html"*/,
+    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["n" /* Component */])({
+        selector: 'page-vehicules',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\vehicules\vehicules.html"*/'<ion-header>\n\n    \n\n        <ion-navbar>\n\n          <ion-title>Véhicules</ion-title>\n\n        </ion-navbar>\n\n        <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left:0px">\n\n              <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6)" (click)="openmenu()" ><i class="fa fa-list" aria-hidden="true"></i></button>\n\n       </ion-fab>\n\n      \n\n  </ion-header>\n\n  <ion-content>\n\n      <table style="font-size: 15px;" >\n\n          <thead>\n\n            <tr style="background-color: #F5F5F5;opacity: 0.65;height:50px;font-size: 17px; font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 10px; background-color: rgb(115, 144, 182);opacity: 0.75;">\n\n              <th  style="text-align: center;">Equipement</th>\n\n              <th  style="text-align: center;padding-left:9px;padding-right:9px;">Immatricule</th>\n\n              <th  style="text-align: center;padding-left: 9px;padding-right: 9px"> Surnom</th>\n\n              <th style="text-align: center;padding-left: 9px;padding-right: 9px">Mark</th>\n\n\n\n            </tr>\n\n          </thead>\n\n          <tbody style="background-color: #FFFAFA;opacity: 0.5;font: bolder;font-size: 17px; font-weight: bold;text-align: center;padding-top: 10px;padding-bottom: 10px; background-color: #B0C4DE;opacity: 0.75;">\n\n            \n\n               <tr *ngFor="let vehicule of vehicules" style="border-top: solid black 1px;height:50px;">\n\n                <td style="text-align: center"  (click)="presentConfirm(vehicule)">\n\n                   {{vehicule.device.idDevice}}\n\n                </td>\n\n                <td style="text-align: center;" data-toggle="tooltip"  (click)="presentConfirm(vehicule)">\n\n                    {{vehicule.matricule}}\n\n                </td>\n\n                <td style="text-align: center;" data-toggle="tooltip"  (click)="presentConfirm(vehicule)">\n\n                  {{vehicule.alias}}\n\n                </td>\n\n                <td style="text-align: center;" data-toggle="tooltip"  (click)="presentConfirm(vehicule)">\n\n                   {{vehicule.mark}}\n\n                </td>\n\n              </tr>\n\n            </tbody>\n\n        </table>\n\n  </ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\vehicules\vehicules.html"*/,
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_0__providers_vehicule_service__["a" /* VehiculeService */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* MenuController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* ModalController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1__providers_vehicule_service__["a" /* VehiculeService */]])
 ], Vehicules);
 
 //# sourceMappingURL=vehicules.js.map
 
 /***/ }),
 
-/***/ 274:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VehiculeService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(23);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var VehiculeService = (function () {
-    function VehiculeService(_http) {
-        this._http = _http;
-        this.vehicules = [];
-        this.toastyAdd = false;
-        this.toastyUpdate = false;
-        this.groupLabels = [];
-        this.driverLabels = [];
-        this.deviceLabels = [];
-        this.bigCurrentPage = 1;
-        this.currentuser = JSON.parse(localStorage.getItem('currentuser'));
-    }
-    VehiculeService.prototype.add = function (vehicule, idDevice, idGroups, idDriver, deviceNumber) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
-        headers.append('Authorization', this.currentuser.token);
-        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        var body = JSON.stringify(vehicule);
-        return this._http.post(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/?idDevice=' + idDevice + '&idGroups=' + idGroups + '&idDriver=' + idDriver + '&deviceNumber=' + deviceNumber, vehicule, options).map(function (res) { return res.json(); });
-    };
-    VehiculeService.prototype.update = function (vehicule, idGroups, idDriver, deviceNumber) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
-        headers.append('Authorization', this.currentuser.token);
-        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        var body = JSON.stringify(vehicule);
-        return this._http.put(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/?idGroups=' + idGroups + '&idDriver=' + idDriver + '&deviceNumber=' + deviceNumber, vehicule, options).map(function (res) { return res.json(); });
-    };
-    VehiculeService.prototype.addGroup = function (name) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
-        headers.append('Authorization', this.currentuser.token);
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'groupes/byName/?groupeName=' + name, { headers: headers }).map(function (res) { return res.json(); });
-    };
-    VehiculeService.prototype.addDriver = function (name) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
-        headers.append('Authorization', this.currentuser.token);
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'drivers/byName/?driverName=' + name, { headers: headers }).map(function (res) { return res.json(); });
-    };
-    VehiculeService.prototype.getGroupsVehicule = function (id) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
-        headers.append('Authorization', this.currentuser.token);
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/groups/' + id, { headers: headers }).map(function (res) { return res.json(); });
-    };
-    VehiculeService.prototype.getOne = function (id) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
-        headers.append('Authorization', this.currentuser.token);
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/' + id, { headers: headers }).map(function (res) { return res.json(); });
-    };
-    VehiculeService.prototype.assignement = function (idVehicule, idDriver) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
-        headers.append('Authorization', this.currentuser.token);
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/assignement/?idVehicule=' + idVehicule + '&idDriver=' + idDriver, { headers: headers }).map(function (res) { return res.json(); });
-    };
-    VehiculeService.prototype.getListVehicules = function (page, size) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
-        headers.append('Authorization', this.currentuser.token);
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/list' + '?page=' + page + '&size=' + size, { headers: headers }).map(function (res) { return res.json(); });
-    };
-    VehiculeService.prototype.delete = function (id) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
-        headers.append('Authorization', this.currentuser.token);
-        return this._http.delete(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/' + id, { headers: headers }).map(function (res) { return res.json(); });
-    };
-    VehiculeService.prototype.getGroupsLabel = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
-        headers.append('Authorization', this.currentuser.token);
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'groupes/labels', { headers: headers }).map(function (res) { return res.json(); });
-    };
-    VehiculeService.prototype.getDriversLabel = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
-        headers.append('Authorization', this.currentuser.token);
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'drivers/labels', { headers: headers }).map(function (res) { return res.json(); });
-    };
-    VehiculeService.prototype.getDevicesLabel = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
-        headers.append('Authorization', this.currentuser.token);
-        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'devices/labels', { headers: headers }).map(function (res) { return res.json(); });
-    };
-    VehiculeService.prototype.getVehicule = function (idVehicule) {
-        if (this.vehicules.length != 0)
-            return this.vehicules.find(function (vehicule) { return vehicule.idVehicule === idVehicule; });
-        return null;
-    };
-    return VehiculeService;
-}());
-VehiculeService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]])
-], VehiculeService);
-
-//# sourceMappingURL=vehicule.service.js.map
-
-/***/ }),
-
-/***/ 275:
+/***/ 276:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(276);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(281);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -2307,46 +2710,48 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 280:
+/***/ 281:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_gestpoi_gestpoi__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_geolocation__ = __webpack_require__(236);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_call_number__ = __webpack_require__(240);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_poi_poi__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_common__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(241);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__ = __webpack_require__(242);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_component__ = __webpack_require__(323);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_home_home__ = __webpack_require__(271);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_login__ = __webpack_require__(272);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_historical_historical__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_groups_page_groups_page__ = __webpack_require__(269);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_historical_form_historical_form__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_paths_list_paths_list__ = __webpack_require__(245);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__utils_geocoding_service__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__utils_map_service__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_real_time_service__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_historical_service__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__providers_data_management_service__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_storage__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_stop_list_stop_list__ = __webpack_require__(243);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_mileage_mileage__ = __webpack_require__(270);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_datamana_vehicules_vehicules__ = __webpack_require__(273);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_datamana_groupes_groupes__ = __webpack_require__(593);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_vehicule_service__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_datamana_vehicules_vehicule_form_vehicule_form__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_gestpoi_gestpoi__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_call_number__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_poi_poi__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_http__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_common__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_splash_screen__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_status_bar__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_component__ = __webpack_require__(328);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_home_home__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_login__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_historical_historical__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_groups_page_groups_page__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_historical_form_historical_form__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_paths_list_paths_list__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__utils_geocoding_service__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__utils_map_service__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_real_time_service__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__providers_historical_service__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__providers_data_management_service__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_storage__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_stop_list_stop_list__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_mileage_mileage__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_datamana_vehicules_vehicules__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_datamana_groupes_groupes__ = __webpack_require__(598);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_vehicule_service__ = __webpack_require__(130);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -2382,59 +2787,61 @@ var AppModule = (function () {
     return AppModule;
 }());
 AppModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["L" /* NgModule */])({
+    Object(__WEBPACK_IMPORTED_MODULE_6__angular_core__["L" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* MyApp */],
-            __WEBPACK_IMPORTED_MODULE_12__pages_home_home__["a" /* HomePage */],
-            __WEBPACK_IMPORTED_MODULE_3__pages_poi_poi__["a" /* Poi */],
-            __WEBPACK_IMPORTED_MODULE_14__pages_historical_historical__["a" /* Historical */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_groups_page_groups_page__["a" /* GroupsPage */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_historical_form_historical_form__["a" /* HistoricalForm */],
-            __WEBPACK_IMPORTED_MODULE_17__pages_paths_list_paths_list__["a" /* PathsList */],
-            __WEBPACK_IMPORTED_MODULE_24__pages_stop_list_stop_list__["a" /* StopList */],
-            __WEBPACK_IMPORTED_MODULE_25__pages_mileage_mileage__["a" /* MileageComponent */],
-            __WEBPACK_IMPORTED_MODULE_0__pages_gestpoi_gestpoi__["a" /* GestPoi */],
-            __WEBPACK_IMPORTED_MODULE_26__pages_datamana_vehicules_vehicules__["a" /* Vehicules */],
-            __WEBPACK_IMPORTED_MODULE_27__pages_datamana_groupes_groupes__["a" /* Groupes */]
+            __WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* MyApp */],
+            __WEBPACK_IMPORTED_MODULE_13__pages_home_home__["a" /* HomePage */],
+            __WEBPACK_IMPORTED_MODULE_4__pages_poi_poi__["a" /* Poi */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_historical_historical__["a" /* Historical */],
+            __WEBPACK_IMPORTED_MODULE_16__pages_groups_page_groups_page__["a" /* GroupsPage */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_historical_form_historical_form__["a" /* HistoricalForm */],
+            __WEBPACK_IMPORTED_MODULE_18__pages_paths_list_paths_list__["a" /* PathsList */],
+            __WEBPACK_IMPORTED_MODULE_25__pages_stop_list_stop_list__["a" /* StopList */],
+            __WEBPACK_IMPORTED_MODULE_26__pages_mileage_mileage__["a" /* MileageComponent */],
+            __WEBPACK_IMPORTED_MODULE_1__pages_gestpoi_gestpoi__["a" /* GestPoi */],
+            __WEBPACK_IMPORTED_MODULE_27__pages_datamana_vehicules_vehicules__["a" /* Vehicules */],
+            __WEBPACK_IMPORTED_MODULE_28__pages_datamana_groupes_groupes__["a" /* Groupes */],
+            __WEBPACK_IMPORTED_MODULE_0__pages_datamana_vehicules_vehicule_form_vehicule_form__["a" /* VehiculeForm */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_http__["c" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_23__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
-            __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["f" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* MyApp */], {
+            __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_http__["c" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_24__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_8_ionic_angular__["f" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* MyApp */], {
                 swipeBackEnabled: 'false'
             })
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_7_ionic_angular__["d" /* IonicApp */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_8_ionic_angular__["d" /* IonicApp */]],
         entryComponents: [
-            __WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* MyApp */],
-            __WEBPACK_IMPORTED_MODULE_12__pages_home_home__["a" /* HomePage */],
-            __WEBPACK_IMPORTED_MODULE_14__pages_historical_historical__["a" /* Historical */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_groups_page_groups_page__["a" /* GroupsPage */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_historical_form_historical_form__["a" /* HistoricalForm */],
-            __WEBPACK_IMPORTED_MODULE_17__pages_paths_list_paths_list__["a" /* PathsList */],
-            __WEBPACK_IMPORTED_MODULE_3__pages_poi_poi__["a" /* Poi */],
-            __WEBPACK_IMPORTED_MODULE_24__pages_stop_list_stop_list__["a" /* StopList */],
-            __WEBPACK_IMPORTED_MODULE_25__pages_mileage_mileage__["a" /* MileageComponent */],
-            __WEBPACK_IMPORTED_MODULE_0__pages_gestpoi_gestpoi__["a" /* GestPoi */],
-            __WEBPACK_IMPORTED_MODULE_26__pages_datamana_vehicules_vehicules__["a" /* Vehicules */],
-            __WEBPACK_IMPORTED_MODULE_27__pages_datamana_groupes_groupes__["a" /* Groupes */]
+            __WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* MyApp */],
+            __WEBPACK_IMPORTED_MODULE_13__pages_home_home__["a" /* HomePage */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_historical_historical__["a" /* Historical */],
+            __WEBPACK_IMPORTED_MODULE_16__pages_groups_page_groups_page__["a" /* GroupsPage */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_historical_form_historical_form__["a" /* HistoricalForm */],
+            __WEBPACK_IMPORTED_MODULE_18__pages_paths_list_paths_list__["a" /* PathsList */],
+            __WEBPACK_IMPORTED_MODULE_4__pages_poi_poi__["a" /* Poi */],
+            __WEBPACK_IMPORTED_MODULE_25__pages_stop_list_stop_list__["a" /* StopList */],
+            __WEBPACK_IMPORTED_MODULE_26__pages_mileage_mileage__["a" /* MileageComponent */],
+            __WEBPACK_IMPORTED_MODULE_1__pages_gestpoi_gestpoi__["a" /* GestPoi */],
+            __WEBPACK_IMPORTED_MODULE_27__pages_datamana_vehicules_vehicules__["a" /* Vehicules */],
+            __WEBPACK_IMPORTED_MODULE_28__pages_datamana_groupes_groupes__["a" /* Groupes */],
+            __WEBPACK_IMPORTED_MODULE_0__pages_datamana_vehicules_vehicule_form_vehicule_form__["a" /* VehiculeForm */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__["a" /* SplashScreen */],
-            __WEBPACK_IMPORTED_MODULE_28__providers_vehicule_service__["a" /* VehiculeService */],
-            __WEBPACK_IMPORTED_MODULE_13__providers_login__["a" /* SigningService */],
-            __WEBPACK_IMPORTED_MODULE_18__utils_geocoding_service__["a" /* GeocodingService */],
-            __WEBPACK_IMPORTED_MODULE_19__utils_map_service__["a" /* MapService */],
-            __WEBPACK_IMPORTED_MODULE_20__providers_real_time_service__["a" /* RealTimeService */],
-            __WEBPACK_IMPORTED_MODULE_22__providers_data_management_service__["a" /* DataManagementService */],
-            __WEBPACK_IMPORTED_MODULE_1__ionic_native_geolocation__["a" /* Geolocation */],
-            __WEBPACK_IMPORTED_MODULE_21__providers_historical_service__["a" /* HistoricalService */],
-            __WEBPACK_IMPORTED_MODULE_8__angular_common__["d" /* DecimalPipe */],
-            __WEBPACK_IMPORTED_MODULE_2__ionic_native_call_number__["a" /* CallNumber */],
-            __WEBPACK_IMPORTED_MODULE_23__ionic_storage__["a" /* IonicStorageModule */],
-            { provide: __WEBPACK_IMPORTED_MODULE_5__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["e" /* IonicErrorHandler */] }
+            __WEBPACK_IMPORTED_MODULE_11__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_10__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_29__providers_vehicule_service__["a" /* VehiculeService */],
+            __WEBPACK_IMPORTED_MODULE_14__providers_login__["a" /* SigningService */],
+            __WEBPACK_IMPORTED_MODULE_19__utils_geocoding_service__["a" /* GeocodingService */],
+            __WEBPACK_IMPORTED_MODULE_20__utils_map_service__["a" /* MapService */],
+            __WEBPACK_IMPORTED_MODULE_21__providers_real_time_service__["a" /* RealTimeService */],
+            __WEBPACK_IMPORTED_MODULE_23__providers_data_management_service__["a" /* DataManagementService */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */],
+            __WEBPACK_IMPORTED_MODULE_22__providers_historical_service__["a" /* HistoricalService */],
+            __WEBPACK_IMPORTED_MODULE_9__angular_common__["d" /* DecimalPipe */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_call_number__["a" /* CallNumber */],
+            __WEBPACK_IMPORTED_MODULE_24__ionic_storage__["a" /* IonicStorageModule */],
+            { provide: __WEBPACK_IMPORTED_MODULE_6__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_8_ionic_angular__["e" /* IonicErrorHandler */] }
         ]
     })
 ], AppModule);
@@ -2443,20 +2850,156 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 323:
+/***/ 318:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__driver__ = __webpack_require__(319);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__group__ = __webpack_require__(320);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__vehicule__ = __webpack_require__(321);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__vehicule__["a"]; });
+
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 319:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export Driver */
+/* unused harmony export VehiculeApparence */
+/* unused harmony export DriverLabel */
+var Driver = (function () {
+    function Driver() {
+    }
+    return Driver;
+}());
+
+var VehiculeApparence = (function () {
+    function VehiculeApparence(text, id) {
+        this.text = text;
+        this.id = id;
+    }
+    return VehiculeApparence;
+}());
+
+var DriverLabel = (function () {
+    function DriverLabel(idDriver, firstName) {
+        this.idDriver = idDriver;
+        this.firstName = firstName;
+    }
+    return DriverLabel;
+}());
+
+//# sourceMappingURL=driver.js.map
+
+/***/ }),
+
+/***/ 320:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export Groupe */
+/* unused harmony export VehiculeGetDTO */
+/* unused harmony export GroupAddDTO */
+var Groupe = (function () {
+    function Groupe(groupeId, nom, imageUrl, vehicules) {
+        this.vehicules = [];
+        this.idGroupe = groupeId;
+        this.nom = nom;
+        this.imageUrl = imageUrl;
+        this.vehicules = vehicules;
+    }
+    return Groupe;
+}());
+
+var VehiculeGetDTO = (function () {
+    function VehiculeGetDTO(idVehicule, matricule) {
+        this.idVehicule = idVehicule;
+        this.matricule = matricule;
+    }
+    return VehiculeGetDTO;
+}());
+
+var GroupAddDTO = (function () {
+    function GroupAddDTO() {
+    }
+    return GroupAddDTO;
+}());
+
+//# sourceMappingURL=group.js.map
+
+/***/ }),
+
+/***/ 321:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export VehiculeInfo */
+/* unused harmony export DeviceLabel */
+/* unused harmony export GroupLabel */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomSelectInfo; });
+/* unused harmony export Vehicule */
+var VehiculeInfo = (function () {
+    function VehiculeInfo() {
+        this.emails = "";
+    }
+    return VehiculeInfo;
+}());
+
+var DeviceLabel = (function () {
+    function DeviceLabel(idDevice, deviceNumber) {
+        this.idDevice = idDevice;
+        this.deviceNumber = deviceNumber;
+    }
+    return DeviceLabel;
+}());
+
+var GroupLabel = (function () {
+    function GroupLabel(idGroupe, nom) {
+        this.idGroupe = idGroupe;
+        this.nom = nom;
+    }
+    return GroupLabel;
+}());
+
+var CustomSelectInfo = (function () {
+    function CustomSelectInfo(text, id) {
+        this.text = text;
+        this.id = id;
+    }
+    return CustomSelectInfo;
+}());
+
+var Vehicule = (function () {
+    function Vehicule() {
+    }
+    return Vehicule;
+}());
+
+//# sourceMappingURL=vehicule.js.map
+
+/***/ }),
+
+/***/ 328:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_historical_historical__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_historical_historical__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__ = __webpack_require__(242);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(241);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(273);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_gestpoi_gestpoi__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_datamana_vehicules_vehicules__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_gestpoi_gestpoi__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_datamana_vehicules_vehicules__ = __webpack_require__(275);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2601,7 +3144,7 @@ MyApp = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(25);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2715,9 +3258,9 @@ DataManagementService = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_leaflet__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_leaflet__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_leaflet__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_global_config__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_global_config__ = __webpack_require__(25);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2985,12 +3528,12 @@ MapService = __decorate([
 
 /***/ }),
 
-/***/ 593:
+/***/ 598:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Groupes; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3032,7 +3575,7 @@ Groupes = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(25);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3107,8 +3650,8 @@ HistoricalService = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__global_config__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_headers__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__global_config__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_headers__ = __webpack_require__(248);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3186,5 +3729,5 @@ RealTimeService = __decorate([
 
 /***/ })
 
-},[275]);
+},[276]);
 //# sourceMappingURL=main.js.map
