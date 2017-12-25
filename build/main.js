@@ -1,5 +1,6 @@
 webpackJsonp([0],{
 
+<<<<<<< Updated upstream
 /***/ 130:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -118,10 +119,14 @@ VehiculeService = __decorate([
 /***/ }),
 
 /***/ 132:
+=======
+/***/ 131:
+>>>>>>> Stashed changes
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Poi; });
+<<<<<<< Updated upstream
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_geocoding_service__ = __webpack_require__(133);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_data_management_service__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_map_service__ = __webpack_require__(56);
@@ -129,6 +134,15 @@ VehiculeService = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_global_config__ = __webpack_require__(25);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_geocoding_service__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_data_management_service__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_map_service__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__objects_data_management__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_global_config__ = __webpack_require__(23);
+>>>>>>> Stashed changes
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -212,14 +226,22 @@ Poi = __decorate([
 
 /***/ }),
 
+<<<<<<< Updated upstream
 /***/ 133:
+=======
+/***/ 132:
+>>>>>>> Stashed changes
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GeocodingService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(39);
+<<<<<<< Updated upstream
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_global_config__ = __webpack_require__(25);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_global_config__ = __webpack_require__(23);
+>>>>>>> Stashed changes
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -265,6 +287,34 @@ GeocodingService = __decorate([
 
 /***/ }),
 
+<<<<<<< Updated upstream
+=======
+/***/ 134:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PointInterest; });
+/* unused harmony export Driver */
+var PointInterest = (function () {
+    function PointInterest() {
+        this.ray = 100;
+        this.decode = [];
+        this.coordinate = { lat: 0, lng: 0 };
+    }
+    return PointInterest;
+}());
+
+var Driver = (function () {
+    function Driver() {
+    }
+    return Driver;
+}());
+
+//# sourceMappingURL=data-management.js.map
+
+/***/ }),
+
+>>>>>>> Stashed changes
 /***/ 135:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -295,6 +345,7 @@ var Driver = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Historical; });
+<<<<<<< Updated upstream
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ionic_native_status_bar__ = __webpack_require__(136);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_global_config__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objects_real_time__ = __webpack_require__(138);
@@ -322,6 +373,34 @@ var Driver = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_storage__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_geolocation__ = __webpack_require__(239);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__mileage_mileage__ = __webpack_require__(272);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_global_config__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__objects_real_time__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__stop_list_stop_list__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__objects_data_management__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_common__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_map_service__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_historical_service__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_data_management_service__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__historical_form_historical_form__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__paths_list_paths_list__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_global_config__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__utils_geocoding_service__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_leaflet__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_leaflet__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_real_time_service__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_Rx__ = __webpack_require__(327);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_rxjs_Rx__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__groups_page_groups_page__ = __webpack_require__(269);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__objects_real_time__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__poi_poi__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_call_number__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_storage__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_geolocation__ = __webpack_require__(236);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__mileage_mileage__ = __webpack_require__(270);
+>>>>>>> Stashed changes
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -381,6 +460,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
+
 var Polygon = L.Polygon;
 var Marker = L.Marker;
 var Icon = L.Icon;
@@ -395,7 +475,11 @@ var Icon = L.Icon;
 
 
 
+<<<<<<< Updated upstream
 var Routing = __webpack_require__(597);
+=======
+var Routing = __webpack_require__(592);
+>>>>>>> Stashed changes
 var Historical = (function () {
     function Historical(menu, statusBar, alertCtrl, geolocation, actionSheetCtrl, viewCtrl, callNumber, storage, pipe, toastController, realTimeService, geocodingService, dataManagementService, _app, historicalService, loadingCtrl, modalCtrl, navCtrl, navParams, mapService) {
         this.menu = menu;
@@ -441,8 +525,12 @@ var Historical = (function () {
         this.mileages = [];
         this.pathpoirealtime = false;
         this.navCtrl.swipeBackEnabled = false;
+<<<<<<< Updated upstream
         this.totalMileage = new __WEBPACK_IMPORTED_MODULE_2__objects_real_time__["a" /* Mileage */]();
         statusBar.show();
+=======
+        this.totalMileage = new __WEBPACK_IMPORTED_MODULE_1__objects_real_time__["a" /* Mileage */]();
+>>>>>>> Stashed changes
     }
     // initialisation du map + get current coordinate user
     Historical.prototype.ngOnInit = function () {
@@ -481,7 +569,11 @@ var Historical = (function () {
         var _this = this;
         this.mapService.removeAllRtMarkers();
         this.loadGroups();
+<<<<<<< Updated upstream
         __WEBPACK_IMPORTED_MODULE_17_rxjs_Rx__["Observable"].interval(1000 * 60).subscribe(function (x) {
+=======
+        __WEBPACK_IMPORTED_MODULE_16_rxjs_Rx__["Observable"].interval(1000 * 60).subscribe(function (x) {
+>>>>>>> Stashed changes
             _this.getAllRealTimeRecords();
         });
     };
@@ -560,8 +652,12 @@ var Historical = (function () {
             return;
         }
         else {
+<<<<<<< Updated upstream
             console.log(this.iconitineraire);
             var L = __webpack_require__(134);
+=======
+            var L = __webpack_require__(133);
+>>>>>>> Stashed changes
             if (this.mapService.map)
                 this.mapService.map.remove();
             var map = L.map('historicalMap', {
@@ -580,10 +676,17 @@ var Historical = (function () {
                 createMarker: function (i, wp, n) {
                     var url = null;
                     if (i == 0) {
+<<<<<<< Updated upstream
                         url = __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + 'startMarker.png';
                     }
                     else if (i == n - 1) {
                         return null;
+=======
+                        url = __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + 'startMarker.png';
+                    }
+                    else if (i == n - 1) {
+                        url = __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + 'endMarker.png';
+>>>>>>> Stashed changes
                     }
                     return L.marker(wp.latLng, {
                         draggable: true,
@@ -635,7 +738,11 @@ var Historical = (function () {
     //open POI Modal
     Historical.prototype.openPoiModal = function () {
         var _this = this;
+<<<<<<< Updated upstream
         var pointInterest = new __WEBPACK_IMPORTED_MODULE_4__objects_data_management__["a" /* PointInterest */]();
+=======
+        var pointInterest = new __WEBPACK_IMPORTED_MODULE_3__objects_data_management__["a" /* PointInterest */]();
+>>>>>>> Stashed changes
         pointInterest.address = this.addresspoi;
         pointInterest.coordinate.lat = this.latpoi;
         pointInterest.coordinate.lng = this.lngpoi;
@@ -789,6 +896,7 @@ var Historical = (function () {
         var imageUri = "http://37.187.171.84/images/c1x0.png";
         if (realTimeRecord.realTimeRecordStatus == 'VALID' && realTimeRecord.speed == 0 && realTimeRecord.ignition == true) {
             icon = new Icon({
+<<<<<<< Updated upstream
                 iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "c4x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
                 iconAnchor: [-2, 30],
                 popupAnchor: [10, -10]
@@ -818,6 +926,37 @@ var Historical = (function () {
                 popupAnchor: [10, -25]
             });
             imageUri = __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "c3x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
+=======
+                iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "c4x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
+                iconAnchor: [-2, 30],
+                popupAnchor: [10, -10]
+            });
+            imageUri = __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "c4x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
+        }
+        if (realTimeRecord.realTimeRecordStatus == 'VALID' && realTimeRecord.speed > 0) {
+            icon = new Icon({
+                iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "c1x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
+                iconAnchor: [-2, 30],
+                popupAnchor: [10, -25]
+            });
+            imageUri = __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "c1x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
+        }
+        if (realTimeRecord.realTimeRecordStatus == 'VALID' && realTimeRecord.speed == 0 && realTimeRecord.ignition == false) {
+            icon = new Icon({
+                iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "c2x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
+                iconAnchor: [-2, 30],
+                popupAnchor: [10, -25]
+            });
+            imageUri = __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "c2x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
+        }
+        if (realTimeRecord.realTimeRecordStatus == 'NON_VALID' || realTimeRecord.realTimeRecordStatus == 'TECHNICAL_ISSUE') {
+            icon = new Icon({
+                iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "c3x" + Math.abs(Math.round(angle / 45) * 45) + ".png",
+                iconAnchor: [-2, 30],
+                popupAnchor: [10, -25]
+            });
+            imageUri = __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "c3x" + Math.abs(Math.round(angle / 45) * 45) + ".png";
+>>>>>>> Stashed changes
         }
         realTimeRecord.icon = imageUri;
         this.geocodingService.inverseGeoconding(realTimeRecord.coordinate.lat, realTimeRecord.coordinate.lng, 18).subscribe(function (adress) {
@@ -929,7 +1068,11 @@ var Historical = (function () {
         var _this = this;
         this.mapService.removePolylinesFromMap();
         this.mapService.removeMarkersFromMap();
+<<<<<<< Updated upstream
         var pathsListModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_12__paths_list_paths_list__["a" /* PathsList */], { paths: this.paths });
+=======
+        var pathsListModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_11__paths_list_paths_list__["a" /* PathsList */], { paths: this.paths });
+>>>>>>> Stashed changes
         if (this.paths == null) {
             var alert_1 = this.alertCtrl.create({
                 title: 'Historique',
@@ -960,7 +1103,11 @@ var Historical = (function () {
         }).subscribe(function (points) {
             var stopMarkers = [];
             points.stops.forEach(function (stop) {
+<<<<<<< Updated upstream
                 var popup = "<img src='" + __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "stop_smal.png" + "'/> Durée d'arrêt : " + stop.stopDurationStr;
+=======
+                var popup = "<img src='" + __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "stop_smal.png" + "'/> Durée d'arrêt : " + stop.stopDurationStr;
+>>>>>>> Stashed changes
                 var stopMarker = L.marker({ lat: stop.stopLatitude, lng: stop.stopLongitude });
                 stopMarker.addTo(_this.mapService.map);
                 stopMarker.on('click', function () { _this.mapService.map.setView({ lat: stop.stopLatitude, lng: stop.stopLongitude }, 14); });
@@ -980,7 +1127,11 @@ var Historical = (function () {
                     stopMarker.bindPopup(popup);
                 });
                 stopMarker.setIcon(new Icon({
+<<<<<<< Updated upstream
                     iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "stop_smal.png",
+=======
+                    iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "stop_smal.png",
+>>>>>>> Stashed changes
                     iconAnchor: [-2, 30],
                     popupAnchor: [10, -25]
                 }));
@@ -991,10 +1142,17 @@ var Historical = (function () {
                 var marker = L.marker(coordinate);
                 if (i != 0 && i != points.coordinates.length - 1) {
                     marker.setIcon(new Icon({
+<<<<<<< Updated upstream
                         iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "green-point.png",
                         iconAnchor: [2, 2]
                     }));
                     var pointDatePipe = new __WEBPACK_IMPORTED_MODULE_7__angular_common__["c" /* DatePipe */](coordinate.date);
+=======
+                        iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "green-point.png",
+                        iconAnchor: [2, 2]
+                    }));
+                    var pointDatePipe = new __WEBPACK_IMPORTED_MODULE_6__angular_common__["c" /* DatePipe */](coordinate.date);
+>>>>>>> Stashed changes
                     var popup = '<b>Heure:</b> ' + pointDatePipe.transform(coordinate.date, 'dd/MM/yyyy HH:mm:ss') + '<b><br>vitesse:</b> ' + coordinate.speed + ' Km/h';
                     marker.bindPopup(popup);
                     marker.on('click', function () {
@@ -1005,10 +1163,17 @@ var Historical = (function () {
             });
             var startMarker = L.marker({ lat: path.beginPathLatitude, lng: path.beginPathLongitude });
             var startTime = path.beginPathTime;
+<<<<<<< Updated upstream
             var startDatePipe = new __WEBPACK_IMPORTED_MODULE_7__angular_common__["c" /* DatePipe */](startTime);
             startMarker.bindPopup('<b> Lieu de début: </b>' + path.beginPathGeocoding + '<b></i><br>Temps de début du trajet : </b>' + startDatePipe.transform(startTime, 'dd/MM/yyyy HH:mm:ss'));
             startMarker.setIcon(new Icon({
                 iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "startMarker.png",
+=======
+            var startDatePipe = new __WEBPACK_IMPORTED_MODULE_6__angular_common__["c" /* DatePipe */](startTime);
+            startMarker.bindPopup('<b> Lieu de début: </b>' + path.beginPathGeocoding + '<b></i><br>Temps de début du trajet : </b>' + startDatePipe.transform(startTime, 'dd/MM/yyyy HH:mm:ss'));
+            startMarker.setIcon(new Icon({
+                iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "startMarker.png",
+>>>>>>> Stashed changes
                 iconAnchor: [-2, 30],
                 popupAnchor: [10, -25]
             }));
@@ -1016,12 +1181,20 @@ var Historical = (function () {
             if (path.endPathLatitude != null && path.endPathLongitude != null && path.endPathTime != null) {
                 var endMarker = L.marker({ lat: path.endPathLatitude, lng: path.endPathLongitude });
                 var endTime = path.endPathTime;
+<<<<<<< Updated upstream
                 var endDatePipe = new __WEBPACK_IMPORTED_MODULE_7__angular_common__["c" /* DatePipe */](endTime);
+=======
+                var endDatePipe = new __WEBPACK_IMPORTED_MODULE_6__angular_common__["c" /* DatePipe */](endTime);
+>>>>>>> Stashed changes
                 endMarker.bindPopup('<b> Lieu de fin: </b>' + path.endPathGeocoding + '<br><b>Temps de fin du trajet : </b>' + endDatePipe.transform(endTime, 'dd/MM/yyyy HH:mm:ss')
                     + '<br><b> Durée du trajet : </b>' + path.pathDurationStr + "<br><b> Durée d'arrêt : </b>" + path.nextStopDurationStr + "<br><b> Vitesse maximum : </b>"
                     + path.maxSpeed + " Km/h <br><b> Kilometrage parcouru : </b>" + path.distanceDriven.toFixed(2) + ' Km');
                 endMarker.setIcon(new Icon({
+<<<<<<< Updated upstream
                     iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "endMarker.png",
+=======
+                    iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "endMarker.png",
+>>>>>>> Stashed changes
                     iconAnchor: [-2, 30],
                     popupAnchor: [10, -25]
                 }));
@@ -1043,7 +1216,11 @@ var Historical = (function () {
                     var marker = new Marker(coordinate);
                     if (i != 0 && i != currentPath.coordinates.length - 1) {
                         marker.setIcon(new Icon({
+<<<<<<< Updated upstream
                             iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "green-point.png",
+=======
+                            iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "green-point.png",
+>>>>>>> Stashed changes
                             iconAnchor: [2, 2]
                         }));
                         _this.mapService.addMarker(marker);
@@ -1051,7 +1228,11 @@ var Historical = (function () {
                 });
                 var startMarker = L.marker({ lat: currentPath.beginPathLatitude, lng: currentPath.beginPathLongitude });
                 startMarker.setIcon(new Icon({
+<<<<<<< Updated upstream
                     iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "startMarker.png",
+=======
+                    iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "startMarker.png",
+>>>>>>> Stashed changes
                     iconAnchor: [-2, 30],
                     popupAnchor: [10, -25]
                 }));
@@ -1157,7 +1338,11 @@ var Historical = (function () {
         this.pathDrawn = false;
         this.previousPathdrawn = false;
         this.mapService.removeAllRtMarkers();
+<<<<<<< Updated upstream
         var formModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_11__historical_form_historical_form__["a" /* HistoricalForm */]);
+=======
+        var formModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_10__historical_form_historical_form__["a" /* HistoricalForm */]);
+>>>>>>> Stashed changes
         formModal.present();
         formModal.onDidDismiss(function (form) {
             //historique des trajets
@@ -1188,11 +1373,19 @@ var Historical = (function () {
                         var i_1 = 0;
                         _this.paths.forEach(function (path) {
                             var startHour = path.beginPathTime;
+<<<<<<< Updated upstream
                             var startTime = startHour + __WEBPACK_IMPORTED_MODULE_13__providers_global_config__["d" /* time_difference */];
                             path.displayBeginPathTime = startTime;
                             if (path.endPathTime != null) {
                                 var endHour = path.endPathTime;
                                 var endTime = endHour + __WEBPACK_IMPORTED_MODULE_13__providers_global_config__["d" /* time_difference */];
+=======
+                            var startTime = startHour + __WEBPACK_IMPORTED_MODULE_12__providers_global_config__["d" /* time_difference */];
+                            path.displayBeginPathTime = startTime;
+                            if (path.endPathTime != null) {
+                                var endHour = path.endPathTime;
+                                var endTime = endHour + __WEBPACK_IMPORTED_MODULE_12__providers_global_config__["d" /* time_difference */];
+>>>>>>> Stashed changes
                                 path.displayEndPathTime = endTime;
                             }
                             path.beginPathGeocodingDetails = _this.dataManagementService.getRelativePosition(path.beginPathLatitude, path.beginPathLongitude);
@@ -1289,7 +1482,11 @@ var Historical = (function () {
                         _this.stops.forEach(function (stop) {
                             stop.geocodingDetails = _this.dataManagementService.getRelativePosition(stop.stopLatitude, stop.stopLongitude);
                             stop.geocoding = stop.geocodingDetails;
+<<<<<<< Updated upstream
                             stop.beginStopTime = stop.beginStopTime + 2 * __WEBPACK_IMPORTED_MODULE_13__providers_global_config__["d" /* time_difference */];
+=======
+                            stop.beginStopTime = stop.beginStopTime + 2 * __WEBPACK_IMPORTED_MODULE_12__providers_global_config__["d" /* time_difference */];
+>>>>>>> Stashed changes
                             if (stop.geocodingDetails == null) {
                                 _this.geocodingService.inverseGeoconding(stop.stopLatitude, stop.stopLongitude, 17).subscribe(function (adress) {
                                     stop.geocodingDetails = adress.display_name;
@@ -1372,10 +1569,17 @@ var Historical = (function () {
         var marker = L.marker({ lat: stop.stopLatitude, lng: stop.stopLongitude });
         var date = new Date(stop.beginStopTime);
         var beginStopTime = stop.beginStopTime;
+<<<<<<< Updated upstream
         var pointDatePipe = new __WEBPACK_IMPORTED_MODULE_7__angular_common__["c" /* DatePipe */](beginStopTime);
         var popup = "<b>Date debut d'arrêt: </b>" + pointDatePipe.transform(stop.beginStopTime, 'dd/MM/yyyy HH:mm:ss') + "<br><b>Durée d'arrêt: </b>" + stop.stopDurationStr + "<br><hr><b>" + stop.geocodingDetails + "</b>";
         marker.setIcon(new Icon({
             iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "endMarker.png",
+=======
+        var pointDatePipe = new __WEBPACK_IMPORTED_MODULE_6__angular_common__["c" /* DatePipe */](beginStopTime);
+        var popup = "<b>Date debut d'arrêt: </b>" + pointDatePipe.transform(stop.beginStopTime, 'dd/MM/yyyy HH:mm:ss') + "<br><b>Durée d'arrêt: </b>" + stop.stopDurationStr + "<br><hr><b>" + stop.geocodingDetails + "</b>";
+        marker.setIcon(new Icon({
+            iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "endMarker.png",
+>>>>>>> Stashed changes
             iconAnchor: [-2, 30],
             popupAnchor: [10, -25]
         }));
@@ -1418,7 +1622,11 @@ var Historical = (function () {
     Historical.prototype.drawMileage = function (mileage) {
         var _this = this;
         if (this.mileageClicked == null || this.mileageClicked.startHour != mileage.startHour) {
+<<<<<<< Updated upstream
             this.mileageClicked = new __WEBPACK_IMPORTED_MODULE_2__objects_real_time__["a" /* Mileage */]();
+=======
+            this.mileageClicked = new __WEBPACK_IMPORTED_MODULE_1__objects_real_time__["a" /* Mileage */]();
+>>>>>>> Stashed changes
             this.mileageClicked.startHour = mileage.startHour;
             this.mileageClicked.endHour = mileage.endHour;
         }
@@ -1434,10 +1642,17 @@ var Historical = (function () {
                 var marker = L.marker(coordinate);
                 if (i != 0 && i != points.length - 1) {
                     marker.setIcon(new Icon({
+<<<<<<< Updated upstream
                         iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "green-point.png",
                         iconAnchor: [2, 2]
                     }));
                     var pointDatePipe = new __WEBPACK_IMPORTED_MODULE_7__angular_common__["c" /* DatePipe */](coordinate.date);
+=======
+                        iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "green-point.png",
+                        iconAnchor: [2, 2]
+                    }));
+                    var pointDatePipe = new __WEBPACK_IMPORTED_MODULE_6__angular_common__["c" /* DatePipe */](coordinate.date);
+>>>>>>> Stashed changes
                     var popup = '<b>Heure:</b> ' + pointDatePipe.transform(coordinate.date, 'dd/MM/yyyy HH:mm:ss') + '<b><br>vitesse:</b> ' + coordinate.speed + ' Km/h';
                     marker.bindPopup(popup);
                     marker.on('click', function () {
@@ -1448,10 +1663,17 @@ var Historical = (function () {
             });
             stops.forEach(function (stop, i) {
                 var marker = L.marker({ lat: stop.stopLatitude, lng: stop.stopLongitude });
+<<<<<<< Updated upstream
                 var pointDatePipe = new __WEBPACK_IMPORTED_MODULE_7__angular_common__["c" /* DatePipe */](stop.beginStopTime);
                 var popup = "<b>Date debut d'arrêt: </b>" + pointDatePipe.transform(stop.beginStopTime, 'dd/MM/yyyy HH:mm:ss') + "<br><b>Durée d'arrêt: </b>" + stop.stopDurationStr;
                 marker.setIcon(new Icon({
                     iconUrl: __WEBPACK_IMPORTED_MODULE_1__providers_global_config__["b" /* imagesDir */] + "stop_smal.png",
+=======
+                var pointDatePipe = new __WEBPACK_IMPORTED_MODULE_6__angular_common__["c" /* DatePipe */](stop.beginStopTime);
+                var popup = "<b>Date debut d'arrêt: </b>" + pointDatePipe.transform(stop.beginStopTime, 'dd/MM/yyyy HH:mm:ss') + "<br><b>Durée d'arrêt: </b>" + stop.stopDurationStr;
+                marker.setIcon(new Icon({
+                    iconUrl: __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */] + "stop_smal.png",
+>>>>>>> Stashed changes
                     iconAnchor: [-2, 30],
                     popupAnchor: [10, -25]
                 }));
@@ -1472,7 +1694,11 @@ var Historical = (function () {
         var _this = this;
         this.mapService.removePolylinesFromMap();
         this.mapService.removeMarkersFromMap();
+<<<<<<< Updated upstream
         var stopListModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_3__stop_list_stop_list__["a" /* StopList */], { stops: this.stops });
+=======
+        var stopListModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_2__stop_list_stop_list__["a" /* StopList */], { stops: this.stops });
+>>>>>>> Stashed changes
         if (this.stops == null) {
             var alert_7 = this.alertCtrl.create({
                 title: 'Historique',
@@ -1494,10 +1720,17 @@ var Historical = (function () {
     return Historical;
 }());
 Historical = __decorate([
+<<<<<<< Updated upstream
     Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["n" /* Component */])({
         selector: 'page-historical',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/'<ion-header style=" height:48px">\n\n     <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left:0px">\n\n      <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6);align-items:center;align-content: center;" (click)="openmenu()" ><i class="fa fa-list" aria-hidden="true"></i></button>\n\n  </ion-fab> \n\n  <ion-fab top right class="ion-fab2" style="margin-top:-7px">\n\n    <button ion-fab mini round outline strong  style="margin-top:0px;margin-right:60px;background-color:rgba(0,0,0,0.6)" (click)="openGroupsModal()"><ion-icon name="arrow-up"></ion-icon></button>\n\n  </ion-fab>\n\n  <ion-fab top right style="margin-top:-7px">\n\n    <button  ion-fab mini round outline strong (click)="calldriver(driverphone)" color="primary" style="margin-top:0px;background-color:rgb(70, 238, 14)" ><ion-icon name="call"></ion-icon></button>\n\n  </ion-fab>\n\n  <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left:50px;">\n\n    <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6);align-content: center;align-items:center;" ><i class="fa fa-history" aria-hidden="true"></i></button>\n\n    <ion-fab-list side="bottom"  >\n\n      <button ion-button round outline strong (click)="openFormModal(fab)" color="light"style="background-color:rgba(0,0,0,0.4);width:80%"><ion-icon name="list"></ion-icon> Historique </button>\n\n      <button ion-button round outline strong (click)="AlertLancementMoteur(selectedDevice)" color="secondary" style="width:80%;background-color:rgba(70, 238, 14, 0.4);color:#FFF" >Lancement</button>\n\n      <button ion-button round outline strong (click)="AlertArretMoteur(selectedDevice)" color="danger" style="width:80%;background-color:rgba(242, 11, 11, 0.4);color:#FFF" >Arrêt (Moteur)</button>\n\n    </ion-fab-list>\n\n  </ion-fab>\n\n  <ion-title><a>RimTelecom</a></ion-title>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <!-- Right Side button+result button -->\n\n  <ion-fab bottom left *ngIf="pathDrawn == true">\n\n    <button ion-fab mini (click)="clearPolylines()" color="danger">\n\n      <ion-icon name="close"></ion-icon>\n\n    </button>\n\n  </ion-fab>    \n\n  <ion-fab bottom left *ngIf="pathDrawn == false && previousPathdrawn==true && DeviceId!==null">\n\n    <button ion-fab mini (click)="displayCurrentPath(DeviceId)"  [ngStyle]="{\'background-color\': \'rgb(70, 238, 14)\'}">\n\n      <ion-icon name="arrow-forward" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab bottom left *ngIf="resultopened==true">\n\n    <button ion-fab mini (click)="openResultsModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab bottom left *ngIf="openStopResult==true">\n\n    <button ion-fab mini (click)="openStopsResultsModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-fab bottom left *ngIf="openMileageResult==true">\n\n    <button ion-fab mini (click)="openMileageResultModal()">\n\n      <ion-icon name="search" ></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <div class="pois-toggle leaflet-bottom leaflet-right" (click)="drawPointInterests()"> \n\n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:450px !important;margin-right:12px;" >\n\n        <button  class="fa fa-eye-slash leaflet-bar-part" title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;"></button>\n\n    </div>\n\n  </div>\n\n <div class="pois-toggle leaflet-bottom leaflet-right" (click)="openPoiModal()"> \n\n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:415px !important;margin-right:12px;" >\n\n        <button *ngIf="pathpoirealtime == true" title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;">  <ion-icon ios="ios-add" md="md-add"></ion-icon></button>\n\n    </div>\n\n  </div>\n\n  <div class="pois-toggle leaflet-bottom leaflet-right" (click)="drawpath()"> \n\n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:380px !important;margin-right:12px;" >\n\n        <button *ngIf="pathpoirealtime == true" class="fa fa-road" title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;"> </button>\n\n    </div>\n\n  </div>\n\n      <!-- Leaflet Map -->\n\n  <div id="historicalMap" class="leaflet-pseudo-fullscreen leaflet-fullscreen-on" style="height: 93%!important; top: 7.5% !important;"></div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_6_ionic_angular__["h" /* MenuController */], __WEBPACK_IMPORTED_MODULE_0__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_23__ionic_native_geolocation__["a" /* Geolocation */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["n" /* ViewController */], __WEBPACK_IMPORTED_MODULE_21__ionic_native_call_number__["a" /* CallNumber */], __WEBPACK_IMPORTED_MODULE_22__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_7__angular_common__["d" /* DecimalPipe */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_16__providers_real_time_service__["a" /* RealTimeService */], __WEBPACK_IMPORTED_MODULE_14__utils_geocoding_service__["a" /* GeocodingService */], __WEBPACK_IMPORTED_MODULE_10__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_9__providers_historical_service__["a" /* HistoricalService */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["i" /* ModalController */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_6_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_8__utils_map_service__["a" /* MapService */]])
+=======
+    Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["n" /* Component */])({
+        selector: 'page-historical',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/'<ion-header style=" height:48px;margin-top:20px;">\n  <ion-fab top right class="ion-fab2" style="margin-top:-7px">\n    <button ion-fab mini round outline strong  style="margin-top:0px;margin-right:60px;background-color:rgba(0,0,0,0.6)" (click)="openGroupsModal()"><ion-icon name="arrow-up"></ion-icon></button>\n  </ion-fab>\n  <ion-fab top right style="margin-top:-7px">\n      <button  ion-fab mini round outline strong (click)="calldriver(driverphone)" color="primary" style="margin-top:0px;background-color:rgb(70, 238, 14)" ><ion-icon name="call"></ion-icon></button>\n  </ion-fab>\n  <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px">\n    <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6)"  ><ion-icon name="list"></ion-icon></button>\n    <ion-fab-list side="bottom"  >\n      <button ion-button round outline strong (click)="openFormModal(fab)" color="light"style="background-color:rgba(0,0,0,0.4);width:80%"><ion-icon name="list"></ion-icon> Historique </button>\n      <button ion-button round outline strong (click)="AlertLancementMoteur(selectedDevice)" color="secondary" style="width:80%;background-color:rgba(70, 238, 14, 0.4);color:#FFF" >Lancement</button>\n      <button ion-button round outline strong (click)="AlertArretMoteur(selectedDevice)" color="danger" style="width:80%;background-color:rgba(242, 11, 11, 0.4);color:#FFF" >Arrêt (Moteur)</button>\n    </ion-fab-list>\n  </ion-fab>\n  \n  <ion-title><button style="background-color:rgba(0,0,0,0)" (click)="presentConfirm()"><a>RimTelecom</a></button></ion-title>\n\n</ion-header>\n\n<ion-content>\n  <ion-fab bottom left *ngIf="pathDrawn == true">\n    <button ion-fab mini (click)="clearPolylines()" color="danger">\n      <ion-icon name="close"></ion-icon>\n    </button>\n  </ion-fab>    \n  <ion-fab bottom left *ngIf="pathDrawn == false && previousPathdrawn==true && DeviceId!==null">\n    <button ion-fab mini (click)="displayCurrentPath(DeviceId)"  [ngStyle]="{\'background-color\': \'rgb(70, 238, 14)\'}">\n      <ion-icon name="arrow-forward" ></ion-icon>\n    </button>\n  </ion-fab>\n  \n  <div class="pois-toggle leaflet-bottom leaflet-right" (click)="drawPointInterests()"> \n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:500px !important;margin-right:12px;" >\n        <button  class="fa fa-eye-slash leaflet-bar-part" title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;"></button>\n    </div>\n  </div>\n  <div class="pois-toggle leaflet-bottom leaflet-right" (click)="openPoiModal()"> \n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:465px !important;margin-right:12px;" >\n        <button *ngIf="pathpoirealtime == true" title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;">  <ion-icon ios="ios-add" md="md-add"></ion-icon></button>\n    </div>\n  </div>\n  <div class="pois-toggle leaflet-bottom leaflet-right" (click)="drawpath()"> \n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:430px !important;margin-right:12px;" >\n        <button *ngIf="pathpoirealtime == true" class="fa fa-road" title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;"> </button>\n    </div>\n  </div>\n <!-- <div class="pois-toggle leaflet-bottom leaflet-right" (click)="openPoiModal()"> \n    <div class=" leaflet-bar leaflet-control" style=" margin-bottom:400px !important;margin-right:12px;" >\n        <button  class="fa fa-eye-slash leaflet-bar-part" title="Afficher/Cacher Poi" style="outline: none;height:30px;width:30px;background-color:white;">  <ion-icon ios="ios-eye-off" md="md-eye-off"></ion-icon></button>\n    </div>\n  </div>-->\n  \n  \n\n  <!--================== /Leaflet Draw plugin ======================-->\n  \n  \n \n  <div id="historicalMap" class="leaflet-pseudo-fullscreen leaflet-fullscreen-on" style="height: 93%!important; top: 8.5% !important;"></div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\historical\historical.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5_ionic_angular__["h" /* MenuController */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_22__ionic_native_geolocation__["a" /* Geolocation */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["a" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["n" /* ViewController */], __WEBPACK_IMPORTED_MODULE_20__ionic_native_call_number__["a" /* CallNumber */], __WEBPACK_IMPORTED_MODULE_21__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_6__angular_common__["d" /* DecimalPipe */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_15__providers_real_time_service__["a" /* RealTimeService */], __WEBPACK_IMPORTED_MODULE_13__utils_geocoding_service__["a" /* GeocodingService */], __WEBPACK_IMPORTED_MODULE_9__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_8__providers_historical_service__["a" /* HistoricalService */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["i" /* ModalController */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_7__utils_map_service__["a" /* MapService */]])
+>>>>>>> Stashed changes
 ], Historical);
 
 //# sourceMappingURL=historical.js.map
@@ -1587,7 +1820,11 @@ var Mileage = (function () {
 
 /***/ }),
 
+<<<<<<< Updated upstream
 /***/ 154:
+=======
+/***/ 152:
+>>>>>>> Stashed changes
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -1600,6 +1837,7 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
+<<<<<<< Updated upstream
 webpackEmptyAsyncContext.id = 154;
 
 /***/ }),
@@ -1613,6 +1851,21 @@ webpackEmptyAsyncContext.id = 154;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objects_index__ = __webpack_require__(318);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_vehicule_service__ = __webpack_require__(130);
+=======
+webpackEmptyAsyncContext.id = 152;
+
+/***/ }),
+
+/***/ 153:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GestPoi; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_global_config__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_data_management_service__ = __webpack_require__(44);
+>>>>>>> Stashed changes
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1626,6 +1879,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+<<<<<<< Updated upstream
 var VehiculeForm = (function () {
     function VehiculeForm(navParams, vehiculeService, viewCtrl, toastCtrl) {
         this.navParams = navParams;
@@ -1801,6 +2055,36 @@ var VehiculeForm = (function () {
                     _this.idGroups.push(response[i].idGroupe);
                 }
             }
+=======
+var GestPoi = (function () {
+    function GestPoi(navCtrl, alertCtrl, toastCtrl, menu, dataManagementService, navParams, viewCtrl, modalCtrl) {
+        this.navCtrl = navCtrl;
+        this.alertCtrl = alertCtrl;
+        this.toastCtrl = toastCtrl;
+        this.menu = menu;
+        this.dataManagementService = dataManagementService;
+        this.navParams = navParams;
+        this.viewCtrl = viewCtrl;
+        this.modalCtrl = modalCtrl;
+        this.MARKER = "MARKER";
+        this.POLYGON = "POLYGON";
+        this.pointInterests = null;
+        this.imagesDir = __WEBPACK_IMPORTED_MODULE_0__providers_global_config__["b" /* imagesDir */];
+        this.navCtrl.swipeBackEnabled = false;
+    }
+    GestPoi.prototype.openmenu = function () {
+        this.menu.open();
+    };
+    GestPoi.prototype.ngOnInit = function () {
+        this.loadPoi();
+        console.log(this.pointInterests);
+    };
+    GestPoi.prototype.loadPoi = function () {
+        var _this = this;
+        this.dataManagementService.getAllPointInterests().subscribe(function (pointInterests) {
+            _this.dataManagementService.pointInterests = pointInterests;
+            _this.pointInterests = pointInterests;
+>>>>>>> Stashed changes
         });
         if (this.vehiculeInfo != null) {
             this.formatEmails(this.vehiculeInfo);
@@ -1810,6 +2094,7 @@ var VehiculeForm = (function () {
             this.config(this.vehicule, this.vehiculeInfo);
         }
     };
+<<<<<<< Updated upstream
     VehiculeForm.prototype.config = function (vehicule, vehiculeInfo) {
         this.idDevice = vehiculeInfo.device.idDevice;
         this.idDriver = vehiculeInfo.idDriver;
@@ -1896,6 +2181,65 @@ VehiculeForm = __decorate([
 /***/ }),
 
 /***/ 198:
+=======
+    GestPoi.prototype.delete = function (point) {
+        var _this = this;
+        var alert = this.alertCtrl.create({
+            title: 'Attention',
+            message: 'Voulez vous vraiment supprimer :' + point.name + '?',
+            buttons: [
+                {
+                    text: 'Cancel',
+                    role: 'cancel',
+                    handler: function () {
+                    }
+                },
+                {
+                    text: 'Supprimer',
+                    handler: function () {
+                        _this.deletepoi(point);
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    GestPoi.prototype.deletepoi = function (point) {
+        var _this = this;
+        this.dataManagementService.deletePointInterest(point.idPointInterest).subscribe(function (suprimed) {
+            if (suprimed) {
+                if (point.type == "MARKER") {
+                    _this.pointInterests.splice(_this.pointInterests.indexOf(point), 1);
+                }
+                if (point.type == "POLYGON") {
+                    _this.pointInterests.splice(_this.pointInterests.indexOf(point), 1);
+                }
+                var toast = _this.toastCtrl.create({
+                    message: '' + point.name + ' est supprimé avec succés',
+                    duration: 3000,
+                    position: 'top'
+                });
+                toast.present();
+            }
+            else {
+            }
+        }, function () { });
+    };
+    return GestPoi;
+}());
+GestPoi = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({
+        selector: 'page-gest-poi',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestpoi\gestpoi.html"*/'<ion-header>\n\n          <ion-navbar>\n\n            <ion-title>Points d\'intérêt</ion-title>\n\n          </ion-navbar>\n\n          <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left:0px">\n\n                <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6)" (click)="openmenu()" ><i class="fa fa-list" aria-hidden="true"></i></button>\n\n         </ion-fab>\n\n    </ion-header>\n\n    <ion-content>\n\n            <ion-list-header>Points</ion-list-header>\n\n            <ion-list  *ngFor="let pointInterest of pointInterests">\n\n                    <ion-item-sliding #item *ngIf="pointInterest.type==MARKER">\n\n                     \n\n                    <ion-item>\n\n                            <ion-avatar item-start>\n\n                                <img src="{{imagesDir}}{{pointInterest.imageUri}}" style="width:25px;height:25px;">\n\n                            </ion-avatar>\n\n                            \n\n                                    <h2>{{pointInterest.name}} </h2> \n\n                                    <button ion-button float-right clear color="danger" (click)="delete(pointInterest)" style="width:20px;"><ion-icon ios="ios-trash" md="md-trash"></ion-icon></button>\n\n                           \n\n                            \n\n                            <p>{{pointInterest.coordinate.lat}} ; {{pointInterest.coordinate.lng}}</p>\n\n                           <p style="font-size:15px">{{pointInterest.address}}</p> \n\n                        \n\n                    </ion-item>\n\n                     <ion-item-options side="right">\n\n                            <button ion-button color="danger" (click)="delete(pointInterest)" >Supprimer</button>\n\n                    </ion-item-options>\n\n                    \n\n                    </ion-item-sliding>\n\n                    </ion-list>\n\n                    <ion-list-header>Zones</ion-list-header>\n\n            <ion-list *ngFor="let pointInterest of pointInterests">\n\n                <ion-item-sliding *ngIf="pointInterest.type==POLYGON">\n\n                        <ion-item>\n\n                                <ion-avatar item-start>\n\n                                    <img src="{{imagesDir}}{{pointInterest.imageUri}}" style="width:25px;height:25px;">\n\n                                </ion-avatar>\n\n                                \n\n                                        <h2>{{pointInterest.name}} </h2> \n\n                                        <button ion-button float-right clear color="danger" (click)="delete(pointInterest)" style="width:20px;"><ion-icon ios="ios-trash" md="md-trash"></ion-icon></button>\n\n                               \n\n                                \n\n                                <p>{{pointInterest.coordinate.lat}} ; {{pointInterest.coordinate.lng}}</p>\n\n                               <p style="font-size:15px">{{pointInterest.address}}</p> \n\n                            \n\n                        </ion-item>\n\n                         <ion-item-options side="right">\n\n                                <button ion-button color="danger" (click)="delete(pointInterest)" >Supprimer</button>\n\n                        </ion-item-options>\n\n                </ion-item-sliding>\n\n            </ion-list>      \n\n                   \n\n              \n\n    </ion-content>\n\n   '/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\gestpoi\gestpoi.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */], __WEBPACK_IMPORTED_MODULE_3__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ModalController */]])
+], GestPoi);
+
+//# sourceMappingURL=gestpoi.js.map
+
+/***/ }),
+
+/***/ 196:
+>>>>>>> Stashed changes
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -1908,6 +2252,7 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
+<<<<<<< Updated upstream
 webpackEmptyAsyncContext.id = 198;
 
 /***/ }),
@@ -2017,6 +2362,27 @@ GestPoi = __decorate([
 ], GestPoi);
 
 //# sourceMappingURL=gestpoi.js.map
+=======
+webpackEmptyAsyncContext.id = 196;
+
+/***/ }),
+
+/***/ 23:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return dns; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return imagesDir; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return nominatim_dns; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return time_difference; });
+//export var dns: string = "http://79.137.75.178:8080/ws_rimtrack_all_dev/";
+//export var dns: string = "http://localhost:8080/rimtrack-all-v2/";
+var dns = "http://37.187.171.84/ws_rimtrack_all/";
+var imagesDir = "http://37.187.171.84/images/";
+var nominatim_dns = "http://37.187.171.84/nominatim";
+var time_difference = -3600000;
+//# sourceMappingURL=global.config.js.map
+>>>>>>> Stashed changes
 
 /***/ }),
 
@@ -2027,10 +2393,17 @@ GestPoi = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StopList; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_map_service__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_data_management_service__ = __webpack_require__(44);
+<<<<<<< Updated upstream
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objects_data_management__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__poi_poi__ = __webpack_require__(132);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objects_data_management__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__poi_poi__ = __webpack_require__(131);
+>>>>>>> Stashed changes
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2115,7 +2488,11 @@ StopList = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoricalForm; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+<<<<<<< Updated upstream
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+>>>>>>> Stashed changes
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_historical_service__ = __webpack_require__(78);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2168,7 +2545,11 @@ HistoricalForm = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PathsList; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+<<<<<<< Updated upstream
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+>>>>>>> Stashed changes
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2228,6 +2609,7 @@ function createAuthorizationHeader(headers) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+<<<<<<< Updated upstream
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return dns; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return imagesDir; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return nominatim_dns; });
@@ -2249,6 +2631,11 @@ var time_difference = -3600000;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+=======
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+>>>>>>> Stashed changes
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_real_time_service__ = __webpack_require__(79);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2365,7 +2752,11 @@ GroupsPage = __decorate([
 
 /***/ }),
 
+<<<<<<< Updated upstream
 /***/ 272:
+=======
+/***/ 270:
+>>>>>>> Stashed changes
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2373,7 +2764,11 @@ GroupsPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_map_service__ = __webpack_require__(56);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_data_management_service__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+<<<<<<< Updated upstream
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(19);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(21);
+>>>>>>> Stashed changes
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2424,6 +2819,338 @@ MileageComponent = __decorate([
 
 /***/ }),
 
+/***/ 271:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__historical_historical__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_real_time_service__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_historical_service__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_data_management_service__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_storage__ = __webpack_require__(57);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var HomePage = (function () {
+    function HomePage(storage, historicalService, app, loadingCtrl, realTimeService, dataManagementService, navCtrl, signinService, toastController) {
+        this.storage = storage;
+        this.historicalService = historicalService;
+        this.app = app;
+        this.loadingCtrl = loadingCtrl;
+        this.realTimeService = realTimeService;
+        this.dataManagementService = dataManagementService;
+        this.navCtrl = navCtrl;
+        this.signinService = signinService;
+        this.toastController = toastController;
+        this.buttonColor = '#c42e36';
+        this.login = null;
+        this.mdp = null;
+        this.newRealTimeRecords = null;
+        this.oldRealTimeRecords = null;
+        this.searchWord = '';
+        this.loginTest = null;
+        this.mdpTest = null;
+        //recuperation current user
+        this.currentuser = JSON.parse(localStorage.getItem('currentuser'));
+        if (this.currentuser) {
+            this.login = this.currentuser.username;
+            this.mdp = this.currentuser.password;
+            this.Signing();
+        }
+        else {
+            this.login = "";
+            this.mdp = "";
+        }
+    }
+    //Signing method
+    HomePage.prototype.Signing = function () {
+        var _this = this;
+        this.buttonColor = '#345465';
+        this.signinService.login({ "username": this.login, "password": this.mdp }).subscribe(function (currentUser) {
+            currentUser.password = _this.mdp;
+            localStorage.setItem('currentuser', JSON.stringify(currentUser));
+            _this.goToRt();
+        }, function () {
+            var toast = _this.toastController.create({
+                message: 'Authentification Echouée!',
+                duration: 2000
+            });
+            _this.buttonColor = '#c42e36';
+            toast.present();
+        });
+    };
+    //GO to Historical
+    HomePage.prototype.goToRt = function () {
+        var _this = this;
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_0__historical_historical__["a" /* Historical */]).then(function () {
+            var index = _this.navCtrl.getActive().index;
+            _this.navCtrl.remove(0, index);
+        });
+    };
+    return HomePage;
+}());
+HomePage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
+        selector: 'page-home',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar >\n    <ion-title > <a>Bienvenue</a></ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content class="page-login">\n \n  <ion-card class="login-card">\n    <ion-card-content>\n      <ion-list no-line>\n       <ion-item>\n          <ion-input type="text" [(ngModel)]="login" name="login" placeholder="Identifiant"></ion-input>\n        </ion-item>\n\n        <ion-item>\n         \n          <ion-input type="password" [(ngModel)]="mdp" name="mdp" placeholder="Mot de passe"></ion-input>\n        </ion-item>\n      </ion-list>\n      <button  margin-top ion-button margin-right block (click)=Signing() [ngStyle]="{\'background-color\': buttonColor}">\n      Connexion\n      </button>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n\n<ion-footer>\n    <ion-toolbar>\n       <ion-title> <img src="assets/img/logorim.jpg" height="100" /></ion-title>\n    </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\home\home.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_7__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_5__providers_historical_service__["a" /* HistoricalService */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_4__providers_real_time_service__["a" /* RealTimeService */], __WEBPACK_IMPORTED_MODULE_6__providers_data_management_service__["a" /* DataManagementService */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__providers_login__["a" /* SigningService */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* ToastController */]])
+], HomePage);
+
+//# sourceMappingURL=home.js.map
+
+/***/ }),
+
+/***/ 272:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SigningService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_headers__ = __webpack_require__(246);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var SigningService = (function () {
+    function SigningService(http) {
+        this.http = http;
+    }
+    SigningService.prototype.login = function (credentials) {
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'signin', credentials, { headers: __WEBPACK_IMPORTED_MODULE_4__utils_headers__["a" /* contentHeaders */] }).map(function (res) { return res.json(); });
+    };
+    SigningService.prototype.logout = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'Accept': 'application/json' });
+        Object(__WEBPACK_IMPORTED_MODULE_4__utils_headers__["b" /* createAuthorizationHeader */])(headers);
+        return this.http.post(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'signout', {}, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    return SigningService;
+}());
+SigningService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
+], SigningService);
+
+//# sourceMappingURL=login.js.map
+
+/***/ }),
+
+/***/ 273:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Vehicules; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_vehicule_service__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(1);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var Vehicules = (function () {
+    function Vehicules(menu, navctrl, vehiculeService) {
+        this.menu = menu;
+        this.navctrl = navctrl;
+        this.vehiculeService = vehiculeService;
+        this.bigCurrentPage = 1;
+        this.itemsPerPage = 25;
+        this.vehicules = [];
+        this.bigTotalItems = 175;
+    }
+    Vehicules.prototype.ngOnInit = function () {
+        this.getListVehicules(this.bigCurrentPage - 1, this.itemsPerPage);
+    };
+    Vehicules.prototype.openmenu = function () {
+        this.menu.open();
+    };
+    Vehicules.prototype.getListVehicules = function (page, size) {
+        var _this = this;
+        this.vehiculeService.bigCurrentPage = this.bigCurrentPage;
+        this.vehiculeService.getListVehicules(this.bigCurrentPage - 1, this.itemsPerPage).subscribe(function (response) {
+            _this.vehicules = response.content;
+            _this.vehicules = _this.vehicules.sort(function (a, b) {
+                if (a.device.idDevice < b.device.idDevice) {
+                    return -1;
+                }
+                else if (a.device.idDevice > b.device.idDevice) {
+                    return 1;
+                }
+                else {
+                    return 0;
+                }
+            });
+            _this.vehiculeService.vehicules = _this.vehicules;
+            _this.bigTotalItems = response.totalElements;
+        });
+    };
+    return Vehicules;
+}());
+Vehicules = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["n" /* Component */])({
+        selector: 'page-vehicules',template:/*ion-inline-start:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\vehicules\vehicules.html"*/'<ion-header>\n\n        <ion-navbar>\n\n          <ion-title>Véhicules</ion-title>\n\n        </ion-navbar>\n\n        <ion-fab top left outline class="ion-fab1" #fab style="margin-top:-7px;margin-left:0px">\n\n              <button ion-fab mini outline style="margin-top:0px;background-color:rgba(0,0,0,0.6)" (click)="openmenu()" ><i class="fa fa-list" aria-hidden="true"></i></button>\n\n       </ion-fab>\n\n  </ion-header>\n\n  <ion-content>\n\n    <ion-list *ngFor="let vehicule of vehicules">\n\n      <ion-label>\n\n        {{vehicule.mark}}\n\n      </ion-label>\n\n    </ion-list>\n\n  </ion-content>\n\n'/*ion-inline-end:"C:\Users\MedJabrane\Desktop\Rimtelecom\rimtrack version ios\rimtrack\src\pages\datamana\vehicules\vehicules.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_0__providers_vehicule_service__["a" /* VehiculeService */]])
+], Vehicules);
+
+//# sourceMappingURL=vehicules.js.map
+
+/***/ }),
+
+/***/ 274:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VehiculeService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(23);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var VehiculeService = (function () {
+    function VehiculeService(_http) {
+        this._http = _http;
+        this.vehicules = [];
+        this.toastyAdd = false;
+        this.toastyUpdate = false;
+        this.groupLabels = [];
+        this.driverLabels = [];
+        this.deviceLabels = [];
+        this.bigCurrentPage = 1;
+        this.currentuser = JSON.parse(localStorage.getItem('currentuser'));
+    }
+    VehiculeService.prototype.add = function (vehicule, idDevice, idGroups, idDriver, deviceNumber) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var body = JSON.stringify(vehicule);
+        return this._http.post(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/?idDevice=' + idDevice + '&idGroups=' + idGroups + '&idDriver=' + idDriver + '&deviceNumber=' + deviceNumber, vehicule, options).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.update = function (vehicule, idGroups, idDriver, deviceNumber) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        var options = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var body = JSON.stringify(vehicule);
+        return this._http.put(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/?idGroups=' + idGroups + '&idDriver=' + idDriver + '&deviceNumber=' + deviceNumber, vehicule, options).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.addGroup = function (name) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'groupes/byName/?groupeName=' + name, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.addDriver = function (name) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'drivers/byName/?driverName=' + name, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.getGroupsVehicule = function (id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/groups/' + id, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.getOne = function (id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/' + id, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.assignement = function (idVehicule, idDriver) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/assignement/?idVehicule=' + idVehicule + '&idDriver=' + idDriver, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.getListVehicules = function (page, size) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/list' + '?page=' + page + '&size=' + size, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.delete = function (id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.delete(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'vehicules/' + id, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.getGroupsLabel = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'groupes/labels', { headers: headers }).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.getDriversLabel = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'drivers/labels', { headers: headers }).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.getDevicesLabel = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]({ 'Content-Type': 'application/json' });
+        headers.append('Authorization', this.currentuser.token);
+        return this._http.get(__WEBPACK_IMPORTED_MODULE_3__global_config__["a" /* dns */] + 'devices/labels', { headers: headers }).map(function (res) { return res.json(); });
+    };
+    VehiculeService.prototype.getVehicule = function (idVehicule) {
+        if (this.vehicules.length != 0)
+            return this.vehicules.find(function (vehicule) { return vehicule.idVehicule === idVehicule; });
+        return null;
+    };
+    return VehiculeService;
+}());
+VehiculeService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]])
+], VehiculeService);
+
+//# sourceMappingURL=vehicule.service.js.map
+
+/***/ }),
+
+<<<<<<< Updated upstream
 /***/ 273:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2753,6 +3480,15 @@ Vehicules = __decorate([
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(277);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(281);
+=======
+/***/ 275:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(280);
+>>>>>>> Stashed changes
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -2760,11 +3496,16 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
+<<<<<<< Updated upstream
 /***/ 281:
+=======
+/***/ 280:
+>>>>>>> Stashed changes
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+<<<<<<< Updated upstream
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_datamana_vehicules_vehicule_form_vehicule_form__ = __webpack_require__(155);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_gestpoi_gestpoi__ = __webpack_require__(238);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(239);
@@ -2795,6 +3536,37 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_datamana_vehicules_vehicules__ = __webpack_require__(275);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_datamana_groupes_groupes__ = __webpack_require__(598);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_vehicule_service__ = __webpack_require__(130);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_gestpoi_gestpoi__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_geolocation__ = __webpack_require__(236);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_call_number__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_poi_poi__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_common__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__app_component__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_home_home__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_login__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_historical_historical__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_groups_page_groups_page__ = __webpack_require__(269);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_historical_form_historical_form__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_paths_list_paths_list__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__utils_geocoding_service__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__utils_map_service__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_real_time_service__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_historical_service__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__providers_data_management_service__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_storage__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_stop_list_stop_list__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_mileage_mileage__ = __webpack_require__(270);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_datamana_vehicules_vehicules__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_datamana_groupes_groupes__ = __webpack_require__(593);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_vehicule_service__ = __webpack_require__(274);
+>>>>>>> Stashed changes
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2830,6 +3602,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+<<<<<<< Updated upstream
 
 var AppModule = (function () {
     function AppModule() {
@@ -3028,21 +3801,90 @@ var CustomSelectInfo = (function () {
 
 var Vehicule = (function () {
     function Vehicule() {
+=======
+var AppModule = (function () {
+    function AppModule() {
+>>>>>>> Stashed changes
     }
     return Vehicule;
 }());
+<<<<<<< Updated upstream
+=======
+AppModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_5__angular_core__["L" /* NgModule */])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* MyApp */],
+            __WEBPACK_IMPORTED_MODULE_12__pages_home_home__["a" /* HomePage */],
+            __WEBPACK_IMPORTED_MODULE_3__pages_poi_poi__["a" /* Poi */],
+            __WEBPACK_IMPORTED_MODULE_14__pages_historical_historical__["a" /* Historical */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_groups_page_groups_page__["a" /* GroupsPage */],
+            __WEBPACK_IMPORTED_MODULE_16__pages_historical_form_historical_form__["a" /* HistoricalForm */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_paths_list_paths_list__["a" /* PathsList */],
+            __WEBPACK_IMPORTED_MODULE_24__pages_stop_list_stop_list__["a" /* StopList */],
+            __WEBPACK_IMPORTED_MODULE_25__pages_mileage_mileage__["a" /* MileageComponent */],
+            __WEBPACK_IMPORTED_MODULE_0__pages_gestpoi_gestpoi__["a" /* GestPoi */],
+            __WEBPACK_IMPORTED_MODULE_26__pages_datamana_vehicules_vehicules__["a" /* Vehicules */],
+            __WEBPACK_IMPORTED_MODULE_27__pages_datamana_groupes_groupes__["a" /* Groupes */]
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_http__["c" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_23__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["f" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* MyApp */], {
+                swipeBackEnabled: 'false'
+            })
+        ],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_7_ionic_angular__["d" /* IonicApp */]],
+        entryComponents: [
+            __WEBPACK_IMPORTED_MODULE_11__app_component__["a" /* MyApp */],
+            __WEBPACK_IMPORTED_MODULE_12__pages_home_home__["a" /* HomePage */],
+            __WEBPACK_IMPORTED_MODULE_14__pages_historical_historical__["a" /* Historical */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_groups_page_groups_page__["a" /* GroupsPage */],
+            __WEBPACK_IMPORTED_MODULE_16__pages_historical_form_historical_form__["a" /* HistoricalForm */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_paths_list_paths_list__["a" /* PathsList */],
+            __WEBPACK_IMPORTED_MODULE_3__pages_poi_poi__["a" /* Poi */],
+            __WEBPACK_IMPORTED_MODULE_24__pages_stop_list_stop_list__["a" /* StopList */],
+            __WEBPACK_IMPORTED_MODULE_25__pages_mileage_mileage__["a" /* MileageComponent */],
+            __WEBPACK_IMPORTED_MODULE_0__pages_gestpoi_gestpoi__["a" /* GestPoi */],
+            __WEBPACK_IMPORTED_MODULE_26__pages_datamana_vehicules_vehicules__["a" /* Vehicules */],
+            __WEBPACK_IMPORTED_MODULE_27__pages_datamana_groupes_groupes__["a" /* Groupes */]
+        ],
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_10__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_9__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_28__providers_vehicule_service__["a" /* VehiculeService */],
+            __WEBPACK_IMPORTED_MODULE_13__providers_login__["a" /* SigningService */],
+            __WEBPACK_IMPORTED_MODULE_18__utils_geocoding_service__["a" /* GeocodingService */],
+            __WEBPACK_IMPORTED_MODULE_19__utils_map_service__["a" /* MapService */],
+            __WEBPACK_IMPORTED_MODULE_20__providers_real_time_service__["a" /* RealTimeService */],
+            __WEBPACK_IMPORTED_MODULE_22__providers_data_management_service__["a" /* DataManagementService */],
+            __WEBPACK_IMPORTED_MODULE_1__ionic_native_geolocation__["a" /* Geolocation */],
+            __WEBPACK_IMPORTED_MODULE_21__providers_historical_service__["a" /* HistoricalService */],
+            __WEBPACK_IMPORTED_MODULE_8__angular_common__["d" /* DecimalPipe */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_call_number__["a" /* CallNumber */],
+            __WEBPACK_IMPORTED_MODULE_23__ionic_storage__["a" /* IonicStorageModule */],
+            { provide: __WEBPACK_IMPORTED_MODULE_5__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_7_ionic_angular__["e" /* IonicErrorHandler */] }
+        ]
+    })
+], AppModule);
+>>>>>>> Stashed changes
 
 //# sourceMappingURL=vehicule.js.map
 
 /***/ }),
 
+<<<<<<< Updated upstream
 /***/ 328:
+=======
+/***/ 323:
+>>>>>>> Stashed changes
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_historical_historical__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+<<<<<<< Updated upstream
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__ = __webpack_require__(136);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(244);
@@ -3050,6 +3892,15 @@ var Vehicule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_gestpoi_gestpoi__ = __webpack_require__(238);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_datamana_vehicules_vehicules__ = __webpack_require__(275);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_status_bar__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_gestpoi_gestpoi__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_datamana_vehicules_vehicules__ = __webpack_require__(273);
+>>>>>>> Stashed changes
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3194,7 +4045,11 @@ MyApp = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(39);
+<<<<<<< Updated upstream
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(25);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(23);
+>>>>>>> Stashed changes
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3308,9 +4163,15 @@ DataManagementService = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+<<<<<<< Updated upstream
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_leaflet__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_leaflet__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_global_config__ = __webpack_require__(25);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_leaflet__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_leaflet__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_global_config__ = __webpack_require__(23);
+>>>>>>> Stashed changes
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3578,12 +4439,20 @@ MapService = __decorate([
 
 /***/ }),
 
+<<<<<<< Updated upstream
 /***/ 598:
+=======
+/***/ 593:
+>>>>>>> Stashed changes
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Groupes; });
+<<<<<<< Updated upstream
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(19);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(21);
+>>>>>>> Stashed changes
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3625,7 +4494,11 @@ Groupes = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(39);
+<<<<<<< Updated upstream
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(25);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__global_config__ = __webpack_require__(23);
+>>>>>>> Stashed changes
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3700,8 +4573,13 @@ HistoricalService = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(39);
+<<<<<<< Updated upstream
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__global_config__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_headers__ = __webpack_require__(248);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__global_config__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_headers__ = __webpack_require__(246);
+>>>>>>> Stashed changes
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3779,5 +4657,9 @@ RealTimeService = __decorate([
 
 /***/ })
 
+<<<<<<< Updated upstream
 },[276]);
+=======
+},[275]);
+>>>>>>> Stashed changes
 //# sourceMappingURL=main.js.map
