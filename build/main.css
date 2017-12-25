@@ -25260,13 +25260,13 @@ textarea#note {
 }
 
 .leaflet-pseudo-fullscreen .leaflet-routing-container {
-  height: 135px;
+  height: 120px;
   width: 85%;
   margin-top: -20%;
   margin-right: 15%;
   overflow-y: scroll;
   color: white;
-  font-family: 'Shadows Into Light', cursive;
+  font-family: 'Slabo 27px', serif;
 }
 
 ion-header ion-title {
